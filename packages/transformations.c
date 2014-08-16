@@ -91,6 +91,8 @@ POSSIBILITY OF SUCH DAMAGE.
 #define ISZERO(x) (((x) < EPSILON) && ((x) > -EPSILON))
 #define NOTZERO(x) (((x) > EPSILON) || ((x) < -EPSILON))
 
+
+
 /*****************************************************************************/
 /* C helper functions */
 

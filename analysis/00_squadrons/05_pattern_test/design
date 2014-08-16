@@ -12,4 +12,4 @@ A subset of these flies :
 Fly0191,Fly092,Fly093,
 Fly094,Fly096,Fly097 
 
-Were presented the stimulus set both with the imaging light-on and with the imaging light off. The trial2 .abf files contain the the light-off data.
+Were presented the same stimulus set with both the imaging light on, and with the imaging light off. The trial2 .abf files contain the the light-off data. Flies 096 and 097 didn't fly well for the entire trials so only the first flies are included in the subsequent analysis.
