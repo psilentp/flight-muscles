@@ -6,7 +6,6 @@ import random
 import scipy
 import quantities as pq
 import scipy.io
-#import warnings
 
 stro_R = 'phi_R'
 stro_L = 'phi_L'
@@ -15,65 +14,10 @@ stroke_dev_L = 'theta_L'
 wing_rot_R = 'eta_R'
 wing_rot_L = 'eta_L'
 
-param_file = open('params.json','rb')
-params = json.load(param_file)
-param_file.close()
+from parameters import params
 
 photron_interest_signals = ['eta_L','eta_R','phi_L','phi_R','photron_sample_times','theta_L','theta_R']
 axon_interest_signals = ['AMsysCh1','CamSync','LeftWing','Ph0','Ph1','Ph2','Photostim','RightWing','WBSync','Xpos','Ypos','axon_sample_times']
-
-
-starfield_pattern_names_6_0_2014  = ['equator_000.mat',
-                            'equator_030.mat',
-                            'equator_060.mat',
-                            'equator_090.mat',
-                            'equator_120.mat',
-                            'equator_150.mat',
-                            'equator_180.mat',
-                            'equator_210.mat',
-                            'equator_240.mat',
-                            'equator_270.mat',
-                            'equator_300.mat',
-                            'equator_330.mat',
-                            'coromeridian_030.mat',
-                            'coromeridian_060.mat',
-                            'coromeridian_090.mat',
-                            'coromeridian_120.mat',
-                            'coromeridian_150.mat',
-                            'coromeridian_210.mat',
-                            'coromeridian_240.mat',
-                            'coromeridian_270.mat',
-                            'coromeridian_300.mat',
-                            'coromeridian_330.mat',
-                            'sagimeridian_030.mat',
-                            'sagimeridian_060.mat',
-                            'sagimeridian_120.mat',
-                            'sagimeridian_150.mat',
-                            'sagimeridian_210.mat',
-                            'sagimeridian_240.mat',
-                            'sagimeridian_300.mat',
-                            'sagimeridian_330.mat']
-
-starfield_pattern_names_6_29_2014  = ['translate_forward.mat',
-                            'translate_backward.mat',
-                            'translate_up.mat',
-                            'translate_down.mat',
-                            'spin_equator_000.mat',
-                            'spin_equator_030.mat',
-                            'spin_equator_060.mat',
-                            'spin_equator_090.mat',
-                            'spin_equator_120.mat',
-                            'spin_equator_150.mat',
-                            'spin_equator_180.mat',
-                            'spin_equator_210.mat',
-                            'spin_equator_240.mat',
-                            'spin_equator_270.mat',
-                            'spin_equator_300.mat',
-                            'spin_equator_330.mat']
-l = [[x,x,x] for x in starfield_pattern_names_6_29_2014]
-starfield_pattern_names_6_29_2014 = [item for sublist in l for item in sublist]
-#rootpath = params['platform_paths'][sys.platform] + params['root_dir']
-
 
 class Squadron(object):
     """Controller object to facilitate the groupwise analysis of the fly data"""
@@ -90,9 +34,7 @@ class Fly(object):
     def __init__(self,fly_db,fly_num):
         self.fly_num = fly_num
         self.fly_record = fly_db[fly_num]
-        self.param_file = open('params.json','rb')
-        self.params = json.load(self.param_file)
-        self.param_file.close()
+        self.params = params
         self.rootpath = self.params['platform_paths'][sys.platform] + self.params['root_dir']
         self.fly_path = self.rootpath + ('Fly%04d/')%(fly_num)
         self.experiments = self.get_experiments()
@@ -113,7 +55,6 @@ class Experiment(object):
         self.fly_record = fly_record
         self.exp_record = fly_record['experiments'][experiment_name]
         self.fly_path = fly_path
-        self.sequences = self.get_sequences()
     
     def get_sequences(self):
         pass
@@ -129,11 +70,18 @@ class Sequence(object):
             exp_record['sequences'].create_group(str(seq_num))
             self.seq_record = exp_record['sequences'][str(seq_num)]
 
-#############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
+#########################
+###development note: ####
+#########################
+#there is no reason why the sequence has to be the be-all and end all
+#of sub-experiment data structures, the sequence is a usefull way 
+#of organizing sequences of data captured from different data sources
+#but perhaps it would be usefull to create an "epoch" datatype to
+#encapsulate a time period on the global clock. This then might- or might
+#not span multipe sequences. The question is whether to allow overlapping 
+#epochs. If so it would then be usfull to implement set-like
+#perators on those epochs so that intersections and unions could be computed.
+
 #############################################################################
 #############################################################################
 
@@ -149,6 +97,7 @@ class HSVExperiment(Experiment):
         return sequences
         
     def import_sequence_data(self):
+        self.sequences = self.get_sequences()
         for key in self.sequences.keys():
             self.sequences[key].import_flytracks()
             self.sequences[key].import_processed_wbkin()
@@ -402,11 +351,6 @@ class HSVSequence(Sequence):
 
 #############################################################################
 #############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
 
 class IMGExperiment(Experiment):
 
@@ -437,29 +381,34 @@ class IMGExperiment(Experiment):
 
     def import_axon_data(self,filenum = 0):
         """load the axon data from an experiment into the fly_record"""
-        axon_file = self.fly_path + self.exp_record['axon_file_names'][filenum]
+        try:
+            axon_file = self.fly_path + self.exp_record['axon_file_names'][filenum]
+        except KeyError:
+            print('no axon file!');return None
         axondata = get_axon_signals(axon_file)
         if not('axon_data' in self.exp_record.keys()):
             self.exp_record.create_group('axon_data')
         for key in axondata:
             update_dset(self.exp_record['axon_data'],key,axondata[key])
-            #self.exp_record['axon_data'][key] = axondata[key]
 
     def import_tiff_data(self,filenum = 0):
-        tiff_file = self.fly_path + self.exp_record['tiff_file_names'][filenum]
+        try:
+            tiff_file = self.fly_path + self.exp_record['tiff_file_names'][filenum]
+        except KeyError:
+            print ('no tiff file');return None
         import tifffile
         tif = tifffile.TiffFile(tiff_file)
         images = tif.asarray()
         if not('tiff_data' in self.exp_record.keys()):
             self.exp_record.create_group('tiff_data')
         update_dset(self.exp_record['tiff_data'],'images',images)
-        #self.exp_record['tiff_data']['images'] = images
 
     def calc_framebase(self):
         if 'axon_data' not in self.exp_record.keys():
             self.import_axon_data()
         if 'tiff_data' not in self.exp_record.keys():
-            self.import_tiff_stack()
+            if self.import_tiff_stack() is None:
+                return
         sigs = self.exp_record['axon_data']
         exposures = idx_by_thresh(np.array(sigs['CamSync']),thresh = 1)
         frames = np.array([x[-1] for x in exposures])[0:-1].astype(int)
@@ -472,12 +421,13 @@ class IMGExperiment(Experiment):
             update_dset(self.exp_record['tiff_data']['axon_framebase'],key,downsamp)
         
     def sync_sequences(self):
+        self.sequences = self.get_sequences()
         frame_rate = self.exp_record['imaging_frame_rate_guess'].value
         ep_duration = self.exp_record['ol_epoch_duration'].value
         if 'axon_data' not in self.exp_record.keys():
             self.import_axon_data()
         if 'tiff_data' not in self.exp_record.keys():
-            self.import_tiff_stack()
+            self.import_tiff_data()
         if 'axon_framebase' not in self.exp_record['tiff_data'].keys():
             self.calc_framebase()
         sigs = self.exp_record['tiff_data']['axon_framebase']
@@ -487,7 +437,6 @@ class IMGExperiment(Experiment):
         epochs = idx_by_thresh(ypos*-1,-9.5)
         ttups = [(ax_time[ep[0]],ax_time[ep[0]]+ep_duration) for ep in epochs]
         new_epochs = [np.squeeze(np.argwhere((frame_times>ttup[0]) & (frame_times<ttup[1]))) for ttup in ttups] 
-        #new_epochs = [np.arange(ep[0],ep[0]+frame_rate*ep_duration).astype(int) for ep in epochs]
         ypos_frames = np.array(self.exp_record['tiff_data']['axon_framebase']['Ypos'])
         trial_ind = [int(np.around(np.mean(ypos_frames[ep[10:30]])*10)) for ep in new_epochs]
         sorted_epochs = sorted(zip(trial_ind,new_epochs),key = lambda x:x[0])
@@ -498,18 +447,91 @@ class IMGExperiment(Experiment):
             except IndexError:
                 print('missing sequence #%s'%(skey))
 
+class IMGExperiment2(IMGExperiment):
+    """IMGExperiement updated on 8.17.2014 for data colleced starting with
+    fly0182. The main changes are that the open loop epoch is determined by the 
+    DAC2 signal and that the sync_sequences signal does not require that an imaging 
+    stream exists"""
+    
+    def get_sequences(self,sorted_epochs = None):
+        sequences = dict()
+        if not(sorted_epochs is None):
+            trial_ind_set = sorted(list(set([x[0] for x in sorted_epochs])))
+            trial_ind_map = dict()
+            [trial_ind_map.update({ind:name}) for ind,name in zip(trial_ind_set,self.exp_record['sequence_pattern_names'])]
+            for snum,epoch in enumerate(sorted_epochs):
+                epoch_name = trial_ind_map[epoch[0]]
+                sequences[snum] = IMGSequence(self.exp_record,snum,self.fly_path,seq_pattern_name = epoch_name)
+        else:
+            for snum in self.seq_record.keys():
+                sequences[snum] = IMGSequence(self.exp_record,snum,self.fly_path)
+        return sequences
+
+    def sync_sequences(self):
+        frame_rate = self.exp_record['imaging_frame_rate_guess'].value
+        ep_duration = self.exp_record['ol_epoch_duration'].value
+        if 'axon_data' not in self.exp_record.keys():
+            self.import_axon_data()
+        if 'tiff_data' not in self.exp_record.keys():
+            self.import_tiff_data()
+        #if 'axon_framebase' not in self.exp_record['tiff_data'].keys():
+        #    self.calc_framebase()
+        ###
+        ypos = np.array(self.exp_record['axon_data']['Ypos'])
+        ax_time = np.array(self.exp_record['axon_data']['times'])
+        epoch_signal = np.array(self.exp_record['axon_data']['DAC2'])
+        #frame_times = np.array(sigs['times'])
+        epochs = idx_by_thresh(epoch_signal,thresh = 0)
+        #filter out garbage that starts before the begining the actual experiment
+        if 'experiment_start_time' in self.exp_record.keys():
+            experiment_start_time = self.exp_record['experiment_start_time'].value
+            epochs = [ep for ep in epochs if ax_time[ep[0]]>experiment_start_time]
+        #construct a list of tuples containing the start and end times of each epoch - 
+        #here the end time is determined by the ep_duration parameter.
+        ttups = [(ax_time[ep[0]],ax_time[ep[0]]+ep_duration) for ep in epochs]
+        #line to grab epoch idx's in another timebase - maybe make a general fucntion
+        #new_epochs = [np.squeeze(np.argwhere((frame_times>ttup[0]) & (frame_times<ttup[1]))) for ttup in ttups] 
+        #ypos_frames = np.array(self.exp_record['tiff_data']['axon_framebase']['Ypos'])
+        #index to use to sort the epochs - sorts to create the coresponence with the epoch_names list.
+        trial_ind = [int(np.around(np.mean(epoch_signal[ep])*10)) for ep in epochs]
+        sorted_epochs = sorted(zip(trial_ind,epochs),key = lambda x:x[0])
+        self.sequences = self.get_sequences(sorted_epochs = sorted_epochs)
+        for skey,seq_epoch in enumerate(sorted_epochs):
+            sequence = self.sequences[skey]
+            try:
+                update_dset(sequence.seq_record,'epoch',seq_epoch[1])
+            except IndexError:
+                print('missing sequence #%s'%(skey))
+
+    def extract_epochs_in_framebase(self):
+        """if the frame times have been extracted find the epochs in
+        terms of the frame idxs"""
+        #this concept of different timebases and
+        #idxs needs to be formalized in a better way perhaps using the 
+        #epoch class proposed in a comment above"""
+        frame_sigs = self.exp_record['tiff_data']['axon_framebase']
+        frame_times = np.array(frame_sigs['times'])
+        axon_times = self.exp_record['axon_data']['times']
+        for seq_record in self.exp_record['sequences'].values():
+            axon_epoch = seq_record['epoch']
+            ttup = (axon_times[axon_epoch[0]],axon_times[axon_epoch[-1]]) #time tuple
+            epoch_framebase = np.squeeze(np.argwhere((frame_times>ttup[0]) & (frame_times<ttup[1])))
+            update_dset(seq_record,'epoch_framebase',epoch_framebase)
+
 class IMGSequence(Sequence):
-    def __init__(self,exp_record,seq_num,fly_path):
+    def __init__(self,exp_record,seq_num,fly_path,seq_pattern_name = None):
         Sequence.__init__(self,exp_record,seq_num,fly_path)
-        self.seq_pattern_name = self.exp_record['sequence_pattern_names'][seq_num]
+        if seq_pattern_name is None:
+            try:
+                self.seq_pattern_name = self.seq_record['epoch_name']
+            except IndexError:
+                self.seq_pattern_name = self.exp_record['sequence_pattern_names'][seq_num]
+        else:
+            self.seq_record['epoch_name'] = seq_pattern_name
 
 #############################################################################
 #############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
-#############################################################################
+
 def calc_seq_strokeplane(self,seq):
     """calculate the strokeplane from the quaternions of a sequence"""
     q_left = np.squeeze(seq[:,[9,10,11,8]])
@@ -582,30 +604,30 @@ def load_wbkin_file(kine_filename):
     return kine_data
 
 def load_flytracks_files(sequence_path):
-        """convenience function to load the sequence from fly tracks function will cat
-        the frame numbers into the first row the kine matrx, also the untracked frames
-        before the start of the sequence are padded with NaNs - tries to emulate the same 
-        format as the WBkin file"""
-        flytracks_path = sequence_path + 'flytracks/'
-        #get the list of frames
-        tracklist = filter(lambda x: x.startswith('fly'), os.listdir(flytracks_path))
-        framenums = [np.int(s.strip('fly.mat')) for s in tracklist]
-        #sort the files by frame number
-        tracklist = [x for (y,x) in sorted(zip(framenums,tracklist))]
-        tracklist = [flytracks_path + x for x in tracklist]
-        #load the data from the .mat files
-        mats = [scipy.io.loadmat(trk)['xh'].copy() for trk in tracklist]
-        mats = np.array([np.squeeze(np.pad(np.squeeze(mat),(0,15-np.shape(mat)[0]),'constant')) for mat in mats])
-        #since the frames are sorted - now sort the frame numbers
-        framenums = np.squeeze(sorted(framenums))
-        #cat the frame numbers onto the kine data
-        seq = np.concatenate((framenums[:,np.newaxis],mats),axis = 1)
-        #now pad the matrix with NaNs so that it starts at frame 0
-        start_frame = seq[0,0]
-        pad_seq = np.pad(seq,((start_frame-1,0),(0,0)),'constant')
-        pad_seq[:start_frame-1,0] = np.arange(1,start_frame)
-        pad_seq[:start_frame-1,1:] = np.NAN
-        return pad_seq
+    """convenience function to load the sequence from fly tracks function will cat
+    the frame numbers into the first row the kine matrx, also the untracked frames
+    before the start of the sequence are padded with NaNs - tries to emulate the same 
+    format as the WBkin file"""
+    flytracks_path = sequence_path + 'flytracks/'
+    #get the list of frames
+    tracklist = filter(lambda x: x.startswith('fly'), os.listdir(flytracks_path))
+    framenums = [np.int(s.strip('fly.mat')) for s in tracklist]
+    #sort the files by frame number
+    tracklist = [x for (y,x) in sorted(zip(framenums,tracklist))]
+    tracklist = [flytracks_path + x for x in tracklist]
+    #load the data from the .mat files
+    mats = [scipy.io.loadmat(trk)['xh'].copy() for trk in tracklist]
+    mats = np.array([np.squeeze(np.pad(np.squeeze(mat),(0,15-np.shape(mat)[0]),'constant')) for mat in mats])
+    #since the frames are sorted - now sort the frame numbers
+    framenums = np.squeeze(sorted(framenums))
+    #cat the frame numbers onto the kine data
+    seq = np.concatenate((framenums[:,np.newaxis],mats),axis = 1)
+    #now pad the matrix with NaNs so that it starts at frame 0
+    start_frame = seq[0,0]
+    pad_seq = np.pad(seq,((start_frame-1,0),(0,0)),'constant')
+    pad_seq[:start_frame-1,0] = np.arange(1,start_frame)
+    pad_seq[:start_frame-1,1:] = np.NAN
+    return pad_seq
         
 def butter_bandpass(lowcut, highcut, sampling_period, order=5):
     sampling_frequency = 1.0/sampling_period
@@ -677,8 +699,12 @@ def update_dset(dset,key,value):
         del(dset[key])
         dset[key] = value
 
+#this maps the experiment names to the code used
+#to import and process the data
 exp_map = {'lr_blob_expansion':HSVExperiment,
            'img_starfield_t2_rep1':IMGExperiment,
            'img_nsf_pilot_t2_rep1':IMGExperiment,
            'img_starfields2_t2_rep1':IMGExperiment,
-           'img_starfields2_t2_rep2':IMGExperiment}
+           'img_starfields2_t2_rep2':IMGExperiment,
+           'img_pattern_test_t2_lighton':IMGExperiment2,
+           'img_pattern_test_t2_lightoff':IMGExperiment2}

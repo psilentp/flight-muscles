@@ -49,3 +49,9 @@ starfield_pattern_names_6_29_2014  = ['translate_forward.mat',
 l = [[x,x,x] for x in starfield_pattern_names_6_29_2014]
 starfield_pattern_names_6_29_2014 = [item for sublist in l for item in sublist]
 
+test_pattern_names  = ['static_test_90.mat',
+                       'static_test_270.mat',
+                       'stripe_test_90.mat',
+                       'stripe_test_270.mat',
+                       'opti_test_90.mat',
+                       'opti_test_270.mat']
