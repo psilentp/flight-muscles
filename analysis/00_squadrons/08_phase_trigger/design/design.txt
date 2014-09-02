@@ -1,0 +1,1 @@
+Experiments are designed to test the notion that the ipsi-contra response differences are greater when the fly is presented with roll-stimuli compared to yaw stimuli.

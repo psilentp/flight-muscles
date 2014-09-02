@@ -407,7 +407,7 @@ class IMGExperiment(Experiment):
         if 'axon_data' not in self.exp_record.keys():
             self.import_axon_data()
         if 'tiff_data' not in self.exp_record.keys():
-            if self.import_tiff_stack() is None:
+            if self.import_tiff_data() is None:
                 return
         sigs = self.exp_record['axon_data']
         exposures = idx_by_thresh(np.array(sigs['CamSync']),thresh = 1)
@@ -707,4 +707,10 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'img_starfields2_t2_rep1':IMGExperiment,
            'img_starfields2_t2_rep2':IMGExperiment,
            'img_pattern_test_t2_lighton':IMGExperiment2,
-           'img_pattern_test_t2_lightoff':IMGExperiment2}
+           'img_pattern_test_t2_lightoff':IMGExperiment2,
+           'img_power_t2_ND_32':IMGExperiment,
+           'img_power_t2_ND_16':IMGExperiment,
+           'img_power_t2_ND_08':IMGExperiment,
+           'img_power_t2_ND_04':IMGExperiment,
+           'img_power_t2_ND_02':IMGExperiment,
+           'img_power_t2_ND_01':IMGExperiment}

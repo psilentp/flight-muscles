@@ -1,15 +1,12 @@
 clear all
 
-starfield_names = {'static_test_90.mat'
-                   'stripe_test_90.mat'
-                   'opti_test_90.mat'
-                   'static_test_270.mat'
-                   'stripe_test_270.mat'
-                   'opti_test_270.mat'
-};
+pattern_names = {'static_test_roll_90.mat'
+                 'static_test_roll_270.mat'
+                 'static_test_yaw_90.mat'
+                 'static_test_yaw_270.mat'};
 
 for pnum = 1:6;
-    pname = char(starfield_names(pnum))
+    pname = char(pattern_names(pnum))
     load(pname);
     psize = size(imgs)
     % make_6_wide_med_cont_pattern_48.m

@@ -55,3 +55,8 @@ test_pattern_names  = ['static_test_90.mat',
                        'stripe_test_270.mat',
                        'opti_test_90.mat',
                        'opti_test_270.mat']
+
+pitch_yaw_aperture_pattern_names  = ['static_test_roll_90.mat',
+                                     'static_test_roll_270.mat',
+                                     'static_test_yaw_90.mat',
+                                     'static_test_yaw_270.mat']
