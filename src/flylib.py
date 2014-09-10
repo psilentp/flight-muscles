@@ -518,6 +518,7 @@ class IMGExperiment2(IMGExperiment):
             epoch_framebase = np.squeeze(np.argwhere((frame_times>ttup[0]) & (frame_times<ttup[1])))
             update_dset(seq_record,'epoch_framebase',epoch_framebase)
 
+
 class IMGSequence(Sequence):
     def __init__(self,exp_record,seq_num,fly_path,seq_pattern_name = None):
         Sequence.__init__(self,exp_record,seq_num,fly_path)
@@ -713,4 +714,9 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'img_power_t2_ND_08':IMGExperiment,
            'img_power_t2_ND_04':IMGExperiment,
            'img_power_t2_ND_02':IMGExperiment,
-           'img_power_t2_ND_01':IMGExperiment}
+           'img_power_t2_ND_01':IMGExperiment,
+           'open_loop_test_1ms':IMGExperiment2,
+           'open_loop_test_10ms':IMGExperiment2,
+           'sin_yaw_10ms':IMGExperiment2,
+           'sin_yaw_1ms':IMGExperiment2,
+           'step_responses':IMGExperiment2}

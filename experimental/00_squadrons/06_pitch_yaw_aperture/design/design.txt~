@@ -1,0 +1,15 @@
+Experiments intended to identify artifacs associated with the epifl. imaging light. Subsequent analysis identified a left-right assymetry in the response to roll type stimuli.
+
+The following flies were presented the stimulus set on while the imaging light was on at ~2mW/mm^2. The data from these trials are recorded in the trial1 .abf file.
+
+Fly0182,Fly0183,Fly0184,
+Fly0185,Fly0186,Fly0187,
+Fly0189,Fly0191,Fly0192,
+Fly0193,Fly0194,Fly0195,
+Fly0196,Fly0197
+
+A subset of these flies :
+Fly0191,Fly092,Fly093,
+Fly094,Fly096,Fly097 
+
+Were presented the same stimulus set with both the imaging light on, and with the imaging light off. The trial2 .abf files contain the the light-off data. Flies 096 and 097 didn't fly well for the entire trials so only the first flies are included in the subsequent analysis.

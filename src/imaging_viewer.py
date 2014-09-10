@@ -19,7 +19,7 @@ class ImagingViewer(object):
         self.viewb.invertY(True)
         self.viewb.setAspectLocked(True)
         #####
-        self.img = pg.ImageItem(self.images[0,:,:],autoLevels = False,levels = (0,200))
+        self.img = pg.ImageItem(self.images[0,:,:],autoLevels = False,levels = (0,60))
         self.viewb.addItem(self.img)
         self.viewb.setRange(QtCore.QRectF(0, 0, 200, 120))
         #####
