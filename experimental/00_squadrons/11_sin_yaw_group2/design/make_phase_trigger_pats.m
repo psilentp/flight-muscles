@@ -1,12 +1,20 @@
 clear all
 
-pattern_names = {'stripe_test_yaw_90.mat'
-                 'stripe_test_yaw_270.mat'
+pattern_names = {'stripe_test_yaw_90_0.mat'
+                 'stripe_test_yaw_90_1.mat'
+                 'stripe_test_yaw_90_2.mat'
+                 'stripe_test_yaw_90_3.mat'
+                 'stripe_test_yaw_90_4.mat'
+                 'stripe_test_yaw_90_5.mat'
+                 'stripe_test_yaw_90_6.mat'
+                 'stripe_test_yaw_90_7.mat'
+                 'stripe_test_yaw_90_8.mat'
+                 'stripe_test_yaw_90_9.mat'
 };
 
-for pnum = 1:2;
+for pnum = 1:10;
     pname = char(pattern_names(pnum))
-    load(pname);
+    load(strcat('./stimulus_data/',pname));
     psize = size(imgs)
     % make_6_wide_med_cont_pattern_48.m
     pattern.x_num = psize(3);% There are 96 pixel around the display (12x8)
@@ -23,7 +31,7 @@ for pnum = 1:2;
     pattern.BitMapIndex = process_panel_map(pattern);
     disp('making pattern vector')
     pattern.data = Make_pattern_vector(pattern);
-    directory_name = 'E:\flight-muscles\analysis\00_squadrons\08_phase_trigger\design\stimulus_data';
+    directory_name = 'E:\flight-muscles\experimental\00_squadrons\11_sin_yaw_group2\design\stimulus_data';
     str = [directory_name '\Pattern_scld_' pname(1:end-4)]
     save(str, 'pattern');
     clear Pats
