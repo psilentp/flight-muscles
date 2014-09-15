@@ -1712,3 +1712,160 @@ class InitDB(FlySwitch):
         fly_record['experiments']['sin_yaw_10ms']['ol_epoch_duration'] = 60
         fly_record['experiments']['sin_yaw_10ms']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
         fly_record['experiments']['sin_yaw_10ms'].create_group('sequences')
+
+    def initfly_241(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('sin_yaw_10ms')
+        fly_record['experiments']['sin_yaw_10ms']['axon_file_names'] = ['T2_trial1_ND_16_10ms_exposure_14911000.abf']
+        fly_record['experiments']['sin_yaw_10ms']['tiff_file_names'] = ['/T2_trial1_ND_16_10ms_exposure/T2_trial1_ND_16_10ms_exposure_MMStack.ome.tif']
+        fly_record['experiments']['sin_yaw_10ms']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['sin_yaw_10ms']['ol_epoch_duration'] = 60
+        fly_record['experiments']['sin_yaw_10ms']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['sin_yaw_10ms'].create_group('sequences')
+
+    def initfly_242(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('sin_yaw_10ms')
+        fly_record['experiments']['sin_yaw_10ms']['axon_file_names'] = ['T2_trial1_ND_16_10ms_exposure_14911001.abf']
+        fly_record['experiments']['sin_yaw_10ms']['tiff_file_names'] = ['/T2_trial1_ND_16_10ms_exposure/T2_trial1_ND_16_10ms_exposure_MMStack.ome.tif']
+        fly_record['experiments']['sin_yaw_10ms']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['sin_yaw_10ms']['ol_epoch_duration'] = 60
+        fly_record['experiments']['sin_yaw_10ms']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['sin_yaw_10ms'].create_group('sequences')
+
+    def initfly_243(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('sin_yaw_10ms')
+        fly_record['experiments']['sin_yaw_10ms']['axon_file_names'] = ['T2_trial1_ND_16_10ms_exposure_14911002.abf']
+        fly_record['experiments']['sin_yaw_10ms']['tiff_file_names'] = ['/T2_trial1_ND_16_10ms_exposure/T2_trial1_ND_16_10ms_exposure_MMStack.ome.tif']
+        fly_record['experiments']['sin_yaw_10ms']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['sin_yaw_10ms']['ol_epoch_duration'] = 60
+        fly_record['experiments']['sin_yaw_10ms']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['sin_yaw_10ms'].create_group('sequences')
+
+    def initfly_244(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('sin_yaw_10ms')
+        fly_record['experiments']['sin_yaw_10ms']['axon_file_names'] = ['T2_trial1_ND_16_10ms_exposure_14911003.abf']
+        fly_record['experiments']['sin_yaw_10ms']['tiff_file_names'] = ['/T2_trial1_ND_16_10ms_exposure/T2_trial1_ND_16_10ms_exposure_MMStack.ome.tif']
+        fly_record['experiments']['sin_yaw_10ms']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['sin_yaw_10ms']['ol_epoch_duration'] = 60
+        fly_record['experiments']['sin_yaw_10ms']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['sin_yaw_10ms'].create_group('sequences')
+
+################TrpA1 test ######
+
+    def initfly_245(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_10ms_exposure_14912000.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_246(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_10ms_exposure_14912002.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_247(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_10ms_exposure_14912003.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_248(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_14912005.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_249(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_14912006.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_250(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_14912007.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_251(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_14912008.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_252(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_14912009.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+    def initfly_253(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('TrpA1_test')
+        fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_14912010.abf']
+        fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
+        fly_record['experiments']['TrpA1_test'].create_group('sequences')

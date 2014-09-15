@@ -719,4 +719,5 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'open_loop_test_10ms':IMGExperiment2,
            'sin_yaw_10ms':IMGExperiment2,
            'sin_yaw_1ms':IMGExperiment2,
-           'step_responses':IMGExperiment2}
+           'step_responses':IMGExperiment2,
+           'TrpA1_test':IMGExperiment2}

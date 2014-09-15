@@ -6,7 +6,7 @@ import db_access as dba
 import numpy as np
 i = 0
 #imaging_group = [151,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169]
-imaging_group = [240]
+imaging_group = [244]
 #imaging_group = [151,153,154,155,156,157,158,159,160,161,162,163,165,166,167,168,169]
 
 fly_db = dba.get_db()
