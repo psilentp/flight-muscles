@@ -1,0 +1,2 @@
+Because there is some evidence that blue light induces avoidance behavor in larval flies in a TrpA1 dependent manner it is worth seeing if the same mechanism might be responsible for avoidance in adults. I am running the same protocol as the pitch-yaw experiment but in trpA1 mutants.
+
