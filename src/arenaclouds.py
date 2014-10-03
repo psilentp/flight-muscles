@@ -262,6 +262,6 @@ def play_pattern(imgs):
     img = imshow(imgs[:,:,0],cmap = cm.gray,vmin=0,vmax = 7)
     import time
     for i in range(shape(imgs)[-1]):
-        time.sleep(0.001)
+        time.sleep(0.01)
         img.set_data(imgs[:,:,i])
         draw()

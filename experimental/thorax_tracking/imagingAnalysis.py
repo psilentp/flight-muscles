@@ -23,7 +23,7 @@ WindowTemplate, TemplateBaseClass = pg.Qt.loadUiType(uiFile)
 
 import tifffile
 import numpy as np
-tiff_file = '/media/FlyDataB/FlyDB/Fly0212/T2_trial1_ND_04_1ms_exposure/T2_trial1_ND_04_1ms_exposure_MMStack.ome.tif'
+tiff_file = '/media/FlyDataB/FlyDB/Fly0213/T2_trial1_ND_04_1ms_exposure/T2_trial1_ND_04_1ms_exposure_MMStack.ome.tif'
 
 
 i1 =        [[92.50577788    ,91.0009609 ],

@@ -27,22 +27,16 @@ class GeometricModel(object):
         ## put lines in barycentric coords
         self.barycentric = dict()
         for key in self.lines.keys():
-            coords = dot(self.basis['A_inv'],(self.lines[key]-self.basis['p']).T) 
+            coords = dot(self.basis['A_inv'],(self.lines[key]-self.basis['p'][:,np.newaxis])) 
             self.barycentric[key] = coords.T
             
     def coords_from_basis(self,basis):
         ret = dict()
         for key in self.barycentric.keys():
-            coords = np.dot(basis['A'],(self.barycentric[key].T)).T+basis['p']
+            coords = np.dot(basis['A'],(self.barycentric[key]).T)+basis['p'][:,np.newaxis]
             ret[key] = coords
         return(ret)
         
-    def get_H_from_basis(self,in_basis,out_basis):
-        Vin = np.vstack([in_basis['a1'],in_basis['a2']])
-        Vout = np.vstack([out_basis['a1'],out_basis['a2']])
-        H = np.dot(Vout,np.linalg.inv(Vin))
-        return H
-
 class ModelView(object):
     def __init__(self,model):
         self.model = model
@@ -51,12 +45,12 @@ class ModelView(object):
         lines = self.model.coords_from_basis(basis)
         self.curves = list()
         for line in lines.values():
-            self.curves.append(plotobject.plot(line[:,0],line[:,1]))
+            self.curves.append(plotobject.plot(line[0,:],line[1,:]))
 
     def update_basis(self,basis):
         lines = self.model.coords_from_basis(basis)
         for curve,line in zip(self.curves,lines.values()):
-            curve.setData(line[:,0],line[:,1])
+            curve.setData(line[0,:],line[1,:])
 
 import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtGui
@@ -72,8 +66,14 @@ class BasisROI(pg.ROI):
         pg.ROI.__init__(self, pos, **args)
         
         self.addFreeHandle((basis['p'][0]+basis['a1'][0],basis['p'][1]+basis['a1'][1]))
+        #self.addFreeHandle((basis['p'][1]+basis['a1'][1],basis['p'][0]+basis['a1'][0]))
+        
         self.addFreeHandle((basis['p'][0],basis['p'][1]))
+        #self.addFreeHandle((basis['p'][1],basis['p'][0]))
+        
         self.addFreeHandle((basis['p'][0]+basis['a2'][0],basis['p'][1]+basis['a2'][1]))
+        #self.addFreeHandle((basis['p'][1]+basis['a2'][1],basis['p'][0]+basis['a2'][0]))
+
         for i in range(0, len(self.handles)-1):
             self.addSegment(self.handles[i]['item'], self.handles[i+1]['item'])
             
@@ -103,7 +103,10 @@ f.close()
 
 imfile = tifffile.TiffFile('test_imgdata.tiff')
 sumimg = imfile.asarray()
-#imshow(sumimg)
+
+
+########################
+#model_keys = []
 e1 = model_data['e1']
 e2 = model_data['e2']
 
@@ -117,8 +120,8 @@ iii3 = model_data['iii3']
 i2 = model_data['i2']
 
 basis = Basis()
-basis['a1'] = e1[1]-e2[0]
-basis['a2'] = e2[1]-e2[0]
+basis['a2'] = e1[1]-e2[0]
+basis['a1'] = e2[1]-e2[0]
 basis['p'] = e2[0]
 
 thorax = GeometricModel(muscle_dict,basis)
@@ -135,6 +138,10 @@ plt.addItem(roi)
 plt.disableAutoRange('xy')
 plt.autoRange()
 
+#import polygonitem as pgi
+#pgitem = pgi.PolygonItem(data = [[(1,0),(3,2),(2,4)]])
+#plt.addItem(pgitem)
+
 import copy
 plot_basis = copy.copy(thorax.basis)
 thorax_view.plot(plot_basis,plt)
@@ -142,8 +149,15 @@ thorax_view.plot(plot_basis,plt)
 def basis_changed(roi):
     pnts = roi.saveState()['points']
     p = np.array(pnts[1])
+    #p = np.array([p[1],p[0]])
+    #p = np.array([pnts[1][1],pnts[1][0]])
+    #a1 = np.array([pnts[0][1],pnts[0][0]])-p
+    #a2 = np.array([pnts[2][1],pnts[2][0]])-p
+
     a1 = np.array(pnts[0])-p
     a2 = np.array(pnts[2])-p
+    #a1 = [a1[1],a1[0]]
+    #a2 = [a2[1],a2[0]]
     plot_basis['p'] = p
     plot_basis['a1'] = a1
     plot_basis['a2'] = a2
