@@ -10,7 +10,7 @@ tools/rebuildUi.py script).
 #import initExample ## Add path to library (just for examples; you do not need this)
 
 import pyqtgraph as pg
-from pyqtgraph.Qt import QtCore, QtGui
+from pyqtgraph.Qt import QtCore, QtGui#QStringList,QString
 import numpy as np
 import os
 
@@ -23,9 +23,20 @@ WindowTemplate, TemplateBaseClass = pg.Qt.loadUiType(uiFile)
 
 import tifffile
 import numpy as np
+
+import db_access as dba
+fly_db = dba.get_db()
+
+default_rframe_data = {'a1': np.array([ 51.5848967 ,  -5.93928407]),
+                       'a2': np.array([ -0.09151179,  88.42505672]),
+                       'p': np.array([ 26.66908747,  34.43488385])}
+
+stacked_muscles = tifffile.TiffFile('stacked_muscles.tiff')
+overlay = np.transpose(stacked_muscles.asarray(),(1,0,2))[:,::-1]
 #tiff_file = '/volumes/FlyDataB/FlyDB/Fly0212/T2_trial1_ND_04_1ms_exposure/T2_trial1_ND_04_1ms_exposure_MMStack.ome.tif'
 
-tiff_file_name = '/Volumes/FlyDataB/FlyDB/Fly0267/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif'
+#tiff_file_name = '/media/FlyDataB/FlyDB/Fly0267/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif'
+
 
 class Basis(dict):    
     def __setitem__(self,key,item):
@@ -40,8 +51,7 @@ class Basis(dict):
                 dict.__setitem__(self,key,item)
         except KeyError:
             dict.__setitem__(self,key,item)
-                
-        
+                        
 class GeometricModel(object):   
     def __init__(self,lines,basis):
         self.lines = lines
@@ -64,6 +74,9 @@ class ModelView(object):
         import copy
         self.model = model
         self.plot_basis = copy.copy(model.basis)
+        #self.plot_basis['p'] = default_rframe_data['p']
+        #self.plot_basis['a1'] = default_rframe_data['a1']
+        #self.plot_basis['a2'] = default_rframe_data['a2']
         
     def plot(self,basis,plotobject):
         lines = self.model.coords_from_basis(basis)
@@ -87,8 +100,6 @@ class ModelView(object):
         self.plot_basis['a1'] = a1
         self.plot_basis['a2'] = a2
         self.update_basis(self.plot_basis)
-
-
 
 class BasisROI(pg.ROI):
     
@@ -125,9 +136,17 @@ class BasisROI(pg.ROI):
         state['points'] = [tuple(h.pos()) for h in self.getHandles()]
         return state
 
+    def setState(self,state):
+        pg.ROI.setState(self,state,update = False)
+        #state = pg.ROI.saveState(self)
+        for h,p in zip(self.getHandles(),state['points']):
+            self.movePoint(h,p)
 
+        self.stateChanged(finish=True)
+        return state
 
 class MainWindow(TemplateBaseClass):  
+
     def __init__(self):
         TemplateBaseClass.__init__(self)
         self.setWindowTitle('pyqtgraph example: Qt Designer')
@@ -135,21 +154,36 @@ class MainWindow(TemplateBaseClass):
         # Create the main window
         self.ui = WindowTemplate()
         self.ui.setupUi(self)
+        self.loadfileTree()
+        
         #frame view
-        #self.vb = pg.ViewBox()
-        #self.vb.setAspectLocked()
         self.plt = pg.PlotItem()
         self.ui.frameView.setCentralItem(self.plt)
         self.frameView = pg.ImageItem()
-        #self.plt = pg.PlotItem()
         self.plt.addItem(self.frameView)
-        #self.vb.addItem(self.plt)
+
+        #transform image
+        self.transformPlt = pg.PlotItem()
+        self.ui.transformImage.setCentralItem(self.transformPlt)
+        self.transformImage = pg.ImageItem()
+        self.transformPlt.addItem(self.transformImage)
+
+        #gama plot########
+        self.gammaPlt = pg.PlotItem()
+        self.ui.gammaPlot.setCentralItem(self.gammaPlt)
+        self.ui.gammaSlider.valueChanged.connect(self.gammaChange)
+        #default gama
+        self.gammaf = lambda x: x**1
+        self.gammax = np.linspace(0,2,100)
+        self.gammaCurve = self.gammaPlt.plot(self.gammax,self.gammaf(self.gammax))
+        #self.transformPlot.addItem(self.transformImage)
+        
         
         #load frames button
         self.ui.loadFrames.clicked.connect(self.loadFrames)
         #save data button
-        self.ui.saveTracks.clicked.connect(self.saveTracks)
-        self.ui.loadTracks.clicked.connect(self.loadTracks)
+        self.ui.saveFit.clicked.connect(self.saveFit)
+        self.ui.loadFit.clicked.connect(self.loadFit)
 
         ##scroll bar
         self.ui.frameScrollBar.valueChanged.connect(self.frameScrollBar_valueChanged)
@@ -163,16 +197,45 @@ class MainWindow(TemplateBaseClass):
         self.loadData()
         self.current_frame = 0
         self.show()
+        
+        #self.ui.commentBox
+
+    def gammaChange(self,value):
+        gamma = value/50.0
+        self.gammaf = lambda x: x**gamma
+        #print gamma
+        self.gammaCurve.setData(self.gammax,self.gammaf(self.gammax))
+        self.showFrame()
+
+    def loadfileTree(self):
+        self.ui.fileTree.setColumnCount(1)
+        items = []
+        for key,fly in zip(fly_db.keys(),fly_db.values()):
+            try:
+                exp1 = fly['experiments'].values()[0]
+                exptype = fly['experiments'].keys()[0]
+                if 'tiff_data' in exp1.keys():
+                    #item_list.append('fly%s'%key)
+                    item = QtGui.QTreeWidgetItem(None,['Fly%04d'%int(key)])
+                    for img_key in ['images','refstack']:
+                        if img_key in exp1['tiff_data'].keys():
+                            #data_ref = exp1['tiff_data'][img_key]
+                            child = QtGui.QTreeWidgetItem(None,[img_key])
+                            child.setData(0,QtCore.Qt.UserRole,key)
+                            item.insertChild(0,child)
+                            items.append(item)
+                            #print (img_key,np.shape(exp1['tiff_data'][img_key]))
+                        else:
+                            pass
+            except KeyError:
+                pass
+        self.ui.fileTree.insertTopLevelItems(0,items)
 
     def loadData(self):
         import cPickle
         f = open('model_data.cpkl','rb')
         model_data = cPickle.load(f)
         f.close()
-
-        imfile = tifffile.TiffFile('test_imgdata.tiff')
-        sumimg = imfile.asarray()
-
 
         ########################
         #model_keys = []
@@ -189,36 +252,103 @@ class MainWindow(TemplateBaseClass):
         basis['p'] = e2[0]
         thorax = GeometricModel(muscle_dict,basis)
         self.thorax_view = ModelView(thorax)
-        roi = BasisROI(thorax.basis)
-        roi.sigRegionChanged.connect(self.thorax_view.basis_changed)
+        self.roi = BasisROI(thorax.basis)
+        self.roi.sigRegionChanged.connect(self.thorax_view.basis_changed)
+        self.roi.sigRegionChanged.connect(self.affineWarp)
 
         self.plt.disableAutoRange('xy')
+        
+        state = self.roi.getState()
+        rf = default_rframe_data
+        pnts = [(rf['p'][0]+rf['a1'][0],rf['p'][1]+rf['a1'][1]),
+                 (rf['p'][0],rf['p'][1]),
+                 (rf['p'][0]+rf['a2'][0],rf['p'][1]+rf['a2'][1])]
+        state['points'] = pnts
+        self.roi.setState(state)
+        self.roi.stateChanged()
+        self.plt.addItem(self.roi)
 
-        self.plt.addItem(roi)
         self.thorax_view.plot(self.thorax_view.plot_basis,self.plt)
 
 
     def loadFrames(self):
-        tif = tifffile.TiffFile(tiff_file_name)
-        self.images = tif.asarray()
-        self.frameView.setImage(self.images[0,:,:])
+        selection = self.ui.fileTree.selectedItems()[0]
+        fnum = selection.data(0,QtCore.Qt.UserRole)
+        self.images = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['images'])
+        self.maximg = np.max(self.images,axis = 0)
+        self.transform_img = self.affineWarp(self.maximg)
+        self.current_fly = selection.parent().text(0)
+        print self.current_fly
+        flydir = '%s%s/'%(dba.root_dir,self.current_fly)
+        try:
+            f = open(flydir+'basis_fits.cpkl','rb')
+            import cPickle
+            basis = cPickle.load(f)
+            state = self.roi.getState()
+            pnts = [(basis['p'][0]+basis['a1'][0],basis['p'][1]+basis['a1'][1]),
+                    (basis['p'][0],basis['p'][1]),
+                    (basis['p'][0]+basis['a2'][0],basis['p'][1]+basis['a2'][1])]
+            state['points'] = pnts
+            self.roi.setState(state)
+            self.roi.stateChanged()
+            self.ui.commentBox.setPlainText(basis['commentBox'])
+        except IOError:
+            print 'no file'
+            self.ui.commentBox.setPlainText('')
+
+        #self.frameView.setImage(self.images[0,:,:])
+        self.current_frame = 0
+        self.showFrame()
+        self.transformImage.setImage(self.transform_img)
         self.ui.frameScrollBar.setMaximum(np.shape(self.images)[0])
         self.plt.autoRange()
+        #set transformImage
 
+    def showFrame(self):
+        img = self.gammaf(self.images[self.current_frame,:,:])
+        self.frameView.setImage(img)
+
+    def affineWarp(self,roi):
+        src_f = self.thorax_view.plot_basis
+        dst_f = self.thorax_view.model.basis
+
+        dst_p0 = dst_f['a1'] + dst_f['p']
+        dst_p1 = dst_f['p']
+        dst_p2 = dst_f['a2'] + dst_f['p']
+
+        src_p0 = src_f['a1'] + src_f['p']
+        src_p1 = src_f['p']
+        src_p2 = src_f['a2'] + src_f['p']
+        import cv2
+        A = cv2.getAffineTransform(np.float32([src_p0,src_p1,src_p2]),np.float32([dst_p0,dst_p1,dst_p2]))
+        output_shape = (1024, 1024)
+        self.transform_img = cv2.warpAffine(self.maximg.T,A,output_shape).T[:,::-1]
+
+        display_img = (np.dstack((self.transform_img ,self.transform_img ,self.transform_img ))).astype(np.uint8)
+        display_img += overlay*0.2
+        self.transformImage.setImage(display_img)
 
     def frameScrollBar_valueChanged(self,value):
-        self.frameView.setImage(self.images[value,:,:])
+        #self.frameView.setImage(self.images[value,:,:])
         self.current_frame = value
+        self.showFrame()
         
+    def saveFit(self):
+        import cPickle
+        savedata = dict(self.thorax_view.plot_basis)
+        comment_text = self.ui.commentBox.toPlainText()
+        savedata['commentBox'] = comment_text
 
-    def saveTracks(self):
+        flydir = '%s%s/'%(dba.root_dir,self.current_fly)
+        f = open(flydir+'basis_fits.cpkl','wb')
+        cPickle.dump(savedata,f)
+
+        f.close()
+
+    def loadFit(self):
         pass
-
-
-    def loadTracks(self):
-        pass
-
-
+        #print self.ui.fileTree.selectedItems()[0].data(0,QtCore.Qt.UserRole).toPyObject()
+        
 win = MainWindow()
 
 
@@ -227,3 +357,4 @@ if __name__ == '__main__':
     import sys
     if (sys.flags.interactive != 1) or not hasattr(QtCore, 'PYQT_VERSION'):
         QtGui.QApplication.instance().exec_()
+    fly_db.close()
