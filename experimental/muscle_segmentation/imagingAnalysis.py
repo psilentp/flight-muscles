@@ -273,11 +273,16 @@ class MainWindow(TemplateBaseClass):
 
     def loadFrames(self):
         selection = self.ui.fileTree.selectedItems()[0]
-        fnum = selection.data(0,QtCore.Qt.UserRole)
+        self.current_fly = selection.parent().text(0)
+        fnum = int(self.current_fly.split('Fly')[1])
+        print fnum
+        #fnum = selection.data(0,QtCore.Qt.UserRole)
+        #print 'here'
+        #print int(fnum)
         self.images = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['images'])
         self.maximg = np.max(self.images,axis = 0)
         self.transform_img = self.affineWarp(self.maximg)
-        self.current_fly = selection.parent().text(0)
+        #self.current_fly = selection.parent().text(0)
         print self.current_fly
         flydir = '%s%s/'%(dba.root_dir,self.current_fly)
         try:

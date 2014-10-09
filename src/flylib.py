@@ -518,6 +518,47 @@ class IMGExperiment2(IMGExperiment):
             epoch_framebase = np.squeeze(np.argwhere((frame_times>ttup[0]) & (frame_times<ttup[1])))
             update_dset(seq_record,'epoch_framebase',epoch_framebase)
 
+class IMGExperiment3(IMGExperiment2):
+    """IMGExperiement updated on 10.6.2014 for data colleced starting with
+    fly0254. This class simply extends the load tiff data function so that the 
+    red (tdTomato) reference images are imported into the tiff_data group of the
+    experiment."""
+
+    def import_tiff_data(self,filenum = 0):
+        import tifffile
+        try:
+            tiff_file = self.fly_path + self.exp_record['tiff_file_names'][filenum]
+            tif = tifffile.TiffFile(tiff_file)
+            images = tif.asarray()
+            if not('tiff_data' in self.exp_record.keys()):
+                self.exp_record.create_group('tiff_data')
+            update_dset(self.exp_record['tiff_data'],'images',images)
+        except KeyError:
+            print ('no tiff file')
+
+        try:
+            tiff_file = self.fly_path + self.exp_record['td_end_file_names'][filenum]
+            tif = tifffile.TiffFile(tiff_file)
+            images = tif.asarray()
+            if not('tiff_data' in self.exp_record.keys()):
+                self.exp_record.create_group('tiff_data')
+            update_dset(self.exp_record['tiff_data'],'td_end',images)
+        except KeyError:
+            print ('no td_end file');
+
+        try:
+            tiff_file = self.fly_path + self.exp_record['td_refstack_file_names'][filenum]
+            tif = tifffile.TiffFile(tiff_file)
+            images = tif.asarray()
+            if not('tiff_data' in self.exp_record.keys()):
+                self.exp_record.create_group('tiff_data')
+            update_dset(self.exp_record['tiff_data'],'td_refstack',images)
+        except KeyError:
+            print ('no td_refstack file');
+
+
+
+
 
 class IMGSequence(Sequence):
     def __init__(self,exp_record,seq_num,fly_path,seq_pattern_name = None):
@@ -720,4 +761,5 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'sin_yaw_10ms':IMGExperiment2,
            'sin_yaw_1ms':IMGExperiment2,
            'step_responses':IMGExperiment2,
-           'TrpA1_test':IMGExperiment2}
+           'TrpA1_test':IMGExperiment2,
+           'driver_line_sin_yaw':IMGExperiment3}

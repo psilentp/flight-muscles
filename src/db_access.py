@@ -1869,3 +1869,539 @@ class InitDB(FlySwitch):
         fly_record['experiments']['TrpA1_test']['axon_file_names'] = ['T2_trial1_ND_16_14912010.abf']
         fly_record['experiments']['TrpA1_test']['sequence_pattern_names'] = pitch_yaw_aperture_pattern_names
         fly_record['experiments']['TrpA1_test'].create_group('sequences')
+
+
+################Driver line sin yaw ######
+
+    def initfly_254(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial2_ND_04_10ms_exposure_14929001.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial2_ND_04_10ms_exposure/T2_trial2_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial2_ND_04_100us_exposure_td_end/T2_trial2_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial2_ND_04_100us_exposure_td_refstack/T2_trial2_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_255(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14929002.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_256(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14929003.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_257(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14929005.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_258(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14929006.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+########
+    def initfly_259(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14930000.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_refstack/T2_trial1_ND_04_1ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_260(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14930001.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_refstack/T2_trial1_ND_04_1ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_261(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14930003.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_refstack/T2_trial1_ND_04_1ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_262(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14930004.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_refstack/T2_trial1_ND_04_1ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_263(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14930005.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_refstack/T2_trial1_ND_04_1ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_264(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14930006.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_refstack/T2_trial1_ND_04_1ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    ###
+    def initfly_265(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o01000.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_266(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o01001.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_267(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o01002.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_268(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o01003.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_269(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o01004.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+
+    def initfly_270(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o01005.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_end/T2_trial1_ND_04_100us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+###
+
+    def initfly_271(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o02000.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_2ms_exposure_td_refstack/T2_trial1_ND_04_2ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+
+    def initfly_272(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o02001.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_2ms_exposure_td_refstack/T2_trial1_ND_04_2ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+
+    def initfly_273(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o02002.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_2ms_exposure_td_refstack/T2_trial1_ND_04_2ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+
+
+    def initfly_274(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o02003.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_2ms_exposure_td_refstack/T2_trial1_ND_04_2ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+
+
+    def initfly_275(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o02004.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_2ms_exposure_td_refstack/T2_trial1_ND_04_2ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_276(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o02006.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_1ms_exposure_td_end/T2_trial1_ND_04_1ms_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_2ms_exposure_td_refstack/T2_trial1_ND_04_2ms_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_277(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o06000.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_end/T2_trial1_ND_04_500us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_refstack/T2_trial1_ND_04_500us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_278(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o06002.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_end/T2_trial1_ND_04_500us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_refstack/T2_trial1_ND_04_500us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_279(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o06005.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_end/T2_trial1_ND_04_500us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_refstack/T2_trial1_ND_04_500us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_280(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o06008.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_end/T2_trial1_ND_04_500us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_refstack/T2_trial1_ND_04_500us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_281(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o06009.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_end/T2_trial1_ND_04_500us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_refstack/T2_trial1_ND_04_500us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
+
+    def initfly_282(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record['flynum'] = flynum
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('driver_line_sin_yaw')
+        fly_record['experiments']['driver_line_sin_yaw']['axon_file_names'] = ['T2_trial1_ND_04_10ms_exposure_14o06010.abf']
+        fly_record['experiments']['driver_line_sin_yaw']['tiff_file_names'] = ['/T2_trial1_ND_04_10ms_exposure/T2_trial1_ND_04_10ms_exposure_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['td_end_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_end/T2_trial1_ND_04_500us_exposure_td_end_MMStack.ome.tif']
+        fly_record['experiments']['driver_line_sin_yaw']['td_refstack_file_names'] = ['/T2_trial1_ND_04_500us_exposure_td_refstack/T2_trial1_ND_04_500us_exposure_td_refstack_MMStack.ome.tif']
+        
+        fly_record['experiments']['driver_line_sin_yaw']['imaging_frame_rate_guess'] = 70
+        fly_record['experiments']['driver_line_sin_yaw']['ol_epoch_duration'] = 60
+        fly_record['experiments']['driver_line_sin_yaw']['ol_function_name'] = 'position_function_sin_0.5hz_a40.0.mat'
+        fly_record['experiments']['driver_line_sin_yaw'].create_group('sequences')
