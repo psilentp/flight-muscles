@@ -1,3 +1,0 @@
-Test of step response data - the previous step-response was difficult to interpret because of the bias away from the stimulus. In this run I will try to present a step response of various angular velocites but off a static patern. The key will be giving the fly a few seconds before each trial to allow the wingstroke bias to settle.
-
-The trial should run as a standard open loop movie updating at 60hz, and the motion will be controlled in the construction of the stimulus.
