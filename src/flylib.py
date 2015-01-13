@@ -413,6 +413,7 @@ class IMGExperiment(Experiment):
         exposures = idx_by_thresh(np.array(sigs['CamSync']),thresh = 1)
         frames = np.array([x[-1] for x in exposures])[0:-1].astype(int)
         update_dset(self.exp_record['tiff_data'],'frame_idx',frames)
+        #update_dset(self.exp_record['tiff_data'],'exposures',exposures)
         if 'axon_framebase' not in self.exp_record['tiff_data'].keys():
             self.exp_record['tiff_data'].create_group('axon_framebase')
         for key in sigs.keys():
@@ -556,9 +557,52 @@ class IMGExperiment3(IMGExperiment2):
         except KeyError:
             print ('no td_refstack file');
 
+class IMGExperiment4(IMGExperiment):
+    """IMGExperiement updated on 5.17.2015 for data colleced starting with
+    fly0302. Data collected using led strobe illumination"""
+    
+    def calc_framebase(self):
+        IMGExperiment.calc_framebase(self)
+        period = self.calc_wb_period()
+        strobe = self.calc_strobe_sig()
+        sigs = self.exp_record['axon_data']
+        ax_dt = sigs['times'][1] - sigs['times'][0]
+        exposures = idx_by_thresh(np.array(sigs['CamSync']),thresh = 1)
+        update_dset(self.exp_record['axon_data'],'wb_period',period)
+        update_dset(self.exp_record['axon_data'],'wb_frequency',1.0/period)
+        strobe_framebase = np.array([np.sum(strobe[ex])*ax_dt for ex in exposures])
+        period_framebase = np.array([np.mean(period[ex]) for ex in exposures])
+        frequency_framebase = np.array([np.mean(1.0/period[ex]) for ex in exposures])
+        update_dset(self.exp_record['tiff_data']['axon_framebase'],'wb_period',period_framebase)
+        update_dset(self.exp_record['tiff_data']['axon_framebase'],'wb_frequency',frequency_framebase)
+        update_dset(self.exp_record['tiff_data']['axon_framebase'],'strobe_time',strobe_framebase)
 
+    def get_sequences(self):
+        print 'get_sequences not implemented'
 
+    def sync_sequences(self):
+        print 'sync_sequences not implemented'
 
+    def calc_wb_period(self):
+        wb_trigs = np.diff((np.array(self.exp_record['axon_data']['WBSync']) > 1).astype(int))>0
+        wb_trigs = np.hstack((wb_trigs,np.array([0])))
+        wb_times = np.array(self.exp_record['axon_data']['times'])
+        trigidx = np.where(wb_trigs)[0]
+        idx_intervals = np.vstack((np.hstack(([0],trigidx[:-1])),trigidx))
+        time_intervals = np.vstack((wb_times[idx_intervals[0,:]],wb_times[idx_intervals[1,:]]))
+        wb_periods = np.squeeze(np.diff(time_intervals,axis = 0 ))
+        period_sig = np.zeros_like(wb_trigs).astype(float)
+        for interval,period in zip(idx_intervals[:,:].T,wb_periods):
+            period_sig[interval[0]:interval[1]] = period
+        return period_sig
+
+    def calc_strobe_sig(self):
+        strobe = np.array(self.exp_record['axon_data']['Photostim']) > 1
+        wmask = ((np.array(self.exp_record['axon_data']['LeftWing']) + 
+          np.array(self.exp_record['axon_data']['RightWing']))/2.0) < 1.0
+        fmask = np.array(self.exp_record['axon_data']['CamSync'])> 1
+        expose = strobe & wmask & fmask
+        return expose
 
 class IMGSequence(Sequence):
     def __init__(self,exp_record,seq_num,fly_path,seq_pattern_name = None):
@@ -763,4 +807,6 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'step_responses':IMGExperiment2,
            'TrpA1_test':IMGExperiment2,
            'driver_line_sin_yaw':IMGExperiment3,
-           'driver_line_sin_yaw_td_movement':IMGExperiment3}
+           'driver_line_sin_yaw_td_movement':IMGExperiment3,
+           'step_yaw':IMGExperiment4,
+           'step_yaw_mod1':IMGExperiment4}
