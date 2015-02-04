@@ -1,4 +1,5 @@
 ##Library for aligning muscle models to the thorax of the fly
+import numpy as np
 
 class Frame(dict):    
     def __setitem__(self,key,item):
@@ -24,10 +25,11 @@ class GeometricModel(object):
             coords = np.dot(self.frame['A_inv'],(self.lines[key]-self.frame['p'][:,np.newaxis])) 
             self.barycentric[key] = coords.T
             
-    def coords_from_frame(self,frame):
+    def coords_from_frame(self,other_frame):
         ret = dict()
         for key in self.barycentric.keys():
-            coords = np.dot(frame['A'],(self.barycentric[key]).T)+frame['p'][:,np.newaxis]
+            coords = np.dot(other_frame['A'],(self.barycentric[key]).T) + \
+                     other_frame['p'][:,np.newaxis]
             ret[key] = coords
         return(ret)
         
@@ -40,14 +42,14 @@ class ModelView(object):
         #self.plot_basis['a1'] = default_rframe_data['a1']
         #self.plot_basis['a2'] = default_rframe_data['a2']
         
-    def plot(self,frame,plotobject):
-        lines = self.model.coords_from_frame(frame)
+    def plot(self,plot_frame,plotobject):
+        lines = self.model.coords_from_frame(plot_frame)
         self.curves = list()
         for line in lines.values():
             self.curves.append(plotobject.plot(line[0,:],line[1,:]))
 
-    def update_frame(self,frame):
-        lines = self.model.coords_from_frame(frame)
+    def update_frame(self,plot_frame):
+        lines = self.model.coords_from_frame(plot_frame)
         for curve,line in zip(self.curves,lines.values()):
             curve.setData(line[0,:],line[1,:])
 
@@ -62,3 +64,28 @@ class ModelView(object):
         self.plot_frame['a1'] = a1
         self.plot_frame['a2'] = a2
         self.update_frame(self.plot_frame)
+
+class ModelViewMPL(ModelView):
+
+    def plot(self,plot_frame,**kwargs):
+        from pylab import plot,arrow
+        lines = self.model.coords_from_frame(plot_frame)
+        self.curves = list()
+        plot_args = {}
+        plot_args['plot_frame'] = kwargs.pop('plot_frame',True)
+        plot_args['frame_head_width'] = kwargs.pop('frame_head_width',20)
+        plot_args['contour_color'] = kwargs.pop('contour_color','w')
+        
+        kwargs['color'] = plot_args['contour_color']
+        for line in lines.values():
+            plot(line[0,:],line[1,:], **kwargs)
+        if plot_args['plot_frame']:
+            p = plot_frame['p']
+            a1 = plot_frame['a1']
+            a2 = plot_frame['a2']
+            kwargs['color'] = 'g'
+            kwargs['head_width'] = plot_args['frame_head_width']
+            arrow(p[0],p[1],a1[0],a1[1],**kwargs)
+            kwargs['color'] = 'b'
+            kwargs['head_width'] = plot_args['frame_head_width']
+            arrow(p[0],p[1],a2[0],a2[1],**kwargs)
