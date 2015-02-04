@@ -79,7 +79,7 @@ def led_open_loop(pattern_id = 0,
 	#static patern
     analog.setVoltage(trial_condition_ao, 0)
     #time.sleep(0.001)
-    #analog.setVoltage(3, 1) #protocol sync
+    #analog.setVoltage(1, 1) #protocol sync
     leds.panel_com('stop');
     leds.panel_com('set_pattern_id',pattern_id)
     leds.panel_com('set_mode',0, 0)#open loop on x, open loop on y
