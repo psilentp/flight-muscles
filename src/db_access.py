@@ -3138,7 +3138,7 @@ class InitDB(FlySwitch):
         fly_record.create_group('experiments')
         fly_record['experiments'].create_group('step_yaw_mod1')
         fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15203010.abf']
-        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.repair.tif']
         #fly_record['experiments']['driver_line_sin_yaw_td_movement'].create_group('sequences')
 
     def initfly_344(self,flynum):
