@@ -112,17 +112,27 @@ class ModelView(object):
 class ModelViewMPL(ModelView):
 
     def plot(self,plot_frame,**kwargs):
+        import pylab as plb
+        default_args = {'plot_frame':True,
+                        'frame_head_width':20,
+                        'contour_kwargs':{'edgecolor': 'none', 
+                                          'linewidth': 0.0, 
+                                          'facecolor': 'none'}}
         from pylab import plot,arrow
         lines = self.model.coords_from_frame(plot_frame)
         self.curves = list()
-        plot_args = {}
-        plot_args['plot_frame'] = kwargs.pop('plot_frame',True)
-        plot_args['frame_head_width'] = kwargs.pop('frame_head_width',20)
-        plot_args['contour_color'] = kwargs.pop('contour_color','w')
-        
-        kwargs['color'] = plot_args['contour_color']
-        for line in lines.values():
-            plot(line[0,:],line[1,:], **kwargs)
+        plot_args = kwargs.pop('plot_args',default_args)
+
+        for line_key in lines.keys():
+            try:
+                kwargs = plot_args['contour_kwargs'][line_key]
+            except KeyError:
+                kwargs = default_args['contour_kwargs']
+            line = lines[line_key]
+            from matplotlib.patches import Polygon
+            poly = Polygon(zip(line[0,:],line[1,:]),**kwargs)
+            plb.gca().add_patch(poly,)
+
         if plot_args['plot_frame']:
             p = plot_frame['p']
             a1 = plot_frame['a1']
