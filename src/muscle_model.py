@@ -143,3 +143,5 @@ class ModelViewMPL(ModelView):
             kwargs['color'] = 'b'
             kwargs['head_width'] = plot_args['frame_head_width']
             arrow(p[0],p[1],a2[0],a2[1],**kwargs)
+
+
