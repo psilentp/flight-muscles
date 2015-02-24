@@ -149,7 +149,7 @@ class MainWindow(TemplateBaseClass):
 
     def __init__(self):
         TemplateBaseClass.__init__(self)
-        self.setWindowTitle('pyqtgraph example: Qt Designer')
+        self.setWindowTitle('muscle imaging browser')
         
         # Create the main window
         self.ui = WindowTemplate()
@@ -177,10 +177,18 @@ class MainWindow(TemplateBaseClass):
         self.gammax = np.linspace(0,2,100)
         self.gammaCurve = self.gammaPlt.plot(self.gammax,self.gammaf(self.gammax))
         #self.transformPlot.addItem(self.transformImage)
-        
-        
+
+        #timeSeries
+        self.timeSeriesPlt = pg.PlotItem()
+        self.ui.timeSeriesPlt.setCentralItem(self.timeSeriesPlt)
+        self.tserTrace = self.timeSeriesPlt.plot(np.ones(1000))
+        self.tpointLine = pg.InfiniteLine(pos = 0,movable = True)
+        self.tpointLine.sigPositionChanged.connect(self.tpointLineMoved)
+        self.timeSeriesPlt.addItem(self.tpointLine)
+
         #load frames button
         self.ui.loadFrames.clicked.connect(self.loadFrames)
+
         #save data button
         self.ui.saveFit.clicked.connect(self.saveFit)
         self.ui.loadFit.clicked.connect(self.loadFit)
@@ -199,6 +207,80 @@ class MainWindow(TemplateBaseClass):
         self.show()
         
         #self.ui.commentBox
+        self.ui.frameNumber.setText(str(self.current_frame))
+        self.ui.frameNumber.textEdited.connect(self.frameInput)
+
+        #addEpoch
+        self.epochPlots = dict()
+        self.epoch_dict = dict()
+        self.ui.newEpoch.clicked.connect(self.newEpoch)
+        self.ui.saveEpoch.clicked.connect(self.saveEpoch)
+
+        self.ui.epochStart.textEdited.connect(self.updateEpochFromText)
+        self.ui.epochEnd.textEdited.connect(self.updateEpochFromText)
+
+
+    def newEpoch(self):
+        name = str(self.ui.epochName.text())
+        print name
+        if (not(name in self.epoch_dict.keys()) and not(name == '')):
+            epoch_range = [self.current_frame,self.current_frame + 100]
+            self.epoch_dict[name] = epoch_range
+            self.plotEpoch(name)
+            ep_plot = self.epochPlots[name]
+            sta,stp = ep_plot.getRegion()
+            self.ui.epochStart.setText(str(int(sta)))
+            self.ui.epochEnd.setText(str(int(stp)))
+
+    def clearEpochs(self):
+        for k in self.epoch_dict.keys():
+            self.timeSeriesPlt.removeItem(self.epochPlots[k])
+            self.epochPlots.pop(k)
+            self.epoch_dict.pop(k)
+
+    def plotEpoch(self,k):
+        ep = pg.LinearRegionItem(values= self.epoch_dict[k])
+        ep.epoch_name = k
+        ep.sigRegionChanged.connect(self.updateEpochPlot)
+        self.epochPlots[k] = ep
+        self.timeSeriesPlt.addItem(ep)
+        self.tpointLine.setZValue(ep.zValue()+1)
+
+    def updateEpochPlot(self,ep):
+        self.ui.epochName.setText(ep.epoch_name)
+        self.updateCurrentEpochState()
+
+    def updateEpochFromText(self):
+        k = str(self.ui.epochName.text())
+        ep_plot = self.epochPlots[k]
+        sta = int(self.ui.epochStart.text())
+        stp = int(self.ui.epochEnd.text())
+        ep_plot.setRegion((sta,stp))
+        self.epoch_dict[k] = [sta,stp]
+
+    def updateCurrentEpochState(self):
+        k = str(self.ui.epochName.text())
+        ep = self.epoch_dict[k]
+        ep_plot = self.epochPlots[k]
+        sta,stp = ep_plot.getRegion()
+        self.ui.epochStart.setText(str(int(sta)))
+        self.ui.epochEnd.setText(str(int(stp)))
+        self.epoch_dict[k] = [int(sta),int(stp)]
+
+    def saveEpoch(self):
+        flydir = '%s%s/'%(dba.root_dir,self.current_fly)
+        f = open(flydir + 'epoch_data.cpkl','wb')
+        import cPickle
+        cPickle.dump(self.epoch_dict,f)
+        print self.epoch_dict
+
+    def frameInput(self,value):
+        self.current_frame = int(value)
+        self.showFrame()
+
+    def tpointLineMoved(self):
+        self.current_frame = int(self.tpointLine.value())
+        self.showFrame()
 
     def gammaChange(self,value):
         gamma = value/50.0
@@ -285,6 +367,11 @@ class MainWindow(TemplateBaseClass):
         #self.current_fly = selection.parent().text(0)
         print self.current_fly
         flydir = '%s%s/'%(dba.root_dir,self.current_fly)
+
+        tser_data = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['axon_framebase']['wb_frequency'])
+        self.tserTrace.setData(tser_data)
+        
+
         try:
             f = open(flydir+'basis_fits.cpkl','rb')
             import cPickle
@@ -297,9 +384,26 @@ class MainWindow(TemplateBaseClass):
             self.roi.setState(state)
             self.roi.stateChanged()
             self.ui.commentBox.setPlainText(basis['commentBox'])
+
         except IOError:
             print 'no file'
             self.ui.commentBox.setPlainText('')
+
+        self.clearEpochs()
+
+        try:
+            f = open(flydir + 'epoch_data.cpkl','rb')
+            import cPickle
+            self.epoch_dict = cPickle.load(f)
+            for k in self.epoch_dict.keys():
+                self.plotEpoch(k)
+            self.ui.epochName.setText(self.epoch_dict.keys()[0])
+            self.updateCurrentEpochState()
+        except IOError:
+            print 'no epoch file'
+            self.ui.epochName.setText('')
+            self.ui.epochStart.setText('')
+            self.ui.epochEnd.setText('')
 
         #self.frameView.setImage(self.images[0,:,:])
         self.current_frame = 0
@@ -309,9 +413,14 @@ class MainWindow(TemplateBaseClass):
         self.plt.autoRange()
         #set transformImage
 
+
+
     def showFrame(self):
         img = self.gammaf(self.images[self.current_frame,:,:])
         self.frameView.setImage(img)
+        self.ui.frameNumber.setText(str(self.current_frame))
+        self.ui.frameScrollBar.setValue(self.current_frame)
+        self.tpointLine.setValue(self.current_frame)
 
     def affineWarp(self,roi):
         src_f = self.thorax_view.plot_basis
