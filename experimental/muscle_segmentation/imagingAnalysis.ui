@@ -61,9 +61,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>30</y>
      <width>251</width>
-     <height>501</height>
+     <height>481</height>
     </rect>
    </property>
    <attribute name="headerVisible">
@@ -92,13 +92,13 @@
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>10</y>
+     <y>80</y>
      <width>881</width>
-     <height>841</height>
+     <height>771</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="frameNumber">
    <property name="geometry">
     <rect>
      <x>430</x>
@@ -151,7 +151,7 @@
    <property name="geometry">
     <rect>
      <x>1160</x>
-     <y>40</y>
+     <y>200</y>
      <width>131</width>
      <height>271</height>
     </rect>
@@ -180,7 +180,7 @@
    <property name="geometry">
     <rect>
      <x>1160</x>
-     <y>350</y>
+     <y>500</y>
      <width>131</width>
      <height>121</height>
     </rect>
@@ -190,7 +190,7 @@
    <property name="geometry">
     <rect>
      <x>1160</x>
-     <y>480</y>
+     <y>630</y>
      <width>131</width>
      <height>16</height>
     </rect>
@@ -233,8 +233,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>1210</x>
-     <y>330</y>
+     <x>1160</x>
+     <y>480</y>
      <width>41</width>
      <height>16</height>
     </rect>
@@ -246,7 +246,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>10</x>
      <y>750</y>
      <width>71</width>
      <height>16</height>
@@ -259,8 +259,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>1170</x>
-     <y>10</y>
+     <x>1160</x>
+     <y>180</y>
      <width>111</width>
      <height>20</height>
     </rect>
@@ -282,7 +282,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>10</x>
      <y>520</y>
      <width>71</width>
      <height>16</height>
@@ -290,6 +290,124 @@
    </property>
    <property name="text">
     <string>Transform</string>
+   </property>
+  </widget>
+  <widget class="GraphicsView" name="timeSeriesPlt">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>10</y>
+     <width>881</width>
+     <height>61</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="epochName">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>30</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>10</y>
+     <width>81</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Epoch Name</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="newEpoch">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>120</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>New Epoch</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveEpoch">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>150</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save Epochs</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="epochStart">
+   <property name="geometry">
+    <rect>
+     <x>1200</x>
+     <y>60</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="epochEnd">
+   <property name="geometry">
+    <rect>
+     <x>1200</x>
+     <y>90</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>60</y>
+     <width>31</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>1160</x>
+     <y>90</y>
+     <width>31</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>End</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Fly list</string>
    </property>
   </widget>
  </widget>
