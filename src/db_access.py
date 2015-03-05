@@ -3322,3 +3322,140 @@ class InitDB(FlySwitch):
         fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15213006.abf']
         fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
         #fly_record['experiments']['driver_line_sin_yaw_td_movement'].create_group('sequences')
+
+    def initfly_361(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15225000.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+        #fly_record['experiments']['driver_line_sin_yaw_td_movement'].create_group('sequences')
+
+    def initfly_362(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15225002.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+        #fly_record['experiments']['driver_line_sin_yaw_td_movement'].create_group('sequences')
+
+    def initfly_363(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15225003.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_364(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15225004.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_365(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15225005.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_366(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15227000.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_367(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15227003.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_368(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15227004.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_369(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15227006.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_370(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15228001.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_371(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15228002.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_372(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15228003.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_373(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15228004.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_374(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15301000.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
+
+    def initfly_375(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('step_yaw_mod1')
+        fly_record['experiments']['step_yaw_mod1']['axon_file_names'] = ['T2_trial1_led_test_15301002.abf']
+        fly_record['experiments']['step_yaw_mod1']['tiff_file_names'] = ['/T2_trial1_led_test/T2_trial1_led_test_MMStack.ome.tif']
