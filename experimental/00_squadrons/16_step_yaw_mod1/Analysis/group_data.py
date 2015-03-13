@@ -12,6 +12,13 @@ GMR31E10_swarm = flylib.Squadron(fly_db,GMR31E10_list)
 GMR29E05_list = [349,350,351,352,353,354,355,356,357,358,359,360]
 GMR29E05_swarm = flylib.Squadron(fly_db,GMR29E05_list)
 
+GMR10A12_list = [387,388,389]
+GMR10A12_swarm = flylib.Squadron(fly_db,GMR10A12_list)
+
+GMR29G05_list = [390,391,392]
+GMR29G05_swarm = flylib.Squadron(fly_db,GMR29G05_list)
+
+
 GMR22H05_GFP_list = [370,371,372,373,380,381,382,383]
 GMR22H05_GFP_swarm = flylib.Squadron(fly_db,GMR22H05_GFP_list)
 
@@ -25,6 +32,8 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR39E01':GMR39E01_swarm,
           'GMR31E10':GMR31E10_swarm,
           'GMR29E05':GMR29E05_swarm,
+          'GMR10A12':GMR10A12_swarm,
+          'GMR29G05':GMR29G05_swarm,
           'GMR22H05_GFP':GMR22H05_GFP_swarm,
           'GMR31E10_GFP':GMR31E10_GFP_swarm,
           'GMR29E05_GFP':GMR29E05_GFP_swarm
