@@ -21,7 +21,7 @@ GMR29G05_swarm = flylib.Squadron(fly_db,GMR29G05_list)
 GMR75B06_list = [393,394,395,402,403,404,405,406,407,420,421,422]
 GMR75B06_swarm = flylib.Squadron(fly_db,GMR75B06_list)
 
-GMR74F03_list = [396,397,398,411,412,413,414,415,416]
+GMR74F03_list = [396,397,398,411,412,413,414,415,416,423,424,425]
 GMR74F03_swarm = flylib.Squadron(fly_db,GMR74F03_list)
 ########
 
