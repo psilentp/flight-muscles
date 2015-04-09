@@ -24,7 +24,7 @@ const bool READY = false;
 const int READOUTMICROS = 2000;//camera won't be ready for 2ms untill after pulse
 
 const int TIMEOUTMICROS = 8000; //wait 6ms for wingbeat if not freetrigger at 50Hz
-const int PULSEDURATION = 500; //10 ms exposure
+const int PULSEDURATION = 200; //10 ms exposure
 const int CAMPIN = 24;
 const int LEDPIN = 22;
 const int TRIGGERPIN = 52;
@@ -64,7 +64,7 @@ void loop() {
     trigger_wb_in = micros() + 6000; //micros() + (MAXPERIOD-(pulsedelay+PULSEDURATION));
     //trigger_wb_in = micros() + MAXPERIOD;
     wbstate = UNTRIGGERED;
-    while(pulsecount <3)
+    while(pulsecount <1)
     {
       if (micros() > timeout_in)
       {
