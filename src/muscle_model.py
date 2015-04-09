@@ -76,6 +76,18 @@ class GeometricModel(object):
                      other_frame['p'][:,np.newaxis]
             ret[key] = coords
         return(ret)
+    
+    def get_masks(self,fly_frame,(sizex,sizey)):
+        from matplotlib.path import Path
+        plot_lines = self.coords_from_frame(fly_frame)
+        masks = dict()
+        for line_key in plot_lines.keys():
+            plot_line = plot_lines[line_key]
+            p = Path(plot_line.T)
+            xpnts,ypnts = np.meshgrid(range(sizex),range(sizey))
+            testpnts = np.vstack((xpnts.ravel(),ypnts.ravel()))
+            masks[line_key] = p.contains_points(testpnts.T).reshape(sizey,sizex)
+        return masks
         
 class ModelView(object):
     def __init__(self,model):
@@ -113,7 +125,7 @@ class ModelViewMPL(ModelView):
 
     def plot(self,plot_frame,**kwargs):
         import pylab as plb
-        default_args = {'plot_frame':True,
+        default_args = {'draw_frame':True,
                         'frame_head_width':20,
                         'contour_kwargs':{'edgecolor': 'none', 
                                           'linewidth': 0.0, 
@@ -121,27 +133,26 @@ class ModelViewMPL(ModelView):
         from pylab import plot,arrow
         lines = self.model.coords_from_frame(plot_frame)
         self.curves = list()
-        plot_args = kwargs.pop('plot_args',default_args)
-
+        #plot_args = kwargs.pop('plot_args',default_args)
         for line_key in lines.keys():
             try:
-                kwargs = plot_args['contour_kwargs'][line_key]
+                element_args = kwargs['contour_kwargs'][line_key]
             except KeyError:
-                kwargs = default_args['contour_kwargs']
+                element_args = default_args['contour_kwargs']
             line = lines[line_key]
             from matplotlib.patches import Polygon
-            poly = Polygon(zip(line[0,:],line[1,:]),**kwargs)
+            poly = Polygon(zip(line[0,:],line[1,:]),**element_args)
             plb.gca().add_patch(poly,)
 
-        if plot_args['plot_frame']:
-            p = plot_frame['p']
-            a1 = plot_frame['a1']
-            a2 = plot_frame['a2']
-            kwargs['color'] = 'g'
-            kwargs['head_width'] = plot_args['frame_head_width']
-            arrow(p[0],p[1],a1[0],a1[1],**kwargs)
-            kwargs['color'] = 'b'
-            kwargs['head_width'] = plot_args['frame_head_width']
-            arrow(p[0],p[1],a2[0],a2[1],**kwargs)
-
-
+        if 'draw_frame' in kwargs.keys():
+            if kwargs['draw_frame']:
+                p = plot_frame['p']
+                a1 = plot_frame['a1']
+                a2 = plot_frame['a2']
+                frame_args['color'] = 'g'
+                frame_args['head_width'] = kwargs['frame_head_width']
+                arrow(p[0],p[1],a1[0],a1[1],**frame_args)
+                frame_args['color'] = 'b'
+                frame_args['head_width'] = kwargs['frame_head_width']
+                arrow(p[0],p[1],a2[0],a2[1],**frame_args)
+             
