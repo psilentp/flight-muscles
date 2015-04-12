@@ -1,6 +1,6 @@
 Rubin Line,DLM1,DLM2,DLM3,DLM4,DLM5,DLM6,Anterior DVM-A,Anterior DVM-B,Anterior DVM-C,Medial DVM-A,Medial DVM-B,Posterior DVM-A,Posterior DVM-B,basalare 1 (b1),basalare 3 (b3),basalare 2 (b2 or sb),First Pterale 1 (I1),First Pterale 2 (I2),Third Pterale 1 (III1),Third Pterale 24 (III24),Third Pterale3 (III3),hg1 (posterior notal wing process),hg2 (posterior notal wing process),hg3 (posterior notal wing process),hg4 (posterior notal wing process),Ventral Tergopleural (v-Tp),Dorsal Tergopleural (d-Tp),pleurosternal 1 (ps1),Jump (tt),pleural remotor (pr),Neck muscle (nm),,,,haltere muscle,
 55D06,N/A,N/A,N/A,N/A,N/A,N/A,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,2,0.5,0.5,0.5,0.5,2,0.5,0.5,0.5,0,0,2,,,,H muscles,"H muscle hg1,hg2,  II1"
-31E10,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,2,2,2,1,2,0,2,2,2,0.5,0.5,0,0,2,1,1,1,,,,n/a,
+31E10,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,1,2,0,2,2,2,0,0,0,0,2,1,1,1,,,,n/a,
 10E11,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,2,2,2,0,2,1,2,0,0,0,0,0,1,1,0,,,,H muscles,"H b2, I1?"
 38H06,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,1,0,1,0,2,2,2,2,2,0,0,0,0,1,1,,,,H muscles,"H b1 muscle, h b2 muscle, plus a few others (h hg1 and 2?"
 39E01,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,0,0,2,0,2,2,2,2,2,0,0,0,0,2,2,,,,H muscles,"H b1, b2 and many others"
@@ -8,20 +8,20 @@ Rubin Line,DLM1,DLM2,DLM3,DLM4,DLM5,DLM6,Anterior DVM-A,Anterior DVM-B,Anterior 
 73A05,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,,two strands of B1 muscle,,0,
 86H08,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,,,,n/a,
 12D05,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,0,"Crossing 12D05 to cytoplasmic GFP (in contrast to membrane-bound GFP) revealed that the expression is in tendons ofT ps, not in the muscle itself."
-22H05,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,,,,"all H muscles, I think",
+22H05,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,,,,"all H muscles, I think",
 25H08,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,0,
 27H01,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,2,0.5,0.5,0.5,0.5,2,0.5,0.5,0.5,0.5,0,1,,"stochastic in cases of  low-level expression, and in cases of expression level between muscle strands.",,H muscles,
-29E05,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,0,2,2,2,2,2,0,0,0,0,1,1,,,,H muscles,"H I1 muscle, H I2 muscl, haltere III2(?) muscle"
+29E05,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,0,2,0,2,2,2,0,2,0,0,0,0,1,1,,,,H muscles,"H I1 muscle, H I2 muscl, haltere III2(?) muscle"
 48F07 ,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,stochastic,,0,
 25C01,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0,0,,,,0,
 29H04,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,0,2,2,2,1,0,0,0,2,1,1,1,,,,H muscles,"H b2, I1, I2 muscles (others too?)"
 40D04,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,2,0,0,2,0,0,1,,,,0,
 89D01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,,,,0,
-75B06,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,1,2,0,2,2,2,0,2,0,0,2,1,2,1,,,,,
+75B06,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,1,2,0,2,2,2,2,2,0,0,2,1,2,1,,,,,
 10A12,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,1,1,0,,,,H muscles,H muscle b2 only
 58H10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,,,,0,
 apterous,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,,,,0,
 29G05,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,2,0.5,0,0.5,2,2,1,1,0.5,1,0,1,,,,H muscles,most of H muscles
 74D08,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,0,0,1,0,,,,,Ainne's practice stacks- probably need to re-stain and re-image
 74E08,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,,,,H mucles,Ainne's practice stacks- probably need to re-stain and re-image.  Not sure which haltere muscles are labeled.
-74F03,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,0,2,2,2,1,2,0,0,2,2,2,2,,,,,Ainne's practice stacks- probably need to re-stain and re-image
+74F03,0,0,0,0,0,0,0,0,0,0,0,0,0,2,2,2,2,2,2,0,2,2,2,0,2,0,0,2,2,2,2,,,,,Ainne's practice stacks- probably need to re-stain and re-image
