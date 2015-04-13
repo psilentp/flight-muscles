@@ -716,6 +716,7 @@ def load_flytracks_files(sequence_path):
     return pad_seq
         
 def butter_bandpass(lowcut, highcut, sampling_period, order=5):
+    import scipy.signal
     sampling_frequency = 1.0/sampling_period
     nyq = 0.5 * sampling_frequency
     low = lowcut / nyq
@@ -724,6 +725,7 @@ def butter_bandpass(lowcut, highcut, sampling_period, order=5):
     return b, a
 
 def butter_bandpass_filter(data, lowcut, highcut, sampling_period, order=5):
+    import scipy.signal
     b, a = butter_bandpass(lowcut, highcut, sampling_period, order=order)
     y = scipy.signal.filtfilt(b, a, data)
     return y
@@ -739,6 +741,20 @@ def butter_lowpass(lowcut, sampling_period, order=5):
 def butter_lowpass_filter(data, lowcut, sampling_period, order=5):
     import scipy.signal
     b, a = butter_lowpass(lowcut, sampling_period, order=order)
+    y = scipy.signal.filtfilt(b, a, data)
+    return y
+
+def butter_highpass(highcut, sampling_period, order=5):
+    import scipy.signal
+    sampling_frequency = 1.0/sampling_period
+    nyq = 0.5 * sampling_frequency
+    high = highcut / nyq
+    b, a = scipy.signal.butter( order, high, btype='high')
+    return b, a
+
+def butter_highpass_filter(data, highcut, sampling_period, order=5):
+    import scipy.signal
+    b, a = butter_highpass(highcut, sampling_period, order=order)
     y = scipy.signal.filtfilt(b, a, data)
     return y
     
