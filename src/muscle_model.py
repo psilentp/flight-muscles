@@ -1,6 +1,28 @@
 ##Library for aligning muscle models to the thorax of the fly
 import numpy as np
 
+database_path = '/media/analysis-code/flight-muscles/experimental/mn_expression_matrix_plot/line_database.cpkl'
+
+def get_line_database(line_name):
+    line_name = line_name.split('_GFP')[0].split('GMR')[1]
+    import cPickle
+    import os
+    f = open(database_path,'rb')
+    line_database = cPickle.load(f)
+    f.close()
+    return line_database
+
+def get_muscle_list(line_name):
+    line_database = get_line_database(line_name)
+    ln = line_name.split('_GFP')[0].split('GMR')[1]
+    muscle_names = list()
+    for key in line_database[ln].keys():
+        if line_database[ln][key] > 0:
+            muscle_names.append(key)
+    muscle_names = sorted(muscle_names)
+    #muscle_names = sorted(get_muscle_list(line_name))
+    return muscle_names
+
 class Frame(dict):    
     def __setitem__(self,key,item):
         try:
@@ -88,6 +110,19 @@ class GeometricModel(object):
             testpnts = np.vstack((xpnts.ravel(),ypnts.ravel()))
             masks[line_key] = p.contains_points(testpnts.T).reshape(sizey,sizex)
         return masks
+    
+    def get_masks_by_line(self,fly_frame,(sizex,sizey),line_name = None,muscles = None):
+        #get the mask of all the muscles for fit
+        masks = self.get_masks(fly_frame,(sizex,sizey))
+        #create the model using only the muscles that express in a given line
+        if muscles == None:
+            muscles = get_muscle_list(line_name)
+            muscles = [m for m in muscles if not('DVM' in m) and not('DLM' in m) and not('ps' in m)]
+        model = np.vstack([masks[mask_key].T.ravel().astype(float) for mask_key in muscles])
+        fit_pix_mask = np.sum(model,axis=0) > 0
+        #add a background term
+        model = np.vstack([model,np.ones_like(masks[mask_key].ravel())])
+        return model,fit_pix_mask
         
 class ModelView(object):
     def __init__(self,model):

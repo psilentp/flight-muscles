@@ -19,6 +19,48 @@ from parameters import params
 photron_interest_signals = ['eta_L','eta_R','phi_L','phi_R','photron_sample_times','theta_L','theta_R']
 axon_interest_signals = ['AMsysCh1','CamSync','LeftWing','Ph0','Ph1','Ph2','Photostim','RightWing','WBSync','Xpos','Ypos','axon_sample_times']
 
+
+#############################
+#high level interface to meta data
+#############################
+
+class NetFly(object):
+    """interface to the fly data that allows the storage of heterogenious data and metadata file types,
+    should allow transition to parallel operations on the dataset"""
+       
+    def __init__(self,fly_num):
+        self.fly_num = fly_num
+        self.params = params
+        self.rootpath = self.params['platform_paths'][sys.platform] + self.params['root_dir']
+        self.fly_path = self.rootpath + ('Fly%04d/')%(fly_num)
+        
+    def get_expmnt(self,expname):
+        self.fly_record = h5py.File(self.fly_path + 'fly_record.hdf5')
+        exp_record = fly_record['experiments']['expname']
+        return exp_record
+    
+    def close_fly(self):
+        self.fly_record.close()
+        
+    def get_pkl_data(self,pklname):
+        import cPickle
+        fname = self.fly_path + pklname
+        fi = open(fname,'rb')
+        data = cPickle.load(fi)
+        fi.close()
+        return data
+        
+class NetSquadron(object):
+    def __init__(self,fly_numbers):
+        self.fly_numbers = [int(fln) for fln in fly_numbers]
+        self.flies = [NetFly(fln) for fln in self.fly_numbers]
+        
+    def set_expmnt(self,expname):
+        self.expname = expname
+
+        
+############
+############
 class Squadron(object):
     """Controller object to facilitate the groupwise analysis of the fly data"""
     def __init__(self,fly_db,fly_numbers):
@@ -44,6 +86,7 @@ class Fly(object):
         for experiment_name in self.fly_record['experiments'].keys():
             experiments[experiment_name] = exp_map[experiment_name](self.fly_record,experiment_name,self.fly_path)
         return experiments
+
     
 class Experiment(object):
     """Controller class for an individual experiments init with the fly_record and
