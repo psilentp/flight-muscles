@@ -35,8 +35,9 @@ class NetFly(object):
         self.fly_path = self.rootpath + ('Fly%04d/')%(fly_num)
         
     def get_expmnt(self,expname):
+        import h5py
         self.fly_record = h5py.File(self.fly_path + 'fly_record.hdf5')
-        exp_record = fly_record['experiments']['expname']
+        exp_record = self.fly_record['experiments'][expname]
         return exp_record
     
     def close_fly(self):
