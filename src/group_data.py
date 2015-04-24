@@ -3,7 +3,7 @@ import db_access as dba
 fly_db = dba.get_db()
 import numpy as np
 
-GMR22H05_list = [308,309,310,311,312,313,314,315,316,317,327,328,453,455,456,461,462,463,464] #R range(317,326) #S
+GMR22H05_list = [308,309,310,311,312,313,314,315,316,317,327,328,453,455,456,461,462,463] #R range(317,326) #S
 GMR22H05_swarm = flylib.NetSquadron(GMR22H05_list)
 GMR39E01_list = [318,319,320,321,322,323,324,325,329,330,331,332,333,334,335,336] #S
 GMR39E01_swarm = flylib.NetSquadron(GMR39E01_list)
@@ -42,6 +42,9 @@ GMR10A12_GFP_swarm = flylib.NetSquadron(GMR10A12_GFP_list)
 GMR75B06_GFP_list = [438,439,440,441,444,445,446,447]
 GMR75B06_GFP_swarm = flylib.NetSquadron(GMR75B06_GFP_list)
 
+GMR39E01_GFP_list = []
+GMR39E01_GFP_swarm = flylib.NetSquadron(GMR39E01_GFP_list)
+    
 swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR39E01':GMR39E01_swarm,
           'GMR31E10':GMR31E10_swarm,
@@ -51,7 +54,11 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR74F03':GMR74F03_swarm,
           'GMR22H05_GFP':GMR22H05_GFP_swarm,
           'GMR31E10_GFP':GMR31E10_GFP_swarm,
-          'GMR29E05_GFP':GMR29E05_GFP_swarm
+          'GMR39E01_GFP':GMR39E01_GFP_swarm,
+          'GMR29E05_GFP':GMR29E05_GFP_swarm,
+          'GMR74F03_GFP':GMR74F03_GFP_swarm,
+          'GMR10A12_GFP':GMR10A12_GFP_swarm,
+          'GMR75B06_GFP':GMR75B06_GFP_swarm
          }
 
 exp_swarms = {'GMR22H05':GMR22H05_swarm,
@@ -65,8 +72,12 @@ exp_swarms = {'GMR22H05':GMR22H05_swarm,
 
 ctrl_swarms = {
           'GMR22H05_GFP':GMR22H05_GFP_swarm,
+          'GMR39E01_GFP':GMR39E01_GFP_swarm,
           'GMR31E10_GFP':GMR31E10_GFP_swarm,
-          'GMR29E05_GFP':GMR29E05_GFP_swarm
+          'GMR29E05_GFP':GMR29E05_GFP_swarm,
+          'GMR74F03_GFP':GMR74F03_GFP_swarm,
+          'GMR10A12_GFP':GMR10A12_GFP_swarm,
+          'GMR75B06_GFP':GMR75B06_GFP_swarm
          }
 
 encode = {'regressive':1,'descending':2,'progressive':3,'ascending':4,'flow_right':6,'flow_left':5}
