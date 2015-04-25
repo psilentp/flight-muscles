@@ -869,4 +869,5 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'driver_line_sin_yaw':IMGExperiment3,
            'driver_line_sin_yaw_td_movement':IMGExperiment3,
            'step_yaw':IMGExperiment4,
-           'step_yaw_mod1':IMGExperiment4}
+           'step_yaw_mod1':IMGExperiment4,
+           'step_ptch_roll':IMGExperiment4}
