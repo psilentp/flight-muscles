@@ -3,7 +3,7 @@ import db_access as dba
 fly_db = dba.get_db()
 import numpy as np
 
-GMR22H05_list = [308,309,310,311,312,313,314,315,316,317,327,328,453,455,456,461,462,463] #R range(317,326) #S
+GMR22H05_list = [308,309,310,311,312,313,314,315,316,317,327,328,453,455,456,461,462,463,466,467,468,469,470] #R range(317,326) #S
 GMR22H05_swarm = flylib.NetSquadron(GMR22H05_list)
 GMR39E01_list = [318,319,320,321,322,323,324,325,329,330,331,332,333,334,335,336] #S
 GMR39E01_swarm = flylib.NetSquadron(GMR39E01_list)

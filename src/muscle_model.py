@@ -177,6 +177,7 @@ class ModelViewMPL(ModelView):
             line = lines[line_key]
             from matplotlib.patches import Polygon
             poly = Polygon(zip(line[0,:],line[1,:]),**element_args)
+            #plb.plot([1,2,3,4])
             plb.gca().add_patch(poly,)
 
         if 'draw_frame' in kwargs.keys():
