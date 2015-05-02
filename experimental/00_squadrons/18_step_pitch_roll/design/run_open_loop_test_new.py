@@ -77,7 +77,7 @@ def led_open_loop(pattern_id = 0,
     leds.panel_com('set_pattern_id',pattern_id)
     leds.panel_com('set_mode',0, 0)#open loop on x, open loop on y
     leds.panel_com('send_gain_bias',0,0,0,0)
-    leds.panel_com('set_funcy_freq', 60)
+    leds.panel_com('set_funcy_freq', 50)
     leds.panel_com('start')
     time.sleep(static_duration)
 
@@ -97,7 +97,7 @@ def led_open_loop(pattern_id = 0,
     leds.panel_com('stop');
     leds.panel_com('set_mode',0, 0)#closed loop on x, open loop on y
     leds.panel_com('send_gain_bias',0,0,0,0)
-    leds.panel_com('set_funcy_freq', 60)
+    leds.panel_com('set_funcy_freq', 50)
     leds.panel_com('start')
     time.sleep(static_duration)
     
