@@ -50,6 +50,13 @@ class NetFly(object):
         data = cPickle.load(fi)
         fi.close()
         return data
+    
+    def get_genotype(self):
+        fname = self.fly_path + 'genotype.txt'
+        fi = open(fname,'rt')
+        genotype = fi.readlines()[0]
+        fi.close()
+        return genotype
         
 class NetSquadron(object):
     def __init__(self,fly_numbers):

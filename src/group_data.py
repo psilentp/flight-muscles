@@ -3,6 +3,22 @@ import db_access as dba
 fly_db = dba.get_db()
 import numpy as np
 
+
+genotype_nicknames = {'GMR10A12': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR10A12-GAL4}attP2/+',
+                     'GMR10A12_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR10A12-GAL4}attP2/+',
+                     'GMR22H05': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR22H05-GAL4}attP2/+',
+                     'GMR22H05_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR22H05-GAL4}attP2/+',
+                     'GMR29E05': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR29E05-GAL4}attP2/+',
+                     'GMR29E05_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR29E05-GAL4}attP2/+',
+                     'GMR31E10': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR31E10-GAL4}attP2/+',
+                     'GMR31E10_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR31E10-GAL4}attP2/+',
+                     'GMR39E01': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR39E01-GAL4}attP2/+',
+                     'GMR39E01_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR39E01-GAL4}attP2/+',
+                     'GMR74F03': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR74F03-GAL4}attP2/+',
+                     'GMR75B06': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR75B06-GAL4}attP2/+',
+                     'GMR75B06_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR75B06-GAL4}attP2/+'}
+
+
 GMR22H05_list = [308,309,310,311,312,314,315,316,317,327,328,453,455,456,461,462,463,466,467,468,469,470] #R range(317,326) 
 GMR22H05_swarm = flylib.NetSquadron(GMR22H05_list)
 GMR39E01_list = [318,319,320,321,322,323,324,325,329,330,331,332,333,334,335,336] #S
@@ -93,8 +109,6 @@ decode = dict()
 for key,value in zip(encode.keys(),encode.values()):
     decode[value] = key
 
-
-
 def get_cond(fly_path,trial):
     """extact the experimental condition from a trial"""
     #print 'here'
@@ -128,3 +142,28 @@ def get_cond_pitch_roll(fly_path,trial):
 
 GMR22H05_pr_swarm.get_cond = get_cond_pitch_roll
 GMR22H05_pr_swarm.decode = decode_pitch_roll
+
+
+def get_update_list(file_name ='nnls_fits_no_bk_dF_F.cpkl', 
+                     swarms = gd.swarms,
+                     replace = False):
+    """ if replace is False this will scan the database to 
+    create a 'pathlist' containing just flies that don't have 
+    a file with file_name, otherwise all the flies in swarms will be used"""
+    import os
+    update_flylist = list()
+    for swarm_name,swarm in swarms.items():
+        #print swarm_name
+        for fly in swarm.flies:
+            try:
+                if not(replace):
+                    if os.path.exists(fly.fly_path + 'nnls_fits_no_bk_dF_F.cpkl'):
+                        pass
+                        #print str(fly.fly_num) + ' exists'
+                    else:
+                        update_flylist.append(fly)
+                else:
+                    update_flylist.append(fly)
+            except Exception as er:
+                print er
+    return update_flylist
