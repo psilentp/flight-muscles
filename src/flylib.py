@@ -33,15 +33,32 @@ class NetFly(object):
         self.params = params
         self.rootpath = self.params['platform_paths'][sys.platform] + self.params['root_dir']
         self.fly_path = self.rootpath + ('Fly%04d/')%(fly_num)
+        self.fly_record = None
         
     def get_expmnt(self,expname):
-        import h5py
-        self.fly_record = h5py.File(self.fly_path + 'fly_record.hdf5')
+        if not(self.fly_record):
+            self.open_fly_record()
         exp_record = self.fly_record['experiments'][expname]
         return exp_record
     
-    def close_fly(self):
+    def list_expmnts(self):
+        import h5py
+        if not(self.fly_record):
+            fly_record = h5py.File(self.fly_path + 'fly_record.hdf5','r')
+            exp_names = fly_record['experiments'].keys()
+            fly_record.close()
+        else:
+            exp_names = self.fly_record['experiments'].keys()
+        return exp_names
+    
+    def open_fly_record(self):
+        import h5py
+        if not(self.fly_record):
+            self.fly_record = h5py.File(self.fly_path + 'fly_record.hdf5')
+            
+    def close_fly_record(self):
         self.fly_record.close()
+        self.fly_record = None
         
     def get_pkl_data(self,pklname):
         import cPickle
@@ -695,6 +712,8 @@ def get_frame_idxs(cam_epoch,axondata):
 def idx_by_thresh(signal,thresh = 0.1):
     idxs = np.squeeze(np.argwhere(signal > thresh))
     split_idxs = np.squeeze(np.argwhere(np.diff(idxs) > 1))
+    if (len(np.shape(split_idxs)) == 0):
+        split_idxs = [split_idxs]
     idx_list = np.split(idxs,split_idxs)
     idx_list = [x[1:] for x in idx_list]
     return idx_list
