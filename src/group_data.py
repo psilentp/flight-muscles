@@ -1,6 +1,6 @@
 import flylib
 import db_access as dba
-fly_db = dba.get_db()
+#fly_db = dba.get_db()
 import numpy as np
 
 
@@ -39,6 +39,10 @@ GMR74F03_swarm = flylib.NetSquadron(GMR74F03_list)
 
 GMR22H05_pr_list = [471,472,473,474,475,476,477,478,479,480,481,483,484,485,486]
 GMR22H05_pr_swarm = flylib.NetSquadron(GMR22H05_pr_list)
+
+#GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
+GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
+GMR22H05_prc_swarm = flylib.NetSquadron(GMR22H05_prc_list)
 ###################
 ###################
 
@@ -77,7 +81,8 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR74F03_GFP':GMR74F03_GFP_swarm,
           'GMR10A12_GFP':GMR10A12_GFP_swarm,
           'GMR75B06_GFP':GMR75B06_GFP_swarm,
-          'GMR22H05_pr':GMR22H05_pr_swarm
+          'GMR22H05_pr':GMR22H05_pr_swarm,
+          'GMR22H05_prc':GMR22H05_prc_swarm,
          }
 
 exp_swarms = {'GMR22H05':GMR22H05_swarm,
@@ -100,64 +105,62 @@ ctrl_swarms = {
          }
 
 ptch_roll_swarms = {
-    'GMR22H05_pr':GMR22H05_pr_swarm
+    'GMR22H05_pr':GMR22H05_pr_swarm,
+    'GMR22H05_prc':GMR22H05_prc_swarm,
 }
 
-encode = {'regressive':1,'descending':2,'progressive':3,'ascending':4,'flow_right':6,'flow_left':5}
-decode = dict()
-
-for key,value in zip(encode.keys(),encode.values()):
-    decode[value] = key
-
-def get_cond(fly_path,trial):
+def decode_cond_step_yaw(cond_data):
     """extact the experimental condition from a trial"""
-    #print 'here'
-    import h5py
-    fly_record = h5py.File(fly_path + 'fly_record.hdf5')
-    exp_record = fly_record['experiments'].values()[0]
-    sigs = exp_record['tiff_data']['axon_framebase']
-    cond_data = np.array(sigs['StimCond'])[trial]
+    decode = {1:'regressive',2:'descending',3:'progressive',4:'ascending',5:'flow_left',6:'flow_right'}
+    #cond_data = np.array(sigs['StimCond'])[trial]
     val = np.around(np.mean(cond_data[cond_data>0.5]))
     if np.isnan(val):
         raise ValueError
-    return val
+    return decode[val]
 
-
-decode_pitch_roll = dict()
-[decode_pitch_roll.update({i:'pth_roll_%s'%p}) for i,p in enumerate(range(0,360,30))]
-
-def get_cond_pitch_roll(fly_path,trial):
+def decode_cond_pitch_roll(cond_data):
     """extact the experimental condition from a """
-    #print 'here'
-    import h5py
-    fly_record = h5py.File(fly_path + 'fly_record.hdf5')
-    exp_record = fly_record['experiments'].values()[0]
-    sigs = exp_record['tiff_data']['axon_framebase']
-    cond_data = np.array(sigs['StimCond'])[trial] #-1)*360/(30*9)
+    decode = dict()
+    [decode.update({i:'pth_roll_%s'%p}) for i,p in enumerate(range(0,360,30))]
     val = np.around(np.mean((cond_data[cond_data>0.5]-1)*360/(30*9)))
     if np.isnan(val):
         raise ValueError
-    return val
+    return decode[val]
+
+def decode_cond_pitch_roll_ctrl(cond_data):
+    """extact the experimental condition from a """
+    decode = dict()
+    [decode.update({i:'pth_roll_%s'%p}) for i,p in enumerate(range(0,360,30))]
+    decode.update({12:'pth_roll_multipole'})
+    decode.update({13:'pth_roll_phsrndm'})
+    val = np.around(np.mean((cond_data[cond_data>0.5]-1)*len(decode)/9))
+    if np.isnan(val):
+        raise ValueError
+    return decode[val]
 
 
-GMR22H05_pr_swarm.get_cond = get_cond_pitch_roll
-GMR22H05_pr_swarm.decode = decode_pitch_roll
+decode_map = {'step_yaw_mod1':decode_cond_step_yaw,
+              'step_ptch_roll':decode_cond_pitch_roll,
+              'step_ptch_roll_ctrl':decode_cond_pitch_roll_ctrl}
+
+#GMR22H05_pr_swarm.get_cond = get_cond_pitch_roll
+#GMR22H05_pr_swarm.decode = decode_pitch_roll
 
 
 def get_update_list(file_name ='nnls_fits_no_bk_dF_F.cpkl', 
-                     swarms = gd.swarms,
+                     swarms = swarms,
                      replace = False):
     """ if replace is False this will scan the database to 
     create a 'pathlist' containing just flies that don't have 
     a file with file_name, otherwise all the flies in swarms will be used"""
     import os
     update_flylist = list()
-    for swarm_name,swarm in swarms.items():
+    for swarm in swarms:
         #print swarm_name
         for fly in swarm.flies:
             try:
                 if not(replace):
-                    if os.path.exists(fly.fly_path + 'nnls_fits_no_bk_dF_F.cpkl'):
+                    if os.path.exists(fly.fly_path + file_name):
                         pass
                         #print str(fly.fly_num) + ' exists'
                     else:
