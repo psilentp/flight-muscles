@@ -39,6 +39,8 @@ def main():
     cPickle.dump(fly_db,f)
     f.close()
 
+###In order to work while data is being uploaded    
+hold_flies = [500,501,502]
 def get_db():
     #fly_db = h5py.File('/Volumes/FlyDataB/FlyDB/flydb.hdf5','a')
     flydirs = filter(lambda s:'Fly' in s,os.listdir(root_dir))
@@ -47,7 +49,8 @@ def get_db():
     for fly in initialized_flies:
         flynum = int(fly.split('Fly')[1])
         #print flynum
-        fly_db[flynum] = h5py.File(root_dir+fly+'/fly_record.hdf5','a')
+        if not(flynum in hold_flies):
+            fly_db[flynum] = h5py.File(root_dir+fly+'/fly_record.hdf5','a')
     return fly_db
 
 class FlySwitch(dict):
