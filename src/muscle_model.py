@@ -173,6 +173,7 @@ class ModelViewMPL(ModelView):
             try:
                 element_args = kwargs['contour_kwargs'][line_key]
             except KeyError:
+                
                 element_args = default_args['contour_kwargs']
             line = lines[line_key]
             from matplotlib.patches import Polygon
