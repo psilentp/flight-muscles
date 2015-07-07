@@ -41,7 +41,8 @@ GMR22H05_pr_list = [471,472,473,474,475,476,477,478,479,480,481,483,484,485,486]
 GMR22H05_pr_swarm = flylib.NetSquadron(GMR22H05_pr_list)
 
 #GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
-GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
+#GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
+GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498,499,500,501,502]
 GMR22H05_prc_swarm = flylib.NetSquadron(GMR22H05_prc_list)
 ###################
 ###################
@@ -64,7 +65,7 @@ GMR10A12_GFP_swarm = flylib.NetSquadron(GMR10A12_GFP_list)
 GMR75B06_GFP_list = [438,439,440,441,444,445,446,447]
 GMR75B06_GFP_swarm = flylib.NetSquadron(GMR75B06_GFP_list)
 
-GMR39E01_GFP_list = []
+GMR39E01_GFP_list = [503,504,505,506]
 GMR39E01_GFP_swarm = flylib.NetSquadron(GMR39E01_GFP_list)
     
 swarms = {'GMR22H05':GMR22H05_swarm,
@@ -110,8 +111,8 @@ ptch_roll_swarms = {
 }
 
 def decode_cond_step_yaw(cond_data):
-    """extact the experimental condition from a trial"""
-    decode = {1:'regressive',2:'descending',3:'progressive',4:'ascending',5:'flow_left',6:'flow_right'}
+    """extact the experimental condition for a trial from a 'step_yaw' type experiment"""
+    decode = {1:'progressive',2:'descending',3:'regressive',4:'ascending',5:'yaw_left',6:'yaw_right'}
     #cond_data = np.array(sigs['StimCond'])[trial]
     val = np.around(np.mean(cond_data[cond_data>0.5]))
     if np.isnan(val):
@@ -119,7 +120,7 @@ def decode_cond_step_yaw(cond_data):
     return decode[val]
 
 def decode_cond_pitch_roll(cond_data):
-    """extact the experimental condition from a """
+    """extact the experimental condition for a trial from a 'pitch_roll' type experiment"""
     decode = dict()
     [decode.update({i:'pth_roll_%s'%p}) for i,p in enumerate(range(0,360,30))]
     val = np.around(np.mean((cond_data[cond_data>0.5]-1)*360/(30*9)))
@@ -128,7 +129,7 @@ def decode_cond_pitch_roll(cond_data):
     return decode[val]
 
 def decode_cond_pitch_roll_ctrl(cond_data):
-    """extact the experimental condition from a """
+    """extact the experimental condition for a trial from a 'pitch_roll_ctrl' type experiment"""
     decode = dict()
     [decode.update({i:'pth_roll_%s'%p}) for i,p in enumerate(range(0,360,30))]
     decode.update({12:'pth_roll_multipole'})
@@ -155,7 +156,7 @@ def get_update_list(file_name ='nnls_fits_no_bk_dF_F.cpkl',
     a file with file_name, otherwise all the flies in swarms will be used"""
     import os
     update_flylist = list()
-    for swarm in swarms:
+    for swarm_name,swarm in swarms.items():
         #print swarm_name
         for fly in swarm.flies:
             try:
@@ -170,3 +171,82 @@ def get_update_list(file_name ='nnls_fits_no_bk_dF_F.cpkl',
             except Exception as er:
                 print er
     return update_flylist
+
+segmented_fly = 508
+muscle_anatomy_dir = '/media/FlyDataC/FlyDB/Fly%04d/'%(segmented_fly)
+
+signal_plot_info = {'wb_frequency':
+                       {'ax_label':'freq',
+                        'transform':lambda x:x},
+                   'Ph0':
+                       {'ax_label':'lwing \n amp',
+                       'transform':lambda x:np.rad2deg(x/5.0)},
+                   'Ph1':
+                       {'ax_label':'rwing \n amp',
+                       'transform':lambda x:np.rad2deg(x/5.0)},
+                   'Ph2':
+                       {'ax_label':'lmr \n amp',
+                       'transform':lambda x:np.rad2deg(x/5.0)},
+                   'StimCond':
+                       {'ax_label':'Stimulus',
+                       'transform':lambda x:x},
+                   'b1':
+                       {'ax_label':'b1',
+                       'transform':lambda x:x},
+                   'b2':
+                       {'ax_label':'b2',
+                       'transform':lambda x:x},
+                   'b3':
+                       {'ax_label':'b3',
+                       'transform':lambda x:x},
+                   'i1':
+                       {'ax_label':'i1',
+                       'transform':lambda x:x},
+                   'i2':
+                       {'ax_label':'i2',
+                       'transform':lambda x:x},
+                   'iii1':
+                       {'ax_label':'iii1',
+                       'transform':lambda x:x},
+                   'iii24':
+                       {'ax_label':'iii24',
+                       'transform':lambda x:x},
+                   'iii3': 
+                       {'ax_label':'iii3', 
+                       'transform':lambda x:x},
+                   'hg1':
+                       {'ax_label':'hg1',
+                       'transform':lambda x:x},
+                   'hg2':
+                       {'ax_label':'hg2',
+                       'transform':lambda x:x},
+                   'hg3':
+                       {'ax_label':'hg3',
+                       'transform':lambda x:x},
+                   'hg4':
+                       {'ax_label':'hg4',
+                       'transform':lambda x:x},
+                   'ttm':
+                       {'ax_label':'ttm',
+                       'transform':lambda x:x},
+                   'tpv':
+                       {'ax_label':'tpv',
+                       'transform':lambda x:x},
+                   'tpd':
+                       {'ax_label':'tpd',
+                       'transform':lambda x:x},
+                   'ps':
+                       {'ax_label':'ps',
+                       'transform':lambda x:x},
+                   'nm':
+                       {'ax_label':'nm',
+                       'transform':lambda x:x},
+                   'pr':
+                       {'ax_label':'pr',
+                       'transform':lambda x:x},
+                   'Xpos':
+                       {'ax_label':'Xpos',
+                       'transform':lambda x:x},
+                   'Ypos':
+                       {'ax_label':'Ypos',
+                       'transform':lambda x:x}}
