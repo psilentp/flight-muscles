@@ -23,8 +23,8 @@ const bool READY = false;
 
 const int READOUTMICROS = 2000;//camera won't be ready for 2ms untill after pulse
 
-const int TIMEOUTMICROS = 8000; //wait 6ms for wingbeat if not freetrigger at 50Hz
-const int PULSEDURATION = 500; //0.5 ms exposure
+const int TIMEOUTMICROS = 8000; //wait 8ms for wingbeat if not freetrigger at 50Hz
+const int PULSEDURATION = 1000; //1 ms exposure
 const int CAMPIN = 24;
 const int LEDPIN = 22;
 const int TRIGGERPIN = 52;

@@ -897,4 +897,6 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'step_yaw':IMGExperiment4,
            'step_yaw_mod1':IMGExperiment4,
            'step_ptch_roll':IMGExperiment4,
-           'step_ptch_roll_ctrl':IMGExperiment4}
+           'step_ptch_roll_ctrl':IMGExperiment4,
+           'ASAP_pilot':IMGExperiment4,
+           'strain_tracking':IMGExperiment4}
