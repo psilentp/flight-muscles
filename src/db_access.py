@@ -4858,3 +4858,34 @@ class InitDB(FlySwitch):
         fly_record['experiments'].create_group('strain_tracking')
         fly_record['experiments']['strain_tracking']['axon_file_names'] = ['15720010.abf']
         fly_record['experiments']['strain_tracking']['tiff_file_names'] = ['/T2_trial1/T2_trial1_MMStack.ome.tif']
+        
+    def initfly_528(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('strain_tracking')
+        fly_record['experiments']['strain_tracking']['axon_file_names'] = ['15727003.abf']
+        fly_record['experiments']['strain_tracking']['tiff_file_names'] = ['/T2_trial1/T2_trial1_MMStack.ome.tif']
+    
+
+    def initfly_529(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('strain_tracking')
+        fly_record['experiments']['strain_tracking']['axon_file_names'] = ['15727004.abf']
+        fly_record['experiments']['strain_tracking']['tiff_file_names'] = ['/T2_trial1/T2_trial1_MMStack.ome.tif']
+        
+    
+
+    def initfly_530(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('strain_tracking')
+        fly_record['experiments']['strain_tracking']['axon_file_names'] = ['15727006.abf']
+        fly_record['experiments']['strain_tracking']['tiff_file_names'] = ['/T2_trial1/T2_trial1_MMStack.ome.tif']
+        
