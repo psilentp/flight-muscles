@@ -175,6 +175,21 @@ def get_update_list(file_name ='nnls_fits_no_bk_dF_F.cpkl',
 segmented_fly = 508
 muscle_anatomy_dir = '/media/FlyDataC/FlyDB/Fly%04d/'%(segmented_fly)
 
+signal_plot_list = ['wb_frequency','Ph1',
+                    'b1','b2','b3',
+                    'i1','i2',
+                    'iii1','iii24','iii3',
+                    'hg1','hg2','hg3','hg4',
+                    'tpv','tpd','ttm','pr']
+
+muscle_plot_list = signal_plot_list[2:]
+
+b_list = ['b1','b2','b3']
+i_list = ['i1','i2']
+iii_list = ['iii1','iii24','iii3']
+hg_list = ['hg1','hg2','hg3','hg4']
+id_list = ['tpv','tpd','ttm','pr']
+
 signal_plot_info = {'wb_frequency':
                        {'ax_label':'freq',
                         'transform':lambda x:x},

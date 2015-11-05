@@ -193,4 +193,21 @@ class ModelViewMPL(ModelView):
                 frame_args['color'] = 'b'
                 frame_args['head_width'] = kwargs['frame_head_width']
                 arrow(p[0],p[1],a2[0],a2[1],**frame_args)
-             
+
+def warp_fly_img(netfly = None,img = None,s = 1):        
+    #import muscle_model as mm
+    import group_data as gd
+    confocal_model = GeometricModel(filepath = gd.muscle_anatomy_dir + 'confocal_outline_model.cpkl')
+    confocal_view = ModelViewMPL(confocal_model)
+    import cv2
+    import cPickle
+    pkname = netfly.fly_path + '/basis_fits.cpkl'
+    fly_frame = Frame()
+    fly_frame.load(pkname)
+    A = confocal_model.frame.get_transform(fly_frame)
+    #compose the transformation matrix with a scaling matrix
+    Ap = np.dot([[s,0.0,0],[0,s,0],[0,0,1]],A)
+    output_shape = (np.array([1024,1024])*s).astype(int) #confocal shape * the scale
+    output_shape = (output_shape[0],output_shape[1]) #make the shape a tuple
+    X_warped = cv2.warpAffine(img.T,Ap[:-1,:],output_shape) #warp the image using the cv2 warp Affine method
+    return X_warped
