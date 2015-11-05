@@ -183,6 +183,7 @@ class ModelViewMPL(ModelView):
 
         if 'draw_frame' in kwargs.keys():
             if kwargs['draw_frame']:
+                frame_args = dict()
                 p = plot_frame['p']
                 a1 = plot_frame['a1']
                 a2 = plot_frame['a2']
