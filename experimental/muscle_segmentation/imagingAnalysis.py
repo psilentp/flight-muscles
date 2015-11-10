@@ -315,8 +315,8 @@ class MainWindow(TemplateBaseClass):
 
     def loadData(self):
         import cPickle
-        ### f = open('model_data.cpkl','rb')
-        f = open('/media/flyranch/ICRA_2015/model_data.cpkl','rb')
+        f = open('model_data.cpkl','rb')
+        ###f = open('/media/flyranch/ICRA_2015/model_data.cpkl','rb')
         model_data = cPickle.load(f)
         f.close()
 
@@ -362,9 +362,9 @@ class MainWindow(TemplateBaseClass):
         #fnum = selection.data(0,QtCore.Qt.UserRole)
         #print 'here'
         #print int(fnum)
-        ### self.images = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['images'])
-        tfile = tifffile.TiffFile('/media/flyranch/ICRA_2015/110215_fly1_2_MMStack_Pos0.ome.tif')
-        self.images = tfile.asarray()
+        self.images = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['images'])
+        ### tfile = tifffile.TiffFile('/media/flyranch/ICRA_2015/110215_fly1_2_MMStack_Pos0.ome.tif')
+        ### self.images = tfile.asarray()
 
         self.maximg = np.max(self.images,axis = 0)
         self.transform_img = self.affineWarp(self.maximg)
@@ -372,8 +372,8 @@ class MainWindow(TemplateBaseClass):
         print self.current_fly
         flydir = '%s%s/'%(dba.root_dir,self.current_fly)
 
-        ### tser_data = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['axon_framebase']['wb_frequency'])
-        ### self.tserTrace.setData(tser_data)
+        tser_data = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['axon_framebase']['wb_frequency'])
+        self.tserTrace.setData(tser_data)
         
 
         try:
