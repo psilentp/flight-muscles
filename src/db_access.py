@@ -41,7 +41,7 @@ def main():
 
 ###In order to work while data is being uploaded    
 hold_flies = [500,501,502]
-hold_flies.extend(range(1,400))
+#hold_flies.extend(range(1,400))
 
 def get_db():
     #fly_db = h5py.File('/Volumes/FlyDataB/FlyDB/flydb.hdf5','a')

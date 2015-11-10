@@ -1,5 +1,5 @@
-import os
-uname = os.getlogin()
+import getpass
+uname = getpass.getuser()
 
 params = {"root_dir":"FlyDB/",
 	  "platform_paths":{"darwin":"/Volumes/FlyDataC/",
