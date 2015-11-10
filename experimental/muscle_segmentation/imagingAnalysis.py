@@ -457,7 +457,8 @@ class MainWindow(TemplateBaseClass):
         comment_text = self.ui.commentBox.toPlainText()
         savedata['commentBox'] = comment_text
 
-        flydir = '%s%s/'%(dba.root_dir,self.current_fly)
+        #flydir = '%s%s/'%(dba.root_dir,self.current_fly)
+        flydir = '/media/flyranch/ICRA_2015/'
         f = open(flydir+'basis_fits.cpkl','wb')
         cPickle.dump(savedata,f)
 
