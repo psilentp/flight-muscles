@@ -454,7 +454,7 @@ class MainWindow(TemplateBaseClass):
     def saveFit(self):
         import cPickle
         savedata = dict(self.thorax_view.plot_basis)
-        comment_text = self.ui.commentBox.toPlainText()
+        comment_text = str(self.ui.commentBox.toPlainText())
         savedata['commentBox'] = comment_text
 
         #flydir = '%s%s/'%(dba.root_dir,self.current_fly)
