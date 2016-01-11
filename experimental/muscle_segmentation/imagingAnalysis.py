@@ -292,7 +292,9 @@ class MainWindow(TemplateBaseClass):
     def loadfileTree(self):
         self.ui.fileTree.setColumnCount(1)
         items = []
-        for key,fly in zip(fly_db.keys(),fly_db.values()):
+        #for key,fly in zip(fly_db.keys(),fly_db.values()):
+        for key,fly in sorted(fly_db.items()):#zip(fly_db.keys(),fly_db.values()):
+            #print key
             try:
                 exp1 = fly['experiments'].values()[0]
                 exptype = fly['experiments'].keys()[0]
@@ -309,6 +311,8 @@ class MainWindow(TemplateBaseClass):
                             #print (img_key,np.shape(exp1['tiff_data'][img_key]))
                         else:
                             pass
+                else:
+                    print exp1.keys()
             except KeyError:
                 pass
         self.ui.fileTree.insertTopLevelItems(0,items)

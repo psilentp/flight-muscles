@@ -125,7 +125,12 @@ class Experiment(object):
         self.fly_path = fly_path
     
     def get_sequences(self):
-        pass
+	import warnings
+        warnings.warn('function get_sequences not implemented')
+
+    def load_data(self):
+	import warnings
+	warnings.warn('function load_data not implemented')
 
 class Sequence(object):
     def __init__(self,exp_record,seq_num,fly_path):
@@ -478,6 +483,7 @@ class IMGExperiment(Experiment):
             if self.import_tiff_data() is None:
                 return
         sigs = self.exp_record['axon_data']
+        
         exposures = idx_by_thresh(np.array(sigs['CamSync']),thresh = 1)
         frames = np.array([x[-1] for x in exposures])[0:-1].astype(int) #idx of each frame in the axon array.
         update_dset(self.exp_record['tiff_data'],'frame_idx',frames)
@@ -745,6 +751,51 @@ class IMGSequence(Sequence):
         else:
             self.seq_record['epoch_name'] = seq_pattern_name
 
+
+class ANATExperiment(Experiment):
+    def load_data(self):
+	self.import_tiff_data()
+
+    def import_tiff_data(self,filenum = 0):
+	import tifffile
+        try:
+            tiff_file = self.fly_path + self.exp_record['tiff_file_names'][filenum]
+            tif = tifffile.TiffFile(tiff_file)
+	    #print tif._tiffs.__dict__
+	    metadata = dict()
+	    for key,value in tif.pages[0].__dict__.items():
+		#print type(value)
+		if not(type(value) is tifffile.TiffTags):
+		    #print key
+		    metadata.update({key:str(value)})
+		else:
+		    metadata.update({key:str(value)})		    	
+	    #print metadata
+            images = tif.asarray()
+            if not('tiff_data' in self.exp_record.keys()):
+                self.exp_record.create_group('tiff_data')
+            update_dset(self.exp_record['tiff_data'],'images',images)
+	    for key,value in metadata.items():
+		self.exp_record['tiff_data']['images'].attrs.create(key,value)
+	    x_res = [x for x in self.exp_record['tiff_data']['images'].attrs['tags'].split('*') if 'x_resolution' in x]
+	    y_res = [x for x in self.exp_record['tiff_data']['images'].attrs['tags'].split('*') if 'y_resolution' in x]
+	    z_res = [x for x in self.exp_record['tiff_data']['images'].attrs['imagej_tags'].split('*') if 'spacing' in x]
+	    unit = [x for x in self.exp_record['tiff_data']['images'].attrs['imagej_tags'].split('*') if 'unit' in x]
+	    unit = unit[0].split()[-1]
+	    z_res = float(z_res[0].split()[1])
+	    itms = [x.strip('(),') for x in x_res[0].split()[-2:]]
+	    x_res = float(itms[1])/float(itms[0])
+	    itms = [x.strip('(),') for x in y_res[0].split()[-2:]]
+	    y_res = float(itms[1])/float(itms[0])
+	    self.exp_record['tiff_data']['images'].attrs.create('x_res',x_res)
+	    self.exp_record['tiff_data']['images'].attrs.create('y_res',y_res)
+	    self.exp_record['tiff_data']['images'].attrs.create('z_res',z_res)
+	    self.exp_record['tiff_data']['images'].attrs.create('res_unit',unit)
+        except KeyError:
+            print('no tiff file')
+
+	
+
 #############################################################################
 #############################################################################
 
@@ -774,7 +825,8 @@ def get_frame_idxs(cam_epoch,axondata):
 def idx_by_thresh(signal,thresh = 0.1):
     idxs = np.squeeze(np.argwhere(signal > thresh))
     split_idxs = np.squeeze(np.argwhere(np.diff(idxs) > 1))
-    split_idxs = [split_idxs]
+    #split_idxs = [split_idxs]
+    print split_idxs
     idx_list = np.split(idxs,split_idxs)
     idx_list = [x[1:] for x in idx_list]
     return idx_list
@@ -927,10 +979,14 @@ def errfunc(p,cos_mtrx,sin_mtrx,y):
 
 def update_dset(dset,key,value):
     if not(key in dset.keys()):
-        dset[key] = value
+	#print key
+	#print value
+	dset.create_dataset(key,data = value,compression="gzip", compression_opts=5)
+	#dset[key] = value
     else:
         del(dset[key])
-        dset[key] = value
+	dset.create_dataset(key,data = value, compression="gzip", compression_opts=5)
+        #dset[key] = value
 
 #this maps the experiment names to the code used
 #to import and process the data
@@ -966,6 +1022,6 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
 	   'hsv_strain2':STRNExperiment,
 	   'hsv_strain3':STRNExperiment,
 	   'hsv_strain4':STRNExperiment,
-	   'hsv_strain5':STRNExperiment}
-
+	   'hsv_strain5':STRNExperiment,
+	   'gal4_hemi_screen':ANATExperiment}
 
