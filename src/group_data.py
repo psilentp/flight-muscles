@@ -16,7 +16,8 @@ genotype_nicknames = {'GMR10A12': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[
                      'GMR39E01_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR39E01-GAL4}attP2/+',
                      'GMR74F03': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR74F03-GAL4}attP2/+',
                      'GMR75B06': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR75B06-GAL4}attP2/+',
-                     'GMR75B06_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR75B06-GAL4}attP2/+'}
+                     'GMR75B06_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR75B06-GAL4}attP2/+',
+                     'GMR40D04': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR40D04-GAL4}attP2/+'}
 
 
 GMR22H05_list = [308,309,310,311,312,314,315,316,317,327,328,453,455,456,461,462,463,466,467,468,469,470] #R range(317,326) 
@@ -37,12 +38,16 @@ GMR75B06_swarm = flylib.NetSquadron(GMR75B06_list)
 GMR74F03_list = [396,397,398,411,412,413,414,415,416] #S
 GMR74F03_swarm = flylib.NetSquadron(GMR74F03_list)
 
-GMR22H05_pr_list = [471,472,473,474,475,476,477,478,479,480,481,483,484,485,486]
+GMR22H05_pr_list = [471,472,473,474,475,476,477,478,479,480,481,483,484,485,486] # azmuthal tuning - pitch to roll
 GMR22H05_pr_swarm = flylib.NetSquadron(GMR22H05_pr_list)
+
+GMR40D04_pr_list = [587,588,589] # azmuthal tuning - pitch to roll
+GMR40D04_pr_swarm = flylib.NetSquadron(GMR40D04_pr_list)
 
 #GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
 #GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
-GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498,499,500,501,502]
+GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498,499,500,501,502] # azmuthal tuning - pitch to roll as well as motion control stimuli
+
 GMR22H05_prc_swarm = flylib.NetSquadron(GMR22H05_prc_list)
 ###################
 ###################
@@ -67,7 +72,8 @@ GMR75B06_GFP_swarm = flylib.NetSquadron(GMR75B06_GFP_list)
 
 GMR39E01_GFP_list = [503,504,505,506]
 GMR39E01_GFP_swarm = flylib.NetSquadron(GMR39E01_GFP_list)
-    
+
+
 swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR39E01':GMR39E01_swarm,
           'GMR31E10':GMR31E10_swarm,
@@ -83,6 +89,7 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR10A12_GFP':GMR10A12_GFP_swarm,
           'GMR75B06_GFP':GMR75B06_GFP_swarm,
           'GMR22H05_pr':GMR22H05_pr_swarm,
+          'GMR40D04_pr':GMR40D04_pr_swarm,
           'GMR22H05_prc':GMR22H05_prc_swarm,
          }
 
