@@ -19,7 +19,6 @@ genotype_nicknames = {'GMR10A12': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[
                      'GMR75B06_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR75B06-GAL4}attP2/+',
                      'GMR40D04': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR40D04-GAL4}attP2/+'}
 
-
 GMR22H05_list = [308,309,310,311,312,314,315,316,317,327,328,453,455,456,461,462,463,466,467,468,469,470] #R range(317,326) 
 GMR22H05_swarm = flylib.NetSquadron(GMR22H05_list)
 GMR39E01_list = [318,319,320,321,322,323,324,325,329,330,331,332,333,334,335,336] #S
@@ -121,19 +120,25 @@ ptch_roll_swarms = {
     'GMR22H05_prc':GMR22H05_prc_swarm,
 }
 
+
 def decode_cond_cardinal(cond_data):
-    """extact the experimental condition for a trial from a 'step_yaw' type experiment"""
-    decode = {1:'progressive',
-              2:'descending',
-              3:'regressive',
-              4:'ascending',
-              5:'yaw_left',
-              6:'yaw_right'}
-    #cond_data = np.array(sigs['StimCond'])[trial]
-    val = np.around(np.mean(cond_data[cond_data>0.5]))
+    """extact the experimental condition for a trial from a 'caridinal_axes' type experiment"""
+    from scipy.io import loadmat
+    from parameters import params
+    import sys
+    import re
+    
+    rootpath = params['platform_paths'][sys.platform]
+    SDMat = loadmat('/media/analysis-code/flight-muscles/experimental/00_squadrons/22_cardinal_axes/design/SD.mat')
+    pnames = [pname[0] for pname in SDMat['SD']['pattern'][0][0]['pattNames'][0][0][0]]
+    volts_per_pattern = 10.0/(len(pnames)-1) # minus 1 because of stripe pattern
+    pattern_data = [{'index':i,'condition_voltage':i*volts_per_pattern,'pattern_name':pname} for 
+                i,pname in enumerate(pnames)] 
+    val = np.int(np.around(np.mean(cond_data[cond_data>0.05])/volts_per_pattern))
     if np.isnan(val):
         raise ValueError
-    return decode[val]
+    parse = lambda pname:re.sub(r'Pattern_','',re.sub(r'_v._rep..mat','',pname))
+    return parse(pattern_data[val]['pattern_name'])
 
 def decode_cond_step_yaw(cond_data):
     """extact the experimental condition for a trial from a 'step_yaw' type experiment"""
@@ -167,7 +172,8 @@ def decode_cond_pitch_roll_ctrl(cond_data):
 
 decode_map = {'step_yaw_mod1':decode_cond_step_yaw,
               'step_ptch_roll':decode_cond_pitch_roll,
-              'step_ptch_roll_ctrl':decode_cond_pitch_roll_ctrl}
+              'step_ptch_roll_ctrl':decode_cond_pitch_roll_ctrl,
+              'cardinal_axes':decode_cond_cardinal}
 
 #GMR22H05_pr_swarm.get_cond = get_cond_pitch_roll
 #GMR22H05_pr_swarm.decode = decode_pitch_roll
