@@ -47,7 +47,7 @@ for direction,direction_voltage in dir_range:
             pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)]['condition_voltage'] = direction_voltage
             #pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)]['condition_voltage'] = encode_condition(count)
             count += 1
-
+print pattern_data
 #def encode_condition(idx):
 #    ntrials = len(pattern_data.keys())#len(vel_range)*len(dir_range)*len(rep_range)
 #    return ((idx)/float(ntrials+1)*10)

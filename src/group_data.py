@@ -41,8 +41,11 @@ GMR74F03_swarm = flylib.NetSquadron(GMR74F03_list)
 GMR22H05_pr_list = [471,472,473,474,475,476,477,478,479,480,481,483,484,485,486] # azmuthal tuning - pitch to roll
 GMR22H05_pr_swarm = flylib.NetSquadron(GMR22H05_pr_list)
 
-GMR40D04_pr_list = [587,588,589] # azmuthal tuning - pitch to roll
+GMR40D04_pr_list = [587, 588, 589, 600, 601, 602, 603, 604, 605, 606, 607] # azmuthal tuning - pitch to roll
 GMR40D04_pr_swarm = flylib.NetSquadron(GMR40D04_pr_list)
+
+GMR40D04_ca_list = [615,616] # azmuthal tuning - pitch to roll
+GMR40D04_ca_swarm = flylib.NetSquadron(GMR40D04_pr_list)
 
 #GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
 #GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]

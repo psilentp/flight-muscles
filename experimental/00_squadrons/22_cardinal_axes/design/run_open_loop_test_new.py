@@ -10,60 +10,20 @@ fixation_pattern = 1
 trial_condition_ao = 0
 phase_signal_ao = 1
 
-vel_range_yaw = [1]
-vel_range_trans = [1]
-dir_range = [('trans_back',1),('trans_down',2),('trans_for',3),('trans_up',4),('yaw_270',5),('yaw_90',6)]
-rep_range = range(5)
+from scipy import io
+SDMat = io.loadmat('SD.mat')
+SDData = np.squeeze(SDMat['SD'])
+pnames = [pname[0] for pname in SDMat['SD']['pattern'][0][0]['pattNames'][0][0][0]]
+volts_per_pattern = 10.0/(len(pnames)-1) # minus 1 because of stripe pattern
 
-#run open loop paterns
-#trials = np.array([[[(z,y,x) for x in rep_range] for y in vel_range] for z in dir_range])
-#trials = np.reshape(trials,(30,3))
+pattern_data = [{'index':i,'condition_voltage':i*volts_per_pattern,'pattern_name':pname} for 
+                i,pname in enumerate(pnames)] 
 
-#check to see if we need to make a new directory for a new fly
-#if np.sum(['.abf' in x for x in os.listdir('E:\\FlyDB\\' + os.listdir('E:\\FlyDB')[-1])]):
-#    newdir = 'Fly%04d'%(int(os.listdir('E:\\FlyDB')[-1].split('Fly')[-1])+1)
-#    print 'making:' + newdir
-#    os.mkdir('E:\\FlyDB\\'+newdir)
-#else:
-#	newdir = 'Fly%04d'%(int(os.listdir('E:\\FlyDB')[-1].split('Fly')[-1]))
+if pattern_data[0]['pattern_name'] == 'Pattern_fixation_4_wide_4X12_Pan':
+    pattern_data[0]['condition_voltage'] = -1
 
-
-
-#create a dictionary of pattern names
-pattern_data = dict()
-count = 2 #pattern_names[0] is fixation
-for direction,direction_voltage in dir_range:
-    if 'trans' in direction:
-        vel_range = vel_range_trans
-    else:
-        vel_range = vel_range_yaw
-    for vel in vel_range:
-        for rep in rep_range:
-            #uncomment to print the expected odered list of patterns on
-            #sd drive
-            #print direction,vel,rep
-            pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)] = dict()
-            pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)]['condition_tuple'] = (direction,
-                                                                                            vel,
-                                                                                            rep)
-            pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)]['pattern_index'] = count
-            pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)]['condition_voltage'] = direction_voltage
-            #pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)]['condition_voltage'] = encode_condition(count)
-            count += 1
-
-#def encode_condition(idx):
-#    ntrials = len(pattern_data.keys())#len(vel_range)*len(dir_range)*len(rep_range)
-#    return ((idx)/float(ntrials+1)*10)
-
-#for trial in pattern_data.values():
-#    trial['condition_voltage'] = encode_condition(trial['pattern_index'])
-
-trials = [t['condition_tuple'] for t in pattern_data.values() if not(t['condition_tuple'][1] == 10)]
-
-#for trial in trials:
-#    print trial
-#for x in pattern_data.values():
-#    print x['pattern_index'],x['condition_voltage']
+#for p in pattern_data:
+#    print p
 
 def led_closed_loop(cl_duration = 3.0):
     analog.setVoltage(trial_condition_ao, -1.0)
@@ -117,25 +77,28 @@ def led_open_loop(pattern_id = 0,
 #start with closed loop stripe fixation
 analog.setVoltage(trial_condition_ao, -1)
 analog.setVoltage(phase_signal_ao, 4)
-#led_closed_loop(cl_duration = 1.0)
+led_closed_loop(cl_duration = 1.0)
 led_closed_loop(cl_duration = 90.0)
 
 
 #condition_list = np.random.permutation(trials)
+executed_trials = list()
+
 count = 0
 for rep in [0,1]:
-    condition_list = np.random.permutation(trials)
+    condition_list = np.random.permutation(pattern_data[1:])
     for condition in condition_list:
-        pattern_name = 'step_%s_v%s_rep%s'%(condition[0],condition[1],condition[2])
+        pattern_name = condition['pattern_name']
         print ('running pattern:%s'%(pattern_name))
         print count
         count += 1
-        pattern_id = pattern_data[pattern_name]['pattern_index']
-        condition_voltage = pattern_data[pattern_name]['condition_voltage']
+        pattern_id = condition['index']
+        condition_voltage = condition['condition_voltage']
+        executed_trials.append(condition)
         led_closed_loop(cl_duration = 5.0)
         led_open_loop(pattern_id = pattern_id,
                       function_id = 1,
-                      static_duration = 10,
+                      static_duration = 7,
                       motion_duration = 3,
                       condition_voltage = condition_voltage)
 
@@ -144,6 +107,11 @@ led_closed_loop(cl_duration = 5.0)
 #f = open('E:\\FlyDB\\'+newdir + '\\run_data.txt','wt')
 #f.writelines(['step_yaw_%s_v%s_rep%s'%(condition[0],condition[1],condition[2]) + '\n' for condition in condition_list])
 #f.close()
+
+import cPickle 
+f = open('trial_data.cpkl','wb')
+cPickle.dump(executed_trials,f)
+f.close()
 
 try:
     analog.closePhidget()
