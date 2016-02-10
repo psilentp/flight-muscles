@@ -39,6 +39,9 @@ for direction,direction_voltage in dir_range:
         vel_range = vel_range_yaw
     for vel in vel_range:
         for rep in rep_range:
+            #uncomment to print the expected odered list of patterns on
+            #sd drive
+            #print direction,vel,rep
             pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)] = dict()
             pattern_data['step_%s_v%s_rep%s'%(direction,vel,rep)]['condition_tuple'] = (direction,
                                                                                             vel,
@@ -57,6 +60,8 @@ for direction,direction_voltage in dir_range:
 
 trials = [t['condition_tuple'] for t in pattern_data.values() if not(t['condition_tuple'][1] == 10)]
 
+#for trial in trials:
+#    print trial
 #for x in pattern_data.values():
 #    print x['pattern_index'],x['condition_voltage']
 

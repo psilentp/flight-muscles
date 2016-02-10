@@ -82,7 +82,6 @@ class NetSquadron(object):
         
     def set_expmnt(self,expname):
         self.expname = expname
-
         
 ############
 ############
@@ -111,7 +110,6 @@ class Fly(object):
         for experiment_name in self.fly_record['experiments'].keys():
             experiments[experiment_name] = exp_map[experiment_name](self.fly_record,experiment_name,self.fly_path)
         return experiments
-
     
 class Experiment(object):
     """Controller class for an individual experiments init with the fly_record and
@@ -125,7 +123,12 @@ class Experiment(object):
         self.fly_path = fly_path
     
     def get_sequences(self):
-        pass
+        import warnings
+        warnings.warn('function get_sequences not implemented')
+
+    def load_data(self,fly_db):
+        import warnings
+        warnings.warn('function load_data not implemented')
 
 class Sequence(object):
     def __init__(self,exp_record,seq_num,fly_path):
@@ -422,6 +425,14 @@ class HSVSequence(Sequence):
 
 class IMGExperiment(Experiment):
 
+    def load_data(self,fly_db):
+        self.import_axon_data()
+        fly_db.flush()
+        self.import_tiff_data()
+        fly_db.flush()
+        self.calc_framebase()
+        fly_db.flush()
+
     def get_sequences(self):
         sequences = dict()
         if 'sequence_pattern_names' in self.exp_record.keys():
@@ -478,8 +489,9 @@ class IMGExperiment(Experiment):
             if self.import_tiff_data() is None:
                 return
         sigs = self.exp_record['axon_data']
+        
         exposures = idx_by_thresh(np.array(sigs['CamSync']),thresh = 1)
-        frames = np.array([x[-1] for x in exposures])[0:-1].astype(int)
+        frames = np.array([x[-1] for x in exposures])[0:-1].astype(int) #idx of each frame in the axon array.
         update_dset(self.exp_record['tiff_data'],'frame_idx',frames)
         #update_dset(self.exp_record['tiff_data'],'exposures',exposures)
         if 'axon_framebase' not in self.exp_record['tiff_data'].keys():
@@ -672,6 +684,67 @@ class IMGExperiment4(IMGExperiment):
         expose = strobe & wmask & fmask
         return expose
 
+class STRNExperiment(IMGExperiment):
+    
+    def calc_framebase(self):
+        if 'axon_data' not in self.exp_record.keys():
+            self.import_axon_data()
+        if 'tiff_data' not in self.exp_record.keys():
+            if self.import_tiff_data() is None:
+                return
+        sigs = self.exp_record['axon_data']
+        all_exposures = idx_by_thresh(np.array(sigs['CamSync']),thresh = 1)
+        triggers = idx_by_thresh(np.array(sigs['CamTrig']),thresh = 1)
+        trigger = triggers[0][0]
+
+        #print 'first trigger:' + str(triggers[0])
+        #print 'trigger value:' + str(sigs['CamTrig'][triggers[0][0]])
+        #print 'trigger range [-5,10]:' + str(sigs['CamTrig'][triggers[0][0]-5:triggers[0][0]+10])
+        
+        for i, exposure in enumerate(all_exposures):
+            if exposure[0] < trigger:
+                pass
+            else:
+                #print trigger
+                #print exposure[0]
+                break
+            #print exposure[0]
+            #print i
+        exposures = all_exposures[i-4000:-1] #wont capture last frame, all saved frames
+                              #saves frames [-4000,56000]
+        #print len(exposures)
+
+        frames = np.array([x[-1] for x in exposures])[0:-1].astype(int) #idx of each frame in the                                           axon array.
+        update_dset(self.exp_record['tiff_data'],'frame_idx',frames)
+        #update_dset(self.exp_record['tiff_data'],'exposures',exposures)
+        if 'axon_framebase' not in self.exp_record['tiff_data'].keys():
+            self.exp_record['tiff_data'].create_group('axon_framebase')
+        for key in sigs.keys():
+            sig = np.array(sigs[key])
+            downsamp = np.array([np.mean(sig[ex]) for ex in exposures])
+            update_dset(self.exp_record['tiff_data']['axon_framebase'],key,downsamp)
+            #taken straight from IMGExperiment4
+            period = self.calc_wb_period()
+            update_dset(self.exp_record['axon_data'],'wb_period',period)
+            update_dset(self.exp_record['axon_data'],'wb_frequency',1.0/period)
+            period_framebase = np.array([np.mean(period[ex]) for ex in exposures])
+            frequency_framebase = np.array([np.mean(1.0/period[ex]) for ex in exposures])
+            update_dset(self.exp_record['tiff_data']['axon_framebase'],'wb_period',period_framebase)
+            update_dset(self.exp_record['tiff_data']['axon_framebase'],'wb_frequency',frequency_framebase)
+
+    def calc_wb_period(self):
+        wb_trigs = np.diff((np.array(self.exp_record['axon_data']['WBSync']) > 1).astype(int))>0
+        wb_trigs = np.hstack((wb_trigs,np.array([0])))
+        wb_times = np.array(self.exp_record['axon_data']['times'])
+        trigidx = np.where(wb_trigs)[0]
+        idx_intervals = np.vstack((np.hstack(([0],trigidx[:-1])),trigidx))
+        time_intervals = np.vstack((wb_times[idx_intervals[0,:]],wb_times[idx_intervals[1,:]]))
+        wb_periods = np.squeeze(np.diff(time_intervals,axis = 0 ))
+        period_sig = np.zeros_like(wb_trigs).astype(float)
+        for interval,period in zip(idx_intervals[:,:].T,wb_periods):
+            period_sig[interval[0]:interval[1]] = period
+        return period_sig
+
 class IMGSequence(Sequence):
     def __init__(self,exp_record,seq_num,fly_path,seq_pattern_name = None):
         Sequence.__init__(self,exp_record,seq_num,fly_path)
@@ -682,6 +755,62 @@ class IMGSequence(Sequence):
                 self.seq_pattern_name = self.exp_record['sequence_pattern_names'][seq_num]
         else:
             self.seq_record['epoch_name'] = seq_pattern_name
+
+class ANATExperiment(Experiment):
+    # Confocal image stack
+    def load_data(self,fly_db):
+        self.import_tiff_data()
+        fly_db.flush()
+
+    def import_tiff_data(self,filenum = 0):
+        import tifffile
+        try:
+            tiff_file = self.fly_path + self.exp_record['tiff_file_names'][filenum]
+            tif = tifffile.TiffFile(tiff_file)
+            ##try to load the tiff file metadata
+            metadata = dict()
+            for key,value in tif.pages[0].__dict__.items():
+                if not(type(value) is tifffile.TiffTags):
+                    metadata.update({key:str(value)})
+                else:
+                    metadata.update({key:str(value)})
+                    images = tif.asarray()
+            if not('tiff_data' in self.exp_record.keys()):
+                self.exp_record.create_group('tiff_data')
+                update_dset(self.exp_record['tiff_data'],'images',images)
+            for key,value in metadata.items():
+                try:
+                    self.exp_record['tiff_data']['images'].attrs.create(key,value)
+                    x_res = [x for x in self.exp_record['tiff_data']['images'].attrs['tags'].split('*') if 'x_resolution' in x]
+                    y_res = [x for x in self.exp_record['tiff_data']['images'].attrs['tags'].split('*') if 'y_resolution' in x]
+                    z_res = [x for x in self.exp_record['tiff_data']['images'].attrs['imagej_tags'].split('*') if 'spacing' in x]
+                    unit = [x for x in self.exp_record['tiff_data']['images'].attrs['imagej_tags'].split('*') if 'unit' in x]
+                    unit = unit[0].split()[-1]
+                    z_res = float(z_res[0].split()[1])
+                    itms = [x.strip('(),') for x in x_res[0].split()[-2:]]
+                    x_res = float(itms[1])/float(itms[0])
+                    itms = [x.strip('(),') for x in y_res[0].split()[-2:]]
+                    y_res = float(itms[1])/float(itms[0])
+                    self.exp_record['tiff_data']['images'].attrs.create('x_res',x_res)
+                    self.exp_record['tiff_data']['images'].attrs.create('y_res',y_res)
+                    self.exp_record['tiff_data']['images'].attrs.create('z_res',z_res)
+                    self.exp_record['tiff_data']['images'].attrs.create('res_unit',unit)
+                except KeyError:
+                    print key
+        except KeyError:
+            print('no tiff file')
+
+class WINGROTExperiment(IMGExperiment):
+    """experiment that simply filmed the wing rotation of a tethered fly"""
+    def load_data(self):
+        file_dir = self.fly_path + self.exp_record['tiff_file_directory']
+        files = [f for f in os.listdir(file_dir) if '.tif' in f]
+        frames = [tifffile.TiffFile(file_dir+f).asarray() for f in files]
+        images = np.array(frames)
+        if not('tiff_data' in self.exp_record.keys()):
+            self.exp_record.create_group('tiff_data')
+        update_dset(self.exp_record['tiff_data'],'images',images)
+
 
 #############################################################################
 #############################################################################
@@ -712,8 +841,8 @@ def get_frame_idxs(cam_epoch,axondata):
 def idx_by_thresh(signal,thresh = 0.1):
     idxs = np.squeeze(np.argwhere(signal > thresh))
     split_idxs = np.squeeze(np.argwhere(np.diff(idxs) > 1))
-    if (len(np.shape(split_idxs)) == 0):
-        split_idxs = [split_idxs]
+    #split_idxs = [split_idxs]
+    print split_idxs
     idx_list = np.split(idxs,split_idxs)
     idx_list = [x[1:] for x in idx_list]
     return idx_list
@@ -818,7 +947,7 @@ def butter_highpass(highcut, sampling_period, order=5):
     import scipy.signal
     sampling_frequency = 1.0/sampling_period
     nyq = 0.5 * sampling_frequency
-    high = highcut / nyq
+    high = highcut / nyq 
     b, a = scipy.signal.butter( order, high, btype='high')
     return b, a
 
@@ -866,10 +995,17 @@ def errfunc(p,cos_mtrx,sin_mtrx,y):
 
 def update_dset(dset,key,value):
     if not(key in dset.keys()):
-        dset[key] = value
+        dset.create_dataset(key,data = value,compression="gzip", compression_opts=5)
     else:
+        print 'here'
+        print key
         del(dset[key])
-        dset[key] = value
+    try:
+        dset.create_dataset(key,data = value, compression="gzip", compression_opts=5)
+    except RuntimeError as err:
+        print err
+        print 'runtime error'
+        print key
 
 #this maps the experiment names to the code used
 #to import and process the data
@@ -899,4 +1035,13 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'step_ptch_roll':IMGExperiment4,
            'step_ptch_roll_ctrl':IMGExperiment4,
            'ASAP_pilot':IMGExperiment4,
-           'strain_tracking':IMGExperiment4}
+           'strain_tracking':IMGExperiment4,
+           'strain_tracking2':IMGExperiment4,
+           'hsv_strain':STRNExperiment,
+           'hsv_strain2':STRNExperiment,
+           'hsv_strain3':STRNExperiment,
+           'hsv_strain4':STRNExperiment,
+           'hsv_strain5':STRNExperiment,
+           'gal4_hemi_screen':ANATExperiment,
+           'cardinal_axes':IMGExperiment4}
+

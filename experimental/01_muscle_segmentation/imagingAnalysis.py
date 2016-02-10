@@ -32,7 +32,7 @@ default_rframe_data = {'a1': np.array([ 51.5848967 ,  -5.93928407]),
                        'p': np.array([ 26.66908747,  34.43488385])}
 
 stacked_muscles = tifffile.TiffFile('stacked_muscles.tiff')
-overlay = np.transpose(stacked_muscles.asarray(),(1,0,2))[:,::-1]
+overlay = np.transpose(stacked_muscles.asarray(),(1,0,2))[:,::-1].astype(np.float32)
 #tiff_file = '/volumes/FlyDataB/FlyDB/Fly0212/T2_trial1_ND_04_1ms_exposure/T2_trial1_ND_04_1ms_exposure_MMStack.ome.tif'
 
 #tiff_file_name = '/media/FlyDataB/FlyDB/Fly0267/T2_trial1_ND_04_100us_exposure_td_refstack/T2_trial1_ND_04_100us_exposure_td_refstack_MMStack.ome.tif'
@@ -292,7 +292,9 @@ class MainWindow(TemplateBaseClass):
     def loadfileTree(self):
         self.ui.fileTree.setColumnCount(1)
         items = []
-        for key,fly in zip(fly_db.keys(),fly_db.values()):
+        #for key,fly in zip(fly_db.keys(),fly_db.values()):
+        for key,fly in sorted(fly_db.items()):#zip(fly_db.keys(),fly_db.values()):
+            #print key
             try:
                 exp1 = fly['experiments'].values()[0]
                 exptype = fly['experiments'].keys()[0]
@@ -309,6 +311,8 @@ class MainWindow(TemplateBaseClass):
                             #print (img_key,np.shape(exp1['tiff_data'][img_key]))
                         else:
                             pass
+                else:
+                    print exp1.keys()
             except KeyError:
                 pass
         self.ui.fileTree.insertTopLevelItems(0,items)
@@ -316,6 +320,7 @@ class MainWindow(TemplateBaseClass):
     def loadData(self):
         import cPickle
         f = open('model_data.cpkl','rb')
+        ###f = open('/media/flyranch/ICRA_2015/model_data.cpkl','rb')
         model_data = cPickle.load(f)
         f.close()
 
@@ -362,6 +367,9 @@ class MainWindow(TemplateBaseClass):
         #print 'here'
         #print int(fnum)
         self.images = np.array(fly_db[fnum]['experiments'].values()[0]['tiff_data']['images'])
+        ### tfile = tifffile.TiffFile('/media/flyranch/ICRA_2015/110215_fly1_2_MMStack_Pos0.ome.tif')
+        ### self.images = tfile.asarray()
+
         self.maximg = np.max(self.images,axis = 0)
         self.transform_img = self.affineWarp(self.maximg)
         #self.current_fly = selection.parent().text(0)
@@ -408,7 +416,7 @@ class MainWindow(TemplateBaseClass):
         #self.frameView.setImage(self.images[0,:,:])
         self.current_frame = 0
         self.showFrame()
-        self.transformImage.setImage(self.transform_img)
+        self.transformImage.setImage(self.transform_img.astype(np.float32))
         self.ui.frameScrollBar.setMaximum(np.shape(self.images)[0])
         self.plt.autoRange()
         #set transformImage
@@ -416,8 +424,8 @@ class MainWindow(TemplateBaseClass):
 
 
     def showFrame(self):
-        img = self.gammaf(self.images[self.current_frame,:,:])
-        self.frameView.setImage(img)
+        img = self.gammaf(self.images[self.current_frame,:,:].astype(np.float32))
+        self.frameView.setImage(img.astype(np.float32))
         self.ui.frameNumber.setText(str(self.current_frame))
         self.ui.frameScrollBar.setValue(self.current_frame)
         self.tpointLine.setValue(self.current_frame)
@@ -436,9 +444,9 @@ class MainWindow(TemplateBaseClass):
         import cv2
         A = cv2.getAffineTransform(np.float32([src_p0,src_p1,src_p2]),np.float32([dst_p0,dst_p1,dst_p2]))
         output_shape = (1024, 1024)
-        self.transform_img = cv2.warpAffine(self.maximg.T,A,output_shape).T[:,::-1]
+        self.transform_img = cv2.warpAffine(self.maximg.T,A,output_shape).T[:,::-1].astype(np.float32)
 
-        display_img = (np.dstack((self.transform_img ,self.transform_img ,self.transform_img ))).astype(np.uint8)
+        display_img = np.dstack((self.transform_img ,self.transform_img ,self.transform_img ))
         display_img += overlay*0.2
         self.transformImage.setImage(display_img)
 

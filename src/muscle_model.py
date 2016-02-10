@@ -75,10 +75,10 @@ class GeometricModel(object):
         fi = open(filepath)
         model_data = cpkl.load(fi)
         fi.close()
-        model_data['e1'] = np.array([[ 170.02788104,  326.71685254],
-                             [ 380.98203222,  919.92627014]])
-        model_data['e2'] = np.array([[ 172.83333333,  332.83333333],
-                          [ 551.5       ,  164.83333333]])
+        #model_data['e1'] = np.array([[ 170.02788104,  326.71685254],
+        #                     [ 380.98203222,  919.92627014]])
+        #model_data['e2'] = np.array([[ 172.83333333,  332.83333333],
+        #                  [ 551.5       ,  164.83333333]])
         e1 = model_data['e1']
         e2 = model_data['e2']
         muscles = dict()
@@ -183,6 +183,7 @@ class ModelViewMPL(ModelView):
 
         if 'draw_frame' in kwargs.keys():
             if kwargs['draw_frame']:
+                frame_args = dict()
                 p = plot_frame['p']
                 a1 = plot_frame['a1']
                 a2 = plot_frame['a2']
