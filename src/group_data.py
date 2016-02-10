@@ -41,8 +41,11 @@ GMR74F03_swarm = flylib.NetSquadron(GMR74F03_list)
 GMR22H05_pr_list = [471,472,473,474,475,476,477,478,479,480,481,483,484,485,486] # azmuthal tuning - pitch to roll
 GMR22H05_pr_swarm = flylib.NetSquadron(GMR22H05_pr_list)
 
-GMR40D04_pr_list = [587,588,589] # azmuthal tuning - pitch to roll
+GMR40D04_pr_list = [587,588,589,600,601,602,603,604,605,606,607] # azmuthal tuning - pitch to roll
 GMR40D04_pr_swarm = flylib.NetSquadron(GMR40D04_pr_list)
+
+GMR40D04_ca_list = [615,616] # azmuthal tuning - pitch to roll
+GMR40D04_ca_swarm = flylib.NetSquadron(GMR40D04_ca_list)
 
 #GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
 #GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
@@ -91,6 +94,7 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR22H05_pr':GMR22H05_pr_swarm,
           'GMR40D04_pr':GMR40D04_pr_swarm,
           'GMR22H05_prc':GMR22H05_prc_swarm,
+          'GMR40D04_ca':GMR40D04_ca_swarm
          }
 
 exp_swarms = {'GMR22H05':GMR22H05_swarm,
@@ -116,6 +120,20 @@ ptch_roll_swarms = {
     'GMR22H05_pr':GMR22H05_pr_swarm,
     'GMR22H05_prc':GMR22H05_prc_swarm,
 }
+
+def decode_cond_cardinal(cond_data):
+    """extact the experimental condition for a trial from a 'step_yaw' type experiment"""
+    decode = {1:'progressive',
+              2:'descending',
+              3:'regressive',
+              4:'ascending',
+              5:'yaw_left',
+              6:'yaw_right'}
+    #cond_data = np.array(sigs['StimCond'])[trial]
+    val = np.around(np.mean(cond_data[cond_data>0.5]))
+    if np.isnan(val):
+        raise ValueError
+    return decode[val]
 
 def decode_cond_step_yaw(cond_data):
     """extact the experimental condition for a trial from a 'step_yaw' type experiment"""
