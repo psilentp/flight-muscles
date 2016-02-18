@@ -842,7 +842,7 @@ def idx_by_thresh(signal,thresh = 0.1):
     idxs = np.squeeze(np.argwhere(signal > thresh))
     split_idxs = np.squeeze(np.argwhere(np.diff(idxs) > 1))
     #split_idxs = [split_idxs]
-    print split_idxs
+    #print split_idxs
     idx_list = np.split(idxs,split_idxs)
     idx_list = [x[1:] for x in idx_list]
     return idx_list
