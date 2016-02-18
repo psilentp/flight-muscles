@@ -1043,5 +1043,6 @@ exp_map = {'lr_blob_expansion':HSVExperiment,
            'hsv_strain4':STRNExperiment,
            'hsv_strain5':STRNExperiment,
            'gal4_hemi_screen':ANATExperiment,
-           'cardinal_axes':IMGExperiment4}
+           'cardinal_axes':IMGExperiment4,
+           'cardinal_axes_mod1':IMGExperiment4}
 
