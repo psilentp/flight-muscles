@@ -3,7 +3,6 @@ import db_access as dba
 #fly_db = dba.get_db()
 import numpy as np
 
-
 genotype_nicknames = {'GMR10A12': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR10A12-GAL4}attP2/+',
                      'GMR10A12_GFP': '+;10XUAS-EGFP/+;P{y[+t7.7] w[+mC]=GMR10A12-GAL4}attP2/+',
                      'GMR22H05': '+;P{20XUAS-IVS-GCaMP6f}attP40/+;P{y[+t7.7] w[+mC]=GMR22H05-GAL4}attP2/+',
@@ -43,8 +42,12 @@ GMR22H05_pr_swarm = flylib.NetSquadron(GMR22H05_pr_list)
 GMR40D04_pr_list = [587,588,589,600,601,602,603,604,605,606,607] # azmuthal tuning - pitch to roll
 GMR40D04_pr_swarm = flylib.NetSquadron(GMR40D04_pr_list)
 
-GMR40D04_ca_list = [615,616] # azmuthal tuning - pitch to roll
+#GMR40D04_ca_list = [616,617,618,619,620,621,622,623,624] # tuning to rotational and translational motion around cardinal axes
+GMR40D04_ca_list = [616,617,618,619,620,621,622,624,625,626,627,631] 
 GMR40D04_ca_swarm = flylib.NetSquadron(GMR40D04_ca_list)
+
+GMR40D04_ca_mod1_list = [632,633,634,635] 
+GMR40D04_ca_mod1_swarm = flylib.NetSquadron(GMR40D04_ca_mod1_list)
 
 #GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
 #GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
@@ -75,7 +78,6 @@ GMR75B06_GFP_swarm = flylib.NetSquadron(GMR75B06_GFP_list)
 GMR39E01_GFP_list = [503,504,505,506]
 GMR39E01_GFP_swarm = flylib.NetSquadron(GMR39E01_GFP_list)
 
-
 swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR39E01':GMR39E01_swarm,
           'GMR31E10':GMR31E10_swarm,
@@ -93,7 +95,8 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR22H05_pr':GMR22H05_pr_swarm,
           'GMR40D04_pr':GMR40D04_pr_swarm,
           'GMR22H05_prc':GMR22H05_prc_swarm,
-          'GMR40D04_ca':GMR40D04_ca_swarm
+          'GMR40D04_ca':GMR40D04_ca_swarm,
+          'GMR40D04_ca_mod1':GMR40D04_ca_mod1_swarm
          }
 
 exp_swarms = {'GMR22H05':GMR22H05_swarm,
@@ -121,6 +124,26 @@ ptch_roll_swarms = {
 }
 
 
+def decode_cond_cardinal_mod1(cond_data):
+    """extact the experimental condition for a trial from a 'caridinal_axes' type experiment"""
+    from scipy.io import loadmat
+    from parameters import params
+    import sys
+    import re
+    
+    rootpath = params['platform_paths'][sys.platform]
+    SDMat = loadmat('/media/analysis-code/flight-muscles/experimental/00_squadrons/22_cardinal_axes/design/SD.mat')
+    pnames = [pname[0] for pname in SDMat['SD']['pattern'][0][0]['pattNames'][0][0][0]]
+    volts_per_pattern = 10.0/(len(pnames)-1) # minus 1 because of stripe pattern
+    pattern_data = [{'index':i+1,'condition_voltage':i*volts_per_pattern,'pattern_name':pname} for 
+                i,pname in enumerate(pnames)] 
+    val = np.int(np.around(np.mean(cond_data[cond_data>0.2])/volts_per_pattern))
+    if np.isnan(val):
+        raise ValueError
+    parse = lambda pname:re.sub(r'Pattern_','',re.sub(r'_v._rep..mat','',pname))
+    run_pat = pattern_data[val]['pattern_name']
+    return parse(run_pat)
+
 def decode_cond_cardinal(cond_data):
     """extact the experimental condition for a trial from a 'caridinal_axes' type experiment"""
     from scipy.io import loadmat
@@ -134,11 +157,15 @@ def decode_cond_cardinal(cond_data):
     volts_per_pattern = 10.0/(len(pnames)-1) # minus 1 because of stripe pattern
     pattern_data = [{'index':i,'condition_voltage':i*volts_per_pattern,'pattern_name':pname} for 
                 i,pname in enumerate(pnames)] 
-    val = np.int(np.around(np.mean(cond_data[cond_data>0.05])/volts_per_pattern))
+    val = np.int(np.around(np.mean(cond_data[cond_data>0.2])/volts_per_pattern))
     if np.isnan(val):
         raise ValueError
     parse = lambda pname:re.sub(r'Pattern_','',re.sub(r'_v._rep..mat','',pname))
-    return parse(pattern_data[val]['pattern_name'])
+    if not(val == 0):
+        run_pat = pattern_data[val-1]['pattern_name']
+    else:
+        run_pat = 'error_trial'
+    return parse(run_pat)
 
 def decode_cond_step_yaw(cond_data):
     """extact the experimental condition for a trial from a 'step_yaw' type experiment"""
@@ -169,15 +196,14 @@ def decode_cond_pitch_roll_ctrl(cond_data):
         raise ValueError
     return decode[val]
 
-
 decode_map = {'step_yaw_mod1':decode_cond_step_yaw,
               'step_ptch_roll':decode_cond_pitch_roll,
               'step_ptch_roll_ctrl':decode_cond_pitch_roll_ctrl,
-              'cardinal_axes':decode_cond_cardinal}
+              'cardinal_axes':decode_cond_cardinal,
+              'cardinal_axes_mod1':decode_cond_cardinal_mod1}
 
 #GMR22H05_pr_swarm.get_cond = get_cond_pitch_roll
 #GMR22H05_pr_swarm.decode = decode_pitch_roll
-
 
 def get_update_list(file_name ='nnls_fits_no_bk_dF_F.cpkl', 
                      swarms = swarms,
