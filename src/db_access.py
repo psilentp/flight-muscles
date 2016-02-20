@@ -26,7 +26,7 @@ class FlyDB(dict):
     def close(self):
         for key in self.keys():
             self[key].close()
-            print self[key]
+            #print self[key]
 
     def flush(self):
         for key in self.keys():
@@ -5635,7 +5635,6 @@ class InitDB(FlySwitch):
         fly_record['experiments'].create_group('cardinal_axes_mod1')
         fly_record['experiments']['cardinal_axes_mod1']['axon_file_names'] = ['16213002.abf']
         fly_record['experiments']['cardinal_axes_mod1']['tiff_file_names'] = ['/T2_trial1_cardinal_ax/T2_trial1_cardinal_ax_MMStack.ome.tif']
-    
 
     def initfly_633(self,flynum):
         fly_db = self.fly_db
@@ -5654,7 +5653,6 @@ class InitDB(FlySwitch):
         fly_record['experiments'].create_group('cardinal_axes_mod1')
         fly_record['experiments']['cardinal_axes_mod1']['axon_file_names'] = ['16216001.abf']
         fly_record['experiments']['cardinal_axes_mod1']['tiff_file_names'] = ['/T2_trial1_cardinal_ax/T2_trial1_cardinal_ax_MMStack.ome.tif']
-    
 
     def initfly_635(self,flynum):
         fly_db = self.fly_db
@@ -5664,5 +5662,3 @@ class InitDB(FlySwitch):
         fly_record['experiments'].create_group('cardinal_axes_mod1')
         fly_record['experiments']['cardinal_axes_mod1']['axon_file_names'] = ['16216005.abf']
         fly_record['experiments']['cardinal_axes_mod1']['tiff_file_names'] = ['/T2_trial1_cardinal_ax/T2_trial1_cardinal_ax_MMStack.ome.tif']
-    
-
