@@ -1,0 +1,1 @@
+Explore rotation arond axes going from roll to yaw.
