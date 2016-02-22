@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 from analog_out import *
-test_code = True # loop through without actually running trials
+test_code = False # loop through without actually running trials
 print not(test_code)
 #save the info needed to recover the vesion of this file from the git repo
 git_SHA = os.popen('git rev-parse HEAD').read()
