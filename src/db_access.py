@@ -5662,3 +5662,33 @@ class InitDB(FlySwitch):
         fly_record['experiments'].create_group('cardinal_axes_mod1')
         fly_record['experiments']['cardinal_axes_mod1']['axon_file_names'] = ['16216005.abf']
         fly_record['experiments']['cardinal_axes_mod1']['tiff_file_names'] = ['/T2_trial1_cardinal_ax/T2_trial1_cardinal_ax_MMStack.ome.tif']
+
+    def initfly_638(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('roll_yaw')
+        fly_record['experiments']['roll_yaw']['axon_file_names'] = ['16221001.abf']
+        fly_record['experiments']['roll_yaw']['tiff_file_names'] = ['/T2_trial1_roll_yaw/T2_trial1_roll_yaw_MMStack.ome.tif']
+    
+
+    def initfly_639(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('roll_yaw')
+        fly_record['experiments']['roll_yaw']['axon_file_names'] = ['16221002.abf']
+        fly_record['experiments']['roll_yaw']['tiff_file_names'] = ['/T2_trial1_roll_yaw/T2_trial1_roll_yaw_MMStack.ome.tif']
+    
+
+    def initfly_640(self,flynum):
+        fly_db = self.fly_db
+        fly_db.create_group(flynum)
+        fly_record =fly_db[flynum]
+        fly_record.create_group('experiments')
+        fly_record['experiments'].create_group('roll_yaw')
+        fly_record['experiments']['roll_yaw']['axon_file_names'] = ['16221003.abf']
+        fly_record['experiments']['roll_yaw']['tiff_file_names'] = ['/T2_trial1_roll_yaw/T2_trial1_roll_yaw_MMStack.ome.tif']
+    
