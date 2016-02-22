@@ -3,6 +3,9 @@ import time
 import numpy as np
 import os
 
+git_SHA = os.popen('git rev-parse HEAD').read()
+script_path = os.path.dirname(os.path.realpath(sys.argv[0]))
+
 from analog_out import *
 
 leds = pc.LEDPanels()
@@ -109,6 +112,8 @@ analog.setVoltage(phase_signal_ao, 4)
 led_closed_loop(cl_duration = 90.0)
 
 
+executed_trials = list()
+
 #condition_list = np.random.permutation(trials)
 count = 0
 for rep in [0,1]:
@@ -117,6 +122,7 @@ for rep in [0,1]:
         pattern_name = 'step_%s_v%s_rep%s'%(condition[0],condition[1],condition[2])
         print ('running pattern:%s'%(pattern_name))
         print count
+        executed_trials.append(condition)
         count += 1
         pattern_id = pattern_data[pattern_name]['pattern_index']
         condition_voltage = pattern_data[pattern_name]['condition_voltage']
@@ -137,6 +143,16 @@ led_closed_loop(cl_duration = 5.0)
 #f = open('E:\\FlyDB\\'+newdir + '\\run_data.txt','wt')
 #f.writelines(['step_yaw_%s_v%s_rep%s'%(condition[0],condition[1],condition[2]) + '\n' for condition in condition_list])
 #f.close()
+
+import cPickle 
+f = open('trial_data.cpkl','wb')
+cPickle.dump(executed_trials,f)
+f.close()
+
+import cPickle 
+f = open('experiment_script.cpkl','wb')
+cPickle.dump({'script_path':script_path,'git_SHA':git_SHA},f)
+f.close()
 
 try:
     analog.closePhidget()

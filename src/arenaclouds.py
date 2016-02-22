@@ -193,13 +193,13 @@ def make_control_pattern_equator(equator_poles,
     for i in range(frames_per_cycle):
         for ptidx in range(len(xyzp_list)):
         #,orientation_vector in zip(xyzp_list,orientation_vectors):
-        xyzp_list[ptidx] = integrate_frame(xyzp_list[ptidx],
-                           rotation_vect = orientation_vectors[ptidx],
-                           translation_vect = np.array([0,0,0]),
-                           frame_period = 1/frame_rate)
-        proj = arena_project(np.hstack(xyzp_list))
-        img = digitize_points(*proj,display_shape = display_shape)
-        imgs = concatenate((imgs, img[:,:,newaxis]),axis = 2)
+          xyzp_list[ptidx] = integrate_frame(xyzp_list[ptidx],
+                             rotation_vect = orientation_vectors[ptidx],
+                             translation_vect = np.array([0,0,0]),
+                             frame_period = 1/frame_rate)
+          proj = arena_project(np.hstack(xyzp_list))
+          img = digitize_points(*proj,display_shape = display_shape)
+          imgs = concatenate((imgs, img[:,:,newaxis]),axis = 2)
     #from scipy import io
     return imgs
 
@@ -265,14 +265,19 @@ def make_spin_pattern_coromeridian(coromeridian_pole,
         imgs = concatenate((imgs, img[:,:,newaxis]),axis = 2)
     from scipy import io
     return imgs
-    
-def make_spin_pattern_sagimeridian(sagimeridian_pole,angular_velocity,frame_rate):
-    #spin the world around a pole on the mid-sagital meridian.
+
+def make_spin_pattern_sagimeridian(sagimeridian_pole,
+                                   angular_velocity,
+                                   frame_rate,
+                                   max_sensory_radius = 2,
+                                   star_density = 50):
+    #Spin the world around a pole around a sagital maridian pole
     from scipy.misc import imresize
     unit_vector = np.array([1.,0.,0.])
     zp_offset = (2*pi)/96*4
     orientation_vector = dot(tran.rotation_matrix(sagimeridian_pole,array([0,1,0]))[:3,:3],unit_vector)
     orientation_vector = dot(tran.rotation_matrix(zp_offset,array([0,0,1]))[:3,:3],orientation_vector)*angular_velocity
+    xyz = make_universe(star_density = star_density,max_sensory_radius = max_sensory_radius)
     xyzp = integrate_frame(xyz,
                        rotation_vect = orientation_vector,
                        translation_vect = np.array([0,0,0]),
@@ -290,7 +295,8 @@ def make_spin_pattern_sagimeridian(sagimeridian_pole,angular_velocity,frame_rate
         img = digitize_points(*proj,display_shape = display_shape)
         imgs = concatenate((imgs, img[:,:,newaxis]),axis = 2)
     from scipy import io
-    io.savemat('sagimeridian_%03d'%(around(rad2deg(sagimeridian_pole))),{'imgs':imgs})
+    return imgs
+
 
 def adjust_depth(imgs,bit_depth=3):
     maxbit = (2**bit_depth)-1

@@ -4,7 +4,9 @@ import numpy as np
 import os
 
 from analog_out import *
-
+test_code = False # loop through without actually running trials
+print not(test_code)
+#save the info needed to recover the vesion of this file from the git repo
 git_SHA = os.popen('git rev-parse HEAD').read()
 script_path = os.path.dirname(os.path.realpath(sys.argv[0]))
 
@@ -25,11 +27,7 @@ pattern_data = [{'index':i+1,'condition_voltage':i*volts_per_pattern,'pattern_na
 if pattern_data[0]['pattern_name'] == 'Pattern_fixation_4_wide_4X12_Pan':
     pattern_data[0]['condition_voltage'] = -1
 
-
-
-#for p in pattern_data:
-#    print p
-
+# functions that will execute a trial
 def led_closed_loop(cl_duration = 3.0):
     analog.setVoltage(trial_condition_ao, -1.0)
     leds.panel_com('stop');
@@ -48,8 +46,6 @@ def led_open_loop(pattern_id = 0,
                   condition_voltage = 0):
 	#static patern
     analog.setVoltage(trial_condition_ao, 0)
-    #time.sleep(0.001)
-    #analog.setVoltage(1, 1) #protocol sync
     leds.panel_com('stop');
     leds.panel_com('set_pattern_id',pattern_id)
     leds.panel_com('set_mode',0, 0)#open loop on x, open loop on y
@@ -69,8 +65,6 @@ def led_open_loop(pattern_id = 0,
 
     #static patern
     analog.setVoltage(trial_condition_ao, 0)
-    #time.sleep(0.001)
-    #analog.setVoltage(0, 1) #protocol sync
     leds.panel_com('stop');
     leds.panel_com('set_mode',0, 0)#closed loop on x, open loop on y
     leds.panel_com('send_gain_bias',0,0,0,0)
@@ -78,19 +72,32 @@ def led_open_loop(pattern_id = 0,
     leds.panel_com('start')
     time.sleep(static_duration)
     
+nreps = 2
+setup_closed_loop_duration = 90
+static_duration = 7
+motion_duration = 3
+cl_duration = 5.0
+imaging_frame_duration = 0.021
+
+trial_duration = (cl_duration+static_duration+motion_duration+static_duration)
+total_duration = setup_closed_loop_duration + nreps*len(pattern_data[1:])*trial_duration
+
+print('total sequence duration = %ss (%smin)'%(total_duration,total_duration/60.0))
+print('allocate more than %s frames'%(int(total_duration/imaging_frame_duration)))
 
 #start with closed loop stripe fixation
 analog.setVoltage(trial_condition_ao, -1)
 analog.setVoltage(phase_signal_ao, 4)
-led_closed_loop(cl_duration = 1.0)
-led_closed_loop(cl_duration = 90.0)
+if not(test_code):
+    led_closed_loop(cl_duration = 1.0)
+    led_closed_loop(cl_duration = setup_closed_loop_duration)
 
-
-#condition_list = np.random.permutation(trials)
+#save a list of the trials that are run
 executed_trials = list()
-
 count = 0
-for rep in [0,1]:
+
+# run through the randomized trials
+for rep in range(0,nreps):
     condition_list = np.random.permutation(pattern_data[1:])
     for condition in condition_list:
         pattern_name = condition['pattern_name']
@@ -100,18 +107,17 @@ for rep in [0,1]:
         pattern_id = condition['index']
         condition_voltage = condition['condition_voltage']
         executed_trials.append(condition)
-        led_closed_loop(cl_duration = 5.0)
-        led_open_loop(pattern_id = pattern_id,
-                      function_id = 1,
-                      static_duration = 7,
-                      motion_duration = 3,
-                      condition_voltage = condition_voltage)
+        if not(test_code):
+            led_closed_loop(cl_duration = 5.0)
+            led_open_loop(pattern_id = pattern_id,
+                          function_id = 1,
+                          static_duration = static_duration,
+                          motion_duration = motion_duration,
+                          condition_voltage = condition_voltage)
 
-led_closed_loop(cl_duration = 5.0)
-led_closed_loop(cl_duration = 5.0)
-#f = open('E:\\FlyDB\\'+newdir + '\\run_data.txt','wt')
-#f.writelines(['step_yaw_%s_v%s_rep%s'%(condition[0],condition[1],condition[2]) + '\n' for condition in condition_list])
-#f.close()
+if not(test_code):
+    led_closed_loop(cl_duration = 5.0)
+    led_closed_loop(cl_duration = 5.0)
 
 import cPickle 
 f = open('trial_data.cpkl','wb')
@@ -129,13 +135,3 @@ except PhidgetException as e:
     print("Phidget Exception %i: %s" % (e.code, e.details))
     print("Exiting....")
     exit(1)
-
-#load the patterns on the disk in this order
-"""
-['step_yaw_90_v1_rep0',
- 'step_yaw_90_v1_rep1',
- 'step_yaw_90_v1_rep2',
- 'step_yaw_90_v1_rep3',
- 'step_yaw_90_v1_rep4',
- ]
-"""
