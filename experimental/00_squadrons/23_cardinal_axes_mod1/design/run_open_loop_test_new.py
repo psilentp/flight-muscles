@@ -5,6 +5,9 @@ import os
 
 from analog_out import *
 
+git_SHA = os.popen('git rev-parse HEAD').read()
+script_path = os.path.dirname(os.path.realpath(sys.argv[0]))
+
 leds = pc.LEDPanels()
 fixation_pattern = 1
 trial_condition_ao = 0
@@ -21,6 +24,8 @@ pattern_data = [{'index':i+1,'condition_voltage':i*volts_per_pattern,'pattern_na
 
 if pattern_data[0]['pattern_name'] == 'Pattern_fixation_4_wide_4X12_Pan':
     pattern_data[0]['condition_voltage'] = -1
+
+
 
 #for p in pattern_data:
 #    print p
@@ -111,6 +116,11 @@ led_closed_loop(cl_duration = 5.0)
 import cPickle 
 f = open('trial_data.cpkl','wb')
 cPickle.dump(executed_trials,f)
+f.close()
+
+import cPickle 
+f = open('experiment_script.cpkl','wb')
+cPickle.dump({'script_path':script_path,'git_SHA':git_SHA},f)
 f.close()
 
 try:
