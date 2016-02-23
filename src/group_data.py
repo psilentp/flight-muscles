@@ -100,7 +100,7 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR22H05_prc':GMR22H05_prc_swarm,
           'GMR40D04_ca':GMR40D04_ca_swarm,
           'GMR40D04_ca_mod1':GMR40D04_ca_mod1_swarm,
-          'GRM40D04_yr':GMR40D04_yr_swarm
+          'GMR40D04_yr':GMR40D04_yr_swarm
          }
 
 exp_swarms = {'GMR22H05':GMR22H05_swarm,
@@ -127,16 +127,36 @@ ptch_roll_swarms = {
     'GMR22H05_prc':GMR22H05_prc_swarm,
 }
 
-
-def decode_cond_cardinal_mod1(cond_data):
-    """extact the experimental condition for a trial from a 'caridinal_axes' type experiment"""
+def decode_cond_roll_yaw(cond_data):
+    """extract the experimental condition for a trial from a 'caridinal_roll_yaw' type experiment"""
     from scipy.io import loadmat
     from parameters import params
     import sys
     import re
     
     rootpath = params['platform_paths'][sys.platform]
-    SDMat = loadmat('/media/analysis-code/flight-muscles/experimental/00_squadrons/22_cardinal_axes/design/SD.mat')
+    SDMat = loadmat('/media/analysis-code/flight-muscles/experimental/00_squadrons/24_roll_yaw/design/SD.mat')
+    pnames = [pname[0] for pname in SDMat['SD']['pattern'][0][0]['pattNames'][0][0][0]]
+    volts_per_pattern = 10.0/(len(pnames)-1) # minus 1 because of stripe pattern
+    pattern_data = [{'index':i+1,'condition_voltage':i*volts_per_pattern,'pattern_name':pname} for 
+                i,pname in enumerate(pnames)] 
+    val = np.int(np.around(np.mean(cond_data[cond_data>0.2])/volts_per_pattern))
+    if np.isnan(val):
+        raise ValueError
+    parse = lambda pname:re.sub(r'Pattern_','',re.sub(r'_v._rep..mat','',pname))
+    run_pat = pattern_data[val]['pattern_name']
+    return parse(run_pat)
+
+def decode_cond_cardinal_mod1(cond_data):
+    """extract the experimental condition for a trial from a 'caridinal_axes' type experiment with correct indexing 
+    in experimental script"""
+    from scipy.io import loadmat
+    from parameters import params
+    import sys
+    import re
+    
+    rootpath = params['platform_paths'][sys.platform]
+    SDMat = loadmat('/media/analysis-code/flight-muscles/experimental/00_squadrons/23_cardinal_axes_mod1/design/SD.mat')
     pnames = [pname[0] for pname in SDMat['SD']['pattern'][0][0]['pattNames'][0][0][0]]
     volts_per_pattern = 10.0/(len(pnames)-1) # minus 1 because of stripe pattern
     pattern_data = [{'index':i+1,'condition_voltage':i*volts_per_pattern,'pattern_name':pname} for 
@@ -149,7 +169,8 @@ def decode_cond_cardinal_mod1(cond_data):
     return parse(run_pat)
 
 def decode_cond_cardinal(cond_data):
-    """extact the experimental condition for a trial from a 'caridinal_axes' type experiment"""
+    """extract the experimental condition for a trial from a 'caridinal_axes' type experiment - 
+    correcting for matlab indexing error in experimental script"""
     from scipy.io import loadmat
     from parameters import params
     import sys
@@ -172,7 +193,7 @@ def decode_cond_cardinal(cond_data):
     return parse(run_pat)
 
 def decode_cond_step_yaw(cond_data):
-    """extact the experimental condition for a trial from a 'step_yaw' type experiment"""
+    """extract the experimental condition for a trial from a 'step_yaw' type experiment"""
     decode = {1:'progressive',2:'descending',3:'regressive',4:'ascending',5:'yaw_left',6:'yaw_right'}
     #cond_data = np.array(sigs['StimCond'])[trial]
     val = np.around(np.mean(cond_data[cond_data>0.5]))
@@ -181,7 +202,7 @@ def decode_cond_step_yaw(cond_data):
     return decode[val]
 
 def decode_cond_pitch_roll(cond_data):
-    """extact the experimental condition for a trial from a 'pitch_roll' type experiment"""
+    """extract the experimental condition for a trial from a 'pitch_roll' type experiment"""
     decode = dict()
     [decode.update({i:'pth_roll_%s'%p}) for i,p in enumerate(range(0,360,30))]
     val = np.around(np.mean((cond_data[cond_data>0.5]-1)*360/(30*9)))
@@ -190,7 +211,7 @@ def decode_cond_pitch_roll(cond_data):
     return decode[val]
 
 def decode_cond_pitch_roll_ctrl(cond_data):
-    """extact the experimental condition for a trial from a 'pitch_roll_ctrl' type experiment"""
+    """extract the experimental condition for a trial from a 'pitch_roll_ctrl' type experiment"""
     decode = dict()
     [decode.update({i:'pth_roll_%s'%p}) for i,p in enumerate(range(0,360,30))]
     decode.update({12:'pth_roll_multipole'})
@@ -204,7 +225,8 @@ decode_map = {'step_yaw_mod1':decode_cond_step_yaw,
               'step_ptch_roll':decode_cond_pitch_roll,
               'step_ptch_roll_ctrl':decode_cond_pitch_roll_ctrl,
               'cardinal_axes':decode_cond_cardinal,
-              'cardinal_axes_mod1':decode_cond_cardinal_mod1}
+              'cardinal_axes_mod1':decode_cond_cardinal_mod1,
+              'roll_yaw':decode_cond_roll_yaw}
 
 #GMR22H05_pr_swarm.get_cond = get_cond_pitch_roll
 #GMR22H05_pr_swarm.decode = decode_pitch_roll
