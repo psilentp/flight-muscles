@@ -23,8 +23,8 @@ xtick_numbers = [5 for j in range(cols)]
 
 figsize = (10,5)
 
-col_epochs = [(2,3) for i in range(cols)]
-row_epochs = [None for j in range(rows)]
+col_epochs = None
+row_epochs = None
 
 col_labels_bottom = ['col\nlbl\n' + str(i) for i in range(cols)]
 row_labels_left = ['row\nlbl\n' + str(j) for j in range(rows)]
@@ -38,7 +38,7 @@ show_spines_right = [True for j in range(rows)]
 show_spines_top = False
 show_spines_bottom = [False for j in range(cols)]
 show_spines_bottom[-1] = True
-plot_panel_data = lambda row,col: (row,col)
+plot_panel_function = lambda row,col: (row,col)
 
 def plot_data_matrix(cols = cols,
                      rows = rows,
@@ -59,6 +59,9 @@ def plot_data_matrix(cols = cols,
                      col_epochs = col_epochs,
                      row_epochs = row_epochs,
                      
+                     col_epochs_kwargs = {'alpha':0.2,'color':'b','lw':None},
+                     row_epochs_kwargs = {'alpha':0.2,'color':'b','lw':None},
+                     
                      col_labels_bottom = col_labels_bottom,
                      row_labels_left = row_labels_left,
                      
@@ -69,11 +72,23 @@ def plot_data_matrix(cols = cols,
                      gs_right = 0.95,
                      gs_wspace = 0.1,
                      gs_hspace = 0.5,
-                     plot_panel_data = plot_panel_data,
+                     plot_panel_function = plot_panel_function,
                      show_spines_left = show_spines_left,
                      show_spines_right = show_spines_right,
                      show_spines_top = show_spines_top,
                      show_spines_bottom = show_spines_bottom):
+    
+    if not(type(row_epochs) == list):
+        row_epochs = [row_epoch for row_epoch in row_epochs]
+        
+    if not(type(col_epochs) == list):
+        col_epochs = [col_epoch for col_epoch in col_epochs]
+        
+    if type(col_epochs_kwargs) == dict:
+        col_epochs_kwargs = [col_epochs_kwargs for i in range(cols)]
+    
+    if type(row_epochs_kwargs) == dict:
+        row_epochs_kwargs = [row_epochs_kwargs for j in range(rows)]
     
     if show_spines_left is True:
         show_spines_left = [True for j in range(rows)]
@@ -95,11 +110,10 @@ def plot_data_matrix(cols = cols,
     elif show_spines_bottom is False:
         show_spines_bottom = [False for j in range(cols)]
 
-
     fig = figure(figsize = figsize)                     
     from matplotlib import gridspec
+    # set up the GridSpec
     gs = gridspec.GridSpec(rows,cols)
-    #gs.update(left=0.05, right=0.95, wspace=0.05,hspace = 0.1)
     
     col_epoch_panels = [fig.add_subplot(gs[:,i]) for i in range(cols)]
     row_epoch_panels = [fig.add_subplot(gs[j,:]) for j in range(rows)]
@@ -110,18 +124,18 @@ def plot_data_matrix(cols = cols,
     for j in range(rows):
         for i in range(cols):
             sca(ax_grid[j][i])
-            plot_panel_data(i,j)
+            plot_panel_function(i,j)
             
-    for panel,row_epoch in zip(row_epoch_panels,row_epochs):
+    for panel,row_epoch,row_epochs_kwarg in zip(row_epoch_panels,row_epochs,row_epochs_kwargs):
         sca(panel)
         if row_epoch:
-            axhspan(*row_epoch,alpha = 0.5,lw = 0)
+            axhspan(*row_epoch,**row_epochs_kwarg)
         kill_spines()
 
-    for panel,col_epoch in zip(col_epoch_panels,col_epochs):
+    for panel,col_epoch,col_epochs_kwarg in zip(col_epoch_panels,col_epochs,col_epochs_kwargs):
         sca(panel)
         if col_epoch:
-            axvspan(*col_epoch,alpha = 0.5,lw = 0)
+            axvspan(*col_epoch,**col_epochs_kwarg)
         kill_spines()
     
     #set row spines
