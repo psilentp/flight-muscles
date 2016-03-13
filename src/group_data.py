@@ -55,8 +55,11 @@ GMR40D04_yr_swarm = flylib.NetSquadron(GMR40D04_yr_list)
 #GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
 #GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
 GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498,499,500,501,502] # azmuthal tuning - pitch to roll as well as motion control stimuli
-
 GMR22H05_prc_swarm = flylib.NetSquadron(GMR22H05_prc_list)
+
+GMR22H05_yr_list = [656,657,658]
+GMR22H05_yr_swarm = flylib.NetSquadron(GMR22H05_yr_list)
+
 ###################
 ###################
 
@@ -100,7 +103,8 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR22H05_prc':GMR22H05_prc_swarm,
           'GMR40D04_ca':GMR40D04_ca_swarm,
           'GMR40D04_ca_mod1':GMR40D04_ca_mod1_swarm,
-          'GMR40D04_yr':GMR40D04_yr_swarm
+          'GMR40D04_yr':GMR40D04_yr_swarm,
+          'GMR22H05_yr':GMR22H05_yr_swarm,
          }
 
 exp_swarms = {'GMR22H05':GMR22H05_swarm,

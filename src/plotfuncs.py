@@ -78,11 +78,12 @@ def plot_data_matrix(cols = cols,
                      show_spines_top = show_spines_top,
                      show_spines_bottom = show_spines_bottom):
     
+    
     if not(type(row_epochs) == list):
-        row_epochs = [row_epoch for row_epoch in row_epochs]
+        row_epochs = [row_epochs for j in range(rows)]
         
     if not(type(col_epochs) == list):
-        col_epochs = [col_epoch for col_epoch in col_epochs]
+        col_epochs = [col_epochs for i in range(cols)]
         
     if type(col_epochs_kwargs) == dict:
         col_epochs_kwargs = [col_epochs_kwargs for i in range(cols)]
@@ -97,7 +98,7 @@ def plot_data_matrix(cols = cols,
     
     if show_spines_right is True:
         show_spines_right = [True for j in range(rows)]
-    elif show_spines_left is False:
+    elif show_spines_right is False:
         show_spines_right = [False for j in range(rows)]
         
     if show_spines_top is True:
@@ -117,6 +118,9 @@ def plot_data_matrix(cols = cols,
     
     col_epoch_panels = [fig.add_subplot(gs[:,i]) for i in range(cols)]
     row_epoch_panels = [fig.add_subplot(gs[j,:]) for j in range(rows)]
+    
+    [col_pan.patch.set_alpha(0.0) for col_pan in col_epoch_panels]
+    [row_pan.patch.set_alpha(0.0) for row_pan in row_epoch_panels]
                      
     ax_grid = [[fig.add_subplot(gs[j,i],sharex = col_epoch_panels[i],
                                         sharey = row_epoch_panels[j]) for i in range(cols)] for j in range(rows)]
@@ -124,6 +128,7 @@ def plot_data_matrix(cols = cols,
     for j in range(rows):
         for i in range(cols):
             sca(ax_grid[j][i])
+            gca().patch.set_alpha(0.0)
             plot_panel_function(i,j)
             
     for panel,row_epoch,row_epochs_kwarg in zip(row_epoch_panels,row_epochs,row_epochs_kwargs):
@@ -203,6 +208,7 @@ def plot_data_matrix(cols = cols,
     #gs.update(left=gs_left, right=gs_right, wspace=gs_wspace,hspace = gs_hspace)
     tight_layout()
     draw()
+    return ax_grid,row_epoch_panels,col_epoch_panels
     
 if __name__ == '__main__':
     plot_data_matrix()
