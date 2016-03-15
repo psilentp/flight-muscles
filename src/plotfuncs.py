@@ -157,9 +157,12 @@ def plot_data_matrix(cols = cols,
             [y.set_visible(False) for y in gca().get_yticklines()[1::2]]
             
     for row,ybound,yticknum,show_spine in zip(ax_grid,ybounds,ytick_numbers,show_spines_right):
-        sca(row[-1])
-        gca().set_ybound(*ybound)
+        #gca().set_ybound(*ybound)
         if show_spine:
+            sca(row[-1])
+            row[-1] = [row[-1],twinx()]
+            sca(row[-1][1])
+            kill_spines()
             gca().spines['right'].set_visible(True)
             gca().spines['right'].set_position(('outward',10))
             plt.tick_params(axis='y', which='both', labelleft='off', labelright='on')
@@ -173,13 +176,15 @@ def plot_data_matrix(cols = cols,
             gca().set_ylabel(row_label)
     for row,row_label in zip(ax_grid,row_labels_right):
         if row_label:
-            sca(row[-1])
+            sca(row[-1][1])
             gca().yaxis.set_label_position("right")
             gca().set_ylabel(row_label,rotation = -90,va = 'bottom')
     
     #set col spines
     for panel,xbound,xticknum,show_spine in zip(ax_grid[-1],xbounds,xtick_numbers,show_spines_bottom):
-        sca(panel)
+        if type(panel) == list:
+            panel = panel[0]
+        sca(panel)    
         gca().set_xbound(*xbound)
         if show_spine:
             gca().spines['bottom'].set_visible(True)
@@ -188,6 +193,8 @@ def plot_data_matrix(cols = cols,
             [x.set_visible(False) for x in gca().get_xticklines()[1::2]]
             
     for panel,xbound,xticknum,show_spine in zip(ax_grid[0],xbounds,xtick_numbers,show_spines_top):
+        if type(panel) == list:
+            panel = panel[0]
         sca(panel)
         gca().set_xbound(*xbound)
         if show_spine:
@@ -197,16 +204,20 @@ def plot_data_matrix(cols = cols,
             [x.set_visible(False) for x in gca().get_xticklines()[::2]]
         
     for panel,col_label in zip(ax_grid[-1],col_labels_bottom):
+        if type(panel) == list:
+            panel = panel[0]
         if col_label:
             sca(panel)
             gca().set_xlabel(col_label)
     for panel,col_label in zip(ax_grid[0],col_labels_top):
+        if type(panel) == list:
+            panel = panel[0]
         if col_label:
             sca(panel)
             gca().set_title(col_label)
         
     #gs.update(left=gs_left, right=gs_right, wspace=gs_wspace,hspace = gs_hspace)
-    tight_layout()
+    gs.tight_layout(fig,h_pad=0.3,w_pad = 0.3)
     draw()
     return ax_grid,row_epoch_panels,col_epoch_panels
     
