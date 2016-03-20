@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from pylab import *
 import numpy as np
 
@@ -53,8 +55,8 @@ def plot_data_matrix(cols = cols,
                      ybounds = ybounds,
                      xbounds = xbounds,
                      
-                     xtick_numbers = xtick_numbers,
-                     ytick_numbers = ytick_numbers,
+                     xtick_numbers = 3,
+                     ytick_numbers = 3,
                      
                      col_epochs = col_epochs,
                      row_epochs = row_epochs,
@@ -62,23 +64,46 @@ def plot_data_matrix(cols = cols,
                      col_epochs_kwargs = {'alpha':0.2,'color':'b','lw':None},
                      row_epochs_kwargs = {'alpha':0.2,'color':'b','lw':None},
                      
-                     col_labels_bottom = col_labels_bottom,
-                     row_labels_left = row_labels_left,
+                     col_labels_bottom = 'no_lbl',
+                     row_labels_left = 'no_lbl',
                      
-                     col_labels_top = col_labels_top,
-                     row_labels_right = row_labels_right,
+                     col_labels_top = 'no_lbl',
+                     row_labels_right = 'no_lbl',
                      
                      gs_left = 0.05,
                      gs_right = 0.95,
                      gs_wspace = 0.1,
                      gs_hspace = 0.5,
                      plot_panel_function = plot_panel_function,
-                     show_spines_left = show_spines_left,
-                     show_spines_right = show_spines_right,
-                     show_spines_top = show_spines_top,
-                     show_spines_bottom = show_spines_bottom):
+                     show_spines_left = True,
+                     show_spines_right = True,
+                     show_spines_top = True,
+                     show_spines_bottom = True):
     
+    if not(type(ytick_numbers) == list):
+        ytick_numbers = [ytick_numbers for j in range(rows)]
     
+    if not(type(xtick_numbers) == list):
+        xtick_numbers = [xtick_numbers for j in range(cols)]
+    
+    if not(type(xbounds) == list):
+        xbounds = [xbounds for j in range(cols)]
+        
+    if not(type(ybounds) == list):
+        ybounds = [ybounds for i in range(rows)]
+        
+    if not(type(row_labels_left) == list):
+        row_labels_left = [row_labels_left for j in range(rows)]
+        
+    if not(type(row_labels_right) == list):
+        row_labels_right = [row_labels_right for j in range(rows)]
+        
+    if not(type(col_labels_top) == list):
+        col_labels_top = [col_labels_top for i in range(cols)]
+    
+    if not(type(col_labels_bottom) == list):
+        col_labels_bottom = [col_labels_bottom for i in range(cols)]
+        
     if not(type(row_epochs) == list):
         row_epochs = [row_epochs for j in range(rows)]
         
@@ -174,11 +199,16 @@ def plot_data_matrix(cols = cols,
         if row_label:
             sca(row[0])
             gca().set_ylabel(row_label)
+            
     for row,row_label in zip(ax_grid,row_labels_right):
         if row_label:
-            sca(row[-1][1])
-            gca().yaxis.set_label_position("right")
-            gca().set_ylabel(row_label,rotation = -90,va = 'bottom')
+            if type(row_label) == list:
+                sca(row[-1][1])
+            else:
+                pass
+                #sca(row[-1])
+            #gca().yaxis.set_label_position("right")
+            #gca().set_ylabel(row_label,rotation = -90,va = 'bottom')
     
     #set col spines
     for panel,xbound,xticknum,show_spine in zip(ax_grid[-1],xbounds,xtick_numbers,show_spines_bottom):

@@ -840,10 +840,18 @@ def get_frame_idxs(cam_epoch,axondata):
 
 def idx_by_thresh(signal,thresh = 0.1):
     idxs = np.squeeze(np.argwhere(signal > thresh))
-    split_idxs = np.squeeze(np.argwhere(np.diff(idxs) > 1))
+    try:
+        split_idxs = np.squeeze(np.argwhere(np.diff(idxs) > 1))
+    except IndexError:
+        #print 'IndexError'
+        return None
     #split_idxs = [split_idxs]
     #print split_idxs
-    idx_list = np.split(idxs,split_idxs)
+    try:
+        idx_list = np.split(idxs,split_idxs)
+    except ValueError:
+        #print 'value error'
+        return None
     idx_list = [x[1:] for x in idx_list]
     return idx_list
                 
