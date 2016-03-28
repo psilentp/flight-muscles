@@ -131,6 +131,35 @@ ptch_roll_swarms = {
     'GMR22H05_prc':GMR22H05_prc_swarm,
 }
 
+#labels to use for plots
+trial_to_label =    {'ascending': 'DES',
+                     'descending': 'ASC',
+                     'flight_starts': 'flight_starts',
+                     'flight_stops': 'flight_stops',
+                     'progressive': 'BCK',
+                     'pth_roll_0': 'PU',
+                     'pth_roll_120': 'PR120',
+                     'pth_roll_150': 'PR150',
+                     'pth_roll_180': 'PD',
+                     'pth_roll_210': 'PR210',
+                     'pth_roll_240': 'PR240',
+                     'pth_roll_270': 'RL',
+                     'pth_roll_30': 'PR30',
+                     'pth_roll_300': 'PR300',
+                     'pth_roll_330': 'PR330',
+                     'pth_roll_60': 'PR60',
+                     'pth_roll_90': 'RR',
+                     'pth_roll_multipole': 'PRmultipole',
+                     'pth_roll_phsrndm': 'PRphsrndm',
+                     'regressive': 'FOR',
+                     'step_roll_yaw_000': 'RL',
+                     'step_roll_yaw_090': 'YR',
+                     'step_roll_yaw_180': 'RR',
+                     'step_roll_yaw_270': 'YL',
+                     'stripe_fix': 'stripe_fix',
+                     'yaw_left': 'YR',
+                     'yaw_right': 'YL'}
+
 def decode_cond_roll_yaw(cond_data):
     """extract the experimental condition for a trial from a 'caridinal_roll_yaw' type experiment"""
     from scipy.io import loadmat
@@ -276,6 +305,19 @@ i_list = ['i1','i2']
 iii_list = ['iii1','iii24','iii3']
 hg_list = ['hg1','hg2','hg3','hg4']
 id_list = ['tpv','tpd','ttm','pr']
+
+def get_xio(trial_name):
+    xi = np.linspace(0,23,1150)
+    #print trial_name
+    if trial_name in ['ascending','descending','yaw_left','yaw_right','progressive','regressive']:
+        xi -= 10.0
+    if 'pth_roll' in trial_name:
+        xi -= 7.0
+    if 'flight' in trial_name:
+        xi -= 5.0
+    else:
+        return xi
+    return xi
 
 signal_plot_info = {'wb_frequency':
                        {'ax_label':'freq',

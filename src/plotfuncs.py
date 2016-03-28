@@ -42,6 +42,22 @@ show_spines_bottom = [False for j in range(cols)]
 show_spines_bottom[-1] = True
 plot_panel_function = lambda row,col: (row,col)
 
+def pull_ax_spines(xtick_numbers = 5,ytick_numbers = 5,left = True,bottom=True):
+    xbound = gca().get_xbound()
+    ybound = gca().get_ybound()
+    kill_spines()
+    if left:
+        gca().spines['left'].set_visible(True)
+        gca().spines['left'].set_position(('outward',10))
+        [y.set_visible(False) for y in gca().get_yticklines()[1::2]]
+        yticks(np.linspace(ybound[0],ybound[1],ytick_numbers))
+    if bottom:
+        gca().spines['bottom'].set_visible(True)
+        gca().spines['bottom'].set_position(('outward',10))
+        [y.set_visible(False) for y in gca().get_xticklines()[1::2]]
+        xticks(np.linspace(xbound[0],xbound[1],xtick_numbers))
+    #yticks(np.linspace(ybound[0],ybound[1],yticknum))
+    
 def plot_data_matrix(cols = cols,
                      rows = rows,
                      
@@ -68,8 +84,9 @@ def plot_data_matrix(cols = cols,
                      row_labels_left = 'no_lbl',
                      
                      col_labels_top = 'no_lbl',
-                     row_labels_right = 'no_lbl',
-                     
+                     row_labels_right = None,
+                     col_axvlines = None,
+                     col_axvlines_kwargs = {'color':'k','ls':'--'},
                      gs_left = 0.05,
                      gs_right = 0.95,
                      gs_wspace = 0.1,
@@ -80,6 +97,11 @@ def plot_data_matrix(cols = cols,
                      show_spines_top = True,
                      show_spines_bottom = True):
     
+    if not(type(col_axvlines) == list):
+        col_axvlines = [col_axvlines for j in range(cols)]
+    if not(type(col_axvlines_kwargs) == list):
+        col_axvlines_kwargs = [col_axvlines_kwargs for j in range(cols)]
+        
     if not(type(ytick_numbers) == list):
         ytick_numbers = [ytick_numbers for j in range(rows)]
     
@@ -162,10 +184,16 @@ def plot_data_matrix(cols = cols,
             axhspan(*row_epoch,**row_epochs_kwarg)
         kill_spines()
 
-    for panel,col_epoch,col_epochs_kwarg in zip(col_epoch_panels,col_epochs,col_epochs_kwargs):
+    for panel,col_epoch,col_epochs_kwarg,col_axvline,col_axvlines_kwarg in zip(col_epoch_panels,
+                                                            col_epochs,
+                                                            col_epochs_kwargs,
+                                                            col_axvlines,
+                                                            col_axvlines_kwargs):
         sca(panel)
         if col_epoch:
             axvspan(*col_epoch,**col_epochs_kwarg)
+        if not(col_axvline is None):
+            axvline(col_axvline,**col_axvlines_kwarg)
         kill_spines()
     
     #set row spines
@@ -202,13 +230,17 @@ def plot_data_matrix(cols = cols,
             
     for row,row_label in zip(ax_grid,row_labels_right):
         if row_label:
-            if type(row_label) == list:
+            if type(row[-1]) == list:
                 sca(row[-1][1])
+                gca().yaxis.set_label_position("right")
+                gca().set_ylabel(row_label,rotation = -90,va = 'bottom')
             else:
-                pass
+                sca(row[-1])
+                gca().yaxis.set_label_position("right")
+                gca().set_ylabel(row_label,rotation = -90,va = 'bottom')
                 #sca(row[-1])
-            #gca().yaxis.set_label_position("right")
-            #gca().set_ylabel(row_label,rotation = -90,va = 'bottom')
+            #
+            #
     
     #set col spines
     for panel,xbound,xticknum,show_spine in zip(ax_grid[-1],xbounds,xtick_numbers,show_spines_bottom):
@@ -247,7 +279,7 @@ def plot_data_matrix(cols = cols,
             gca().set_title(col_label)
         
     #gs.update(left=gs_left, right=gs_right, wspace=gs_wspace,hspace = gs_hspace)
-    gs.tight_layout(fig,h_pad=0.3,w_pad = 0.3)
+    gs.tight_layout(fig,h_pad=0.1,w_pad = 0.1)
     draw()
     return ax_grid,row_epoch_panels,col_epoch_panels
     

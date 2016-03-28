@@ -1001,19 +1001,16 @@ def fourier(phase,p):
 def errfunc(p,cos_mtrx,sin_mtrx,y):
     return fourier_pcomp(p,cos_mtrx,sin_mtrx)-y
 
-def update_dset(dset,key,value):
+def update_dset(dset,key,value,compression = 'gzip',compression_opts = 5):
     if not(key in dset.keys()):
-        dset.create_dataset(key,data = value,compression="gzip", compression_opts=5)
+        dset.create_dataset(key,data = value,compression=compression, compression_opts=compression_opts)
     else:
-        print 'here'
-        print key
+        print 'replacing existing dset %s'%(key)
         del(dset[key])
-    try:
-        dset.create_dataset(key,data = value, compression="gzip", compression_opts=5)
-    except RuntimeError as err:
-        print err
-        print 'runtime error'
-        print key
+        try:
+            dset.create_dataset(key,data = value,compression=compression, compression_opts=compression_opts)
+        except RuntimeError as err:
+            print 'RuntimeError thrown when creating replacement dset %s'%(key)
 
 #this maps the experiment names to the code used
 #to import and process the data
