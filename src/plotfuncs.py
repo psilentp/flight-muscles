@@ -215,6 +215,7 @@ def plot_data_matrix(cols = cols,
             sca(row[-1])
             row[-1] = [row[-1],twinx()]
             sca(row[-1][1])
+            gca().set_ybound(*ybound)
             kill_spines()
             gca().spines['right'].set_visible(True)
             gca().spines['right'].set_position(('outward',10))
