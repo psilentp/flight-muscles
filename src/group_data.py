@@ -164,6 +164,15 @@ trial_to_label =    {'ascending': 'DES',
                      'yaw_left': 'YR',
                      'yaw_right': 'YL'}
 
+trial_list = ['step_roll_yaw_%03d'%(i) for i in range(0,360,30)]
+#trial_to_label = dict()
+[trial_to_label.update({tname:str(lbl)}) for tname,lbl in zip(trial_list,range(0,360,30))]
+trial_to_label['step_roll_yaw_000'] = 'RL00'
+trial_to_label['step_roll_yaw_090'] = 'YR90'
+trial_to_label['step_roll_yaw_180'] = 'RR180'
+trial_to_label['step_roll_yaw_270'] = 'YL270'
+
+
 def decode_cond_roll_yaw(cond_data):
     """extract the experimental condition for a trial from a 'caridinal_roll_yaw' type experiment"""
     from scipy.io import loadmat
@@ -316,6 +325,8 @@ def get_xio(trial_name):
     if trial_name in ['ascending','descending','yaw_left','yaw_right','progressive','regressive']:
         xi -= 10.0
     if 'pth_roll' in trial_name:
+        xi -= 7.0
+    if 'step_roll_yaw' in trial_name:
         xi -= 7.0
     if 'flight' in trial_name:
         xi -= 5.0
