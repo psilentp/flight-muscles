@@ -334,8 +334,12 @@ def get_xio(trial_name):
         return xi
     return xi
 
-signal_plot_info = {'Sac':
-                       {'ax_label':'saccades',
+signal_plot_info = {
+                    'recon':
+                        {'ax_label':'Rec',
+                        'transform':lambda x:np.float(x)},
+                    'Sac':
+                       {'ax_label':'Sac',
                         'transform':lambda x:np.float(x)},
                     'wb_frequency':
                        {'ax_label':'freq',
