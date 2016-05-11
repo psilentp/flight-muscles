@@ -308,8 +308,7 @@ signal_plot_list = ['wb_frequency','Ph1',
                     'b1','b2','b3',
                     'i1','i2',
                     'iii1','iii24','iii3',
-                    'hg1','hg2','hg3','hg4',
-                    'tpv','tpd','ttm','pr']
+                    'hg1','hg2','hg3','hg4']
 
 muscle_plot_list = signal_plot_list[2:]
 
