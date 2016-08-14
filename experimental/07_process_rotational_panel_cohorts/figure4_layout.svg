@@ -1,0 +1,2783 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:figurefirst="http://flyranch.github.io/figurefirst/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   enable-background="new"
+   height="8.75in"
+   id="svg2"
+   inkscape:version="0.91 r"
+   sodipodi:docname="figure4_layout.svg"
+   version="1.1"
+   viewBox="0 0 750 875"
+   width="7.5in">
+  <sodipodi:namedview
+     bordercolor="#666666"
+     borderopacity="1.0"
+     id="base"
+     inkscape:current-layer="layer2"
+     inkscape:cx="14.00805"
+     inkscape:cy="617.7555"
+     inkscape:document-units="in"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:window-height="1041"
+     inkscape:window-maximized="0"
+     inkscape:window-width="1671"
+     inkscape:window-x="239"
+     inkscape:window-y="131"
+     inkscape:zoom="1.4142136"
+     pagecolor="#ffffff"
+     showgrid="false"
+     showguides="true"
+     units="in" />
+  <defs
+     id="defs4">
+    <defs
+       id="defs177-1">
+      <path
+         d="m 19.1875,8.296875 34.421875,0 0,-8.296875 -46.28125,0 0,8.296875 q 5.609375,5.8125 15.296875,15.59375 9.703125,9.796875 12.1875,12.640625 4.734375,5.3125 6.609375,9 1.890625,3.6875 1.890625,7.25 0,5.8125 -4.078125,9.46875 -4.078125,3.671875 -10.625,3.671875 -4.640625,0 -9.796875,-1.609375 -5.140625,-1.609375 -11,-4.890625 l 0,9.96875 Q 13.765625,71.78125 18.9375,73 q 5.1875,1.21875 9.484375,1.21875 11.328125,0 18.0625,-5.671875 6.734375,-5.65625 6.734375,-15.125 0,-4.5 -1.6875,-8.53125 Q 49.859375,40.875 45.40625,35.40625 44.1875,33.984375 37.640625,27.21875 31.109375,20.453125 19.1875,8.296875"
+         id="BitstreamVeraSans-Roman-32-2"
+         inkscape:connector-curvature="0"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+    </defs>
+    <filter
+       id="filter8590"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+    <filter
+       id="filter8590-0"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592-6"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+    <filter
+       id="filter8590-3"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592-5"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+    <filter
+       id="filter8590-0-3"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592-6-3"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+    <filter
+       id="filter8590-3-6"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592-5-0"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+    <filter
+       id="filter8590-0-3-5"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592-6-3-7"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+    <filter
+       id="filter8590-3-6-5"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592-5-0-8"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+    <filter
+       id="filter8590-0-3-5-1"
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB">
+      <feBlend
+         id="feBlend8592-6-3-7-3"
+         in2="BackgroundImage"
+         inkscape:collect="always"
+         mode="multiply" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1"
+     style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+    <g
+       id="g8333"
+       style="fill:#e3e2db;stroke:none"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-250.78136)">
+      <rect
+         height="79.52861"
+         id="rect3336"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87529"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89404"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="YR" />
+    </g>
+    <g
+       id="g8317"
+       style="fill:#e3e2db;stroke:none"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-250.78136)">
+      <rect
+         height="79.52861"
+         id="rect3336-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89407"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-79"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="YL" />
+    </g>
+    <g
+       id="g8301"
+       style="fill:#e3e2db;stroke:none"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-239.60436)">
+      <rect
+         height="79.52861"
+         id="rect3336-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-96"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89407"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-66"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="DES" />
+    </g>
+    <g
+       id="g8285"
+       style="fill:#e3e2db;stroke:none"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-239.60436)">
+      <rect
+         height="79.52861"
+         id="rect3336-73"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-07"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-967"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89407"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="ASC" />
+    </g>
+    <g
+       id="g8269"
+       style="fill:#e3e2db;stroke:none"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-228.42737)">
+      <rect
+         height="79.52861"
+         id="rect3336-73-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-7-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-8-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-6-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-07-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-967-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-7-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.8941"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-8-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-4-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-9-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-0-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-3-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-2-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-3-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="BCK" />
+    </g>
+    <g
+       id="g8269-9"
+       style="fill:#e3e2db;stroke:none"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161205,-144.24541)">
+      <rect
+         height="79.52861"
+         id="rect3336-73-8-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-7-2-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-8-4-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-6-0-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-07-8-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-967-8-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-7-6-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.8941"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-8-8-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-4-0-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-9-6-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-0-6-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-3-7-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-2-6-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-3-5-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="FOR" />
+    </g>
+    <g
+       id="g8333-8"
+       style="display:inline;fill:#e3e2db;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-250.78136)">
+      <rect
+         height="79.52861"
+         id="rect3336-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87529"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89404"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-12"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-25"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-34"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="286.76434">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="YR_summary" />
+    </g>
+    <g
+       id="g16278"
+       transform="matrix(0.70415133,0,0,1.0059304,-140.83754,-274.24743)">
+      <rect
+         height="120"
+         id="rect14435"
+         style="fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="11.111111"
+         x="213.28963"
+         y="442.08441">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="120"
+         id="rect14435-9"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="11.111111"
+         x="307.72757"
+         y="442.08441">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="120"
+         id="rect14435-98"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="11.111111"
+         x="396.73395"
+         y="442.08441">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="120"
+         id="rect14435-4"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="11.111111"
+         x="491.17172"
+         y="442.08441">
+        <figurefirst:axis
+           figurefirst:name="sigma" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="cbars" />
+    </g>
+    <g
+       id="g8317-2"
+       style="display:inline;fill:#e3e2db;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-250.78136)">
+      <rect
+         height="79.52861"
+         id="rect3336-5-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-4-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-2-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-7-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-9-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-9-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-3-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89407"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-5-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-5-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-4-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-79-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-4-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-9-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-6-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="371.61716">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="YL_summary" />
+    </g>
+    <g
+       id="g8301-4"
+       style="display:inline;fill:#e3e2db;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-239.60436)">
+      <rect
+         height="79.52861"
+         id="rect3336-3-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-6-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-3-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-8-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-0-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-96-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-0-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89407"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-9-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-1-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-1-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-66-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-2-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-8-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-8-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="455.6843">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="DES_summary" />
+    </g>
+    <g
+       id="g8285-6"
+       style="display:inline;fill:#e3e2db;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-239.60436)">
+      <rect
+         height="79.52861"
+         id="rect3336-73-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-7-23"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-8-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-6-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-07-1"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-967-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-7-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.89407"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-8-2"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-4-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-9-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-0-68"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-3-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-2-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-3-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="539.75146">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="ASC_summary" />
+    </g>
+    <g
+       id="g8269-5"
+       style="display:inline;fill:#e3e2db;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-228.42737)">
+      <rect
+         height="79.52861"
+         id="rect3336-73-8-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-7-2-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-8-4-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-6-0-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-07-8-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-967-8-6"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-7-6-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.8941"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-8-8-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-4-0-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-9-6-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-0-6-98"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-3-7-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-2-6-63"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-3-5-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="BCK_summary" />
+    </g>
+    <g
+       id="g8269-9-9"
+       style="display:inline;fill:#e3e2db;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.0101836,0,0,1.0101836,-7.3161215,-144.2454)">
+      <rect
+         height="79.52861"
+         id="rect3336-73-8-0-9"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-70.165634"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-1-7-2-4-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-136.87527"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="Ph1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-8-8-4-4-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-199.15924"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-4-6-0-1-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-264.3577"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-43-07-8-0-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-312.53647"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-47-967-8-4-4"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-360.71524"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-80-7-6-6-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-408.8941"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-12-8-8-2-0"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-457.07281"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-41-4-0-3-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-505.25159"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-6-9-6-7-3"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-553.43036"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-0-6-9-8"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-601.60913"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-6-3-7-7-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-649.7879"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-2-6-6-7"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-697.96667"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="79.52861"
+         id="rect3336-7-7-3-3-5-2-5"
+         style="fill:#e3e2db;fill-rule:evenodd;stroke:none;stroke-width:0.32451981px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+         transform="scale(-1,1)"
+         width="43.001904"
+         x="-746.14545"
+         y="623.8186">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="FOR_summary" />
+    </g>
+    <g
+       id="g14419"
+       transform="matrix(1.0059304,0,0,1.0526868,1.0049609,-289.93688)">
+      <rect
+         height="502"
+         id="rect9432"
+         style="fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="19.978857"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="lmr" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="85.386497"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="rwing" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-9"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="148.89131"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="sac" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="214.10226"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="b1" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="262.49982"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="b2" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="310.89737"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="b3" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="359.29492"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="i1" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2-0"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="407.69247"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="i2" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2-0-3"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="456.09003"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="iii1" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2-0-32"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="504.48758"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="iii3" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2-0-2"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="552.88513"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="hg1" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2-0-4"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="601.28271"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="hg2" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2-0-8"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="649.68024"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="hg3" />
+      </rect>
+      <rect
+         height="502"
+         id="rect9432-0-5-4-6-2-0-0"
+         style="display:inline;fill:#000000;fill-opacity:0.36263739;stroke:none;stroke-opacity:1"
+         width="43.200001"
+         x="698.07782"
+         y="311.3916">
+        <figurefirst:axis
+           figurefirst:name="hg4" />
+      </rect>
+      <figurefirst:group
+         figurefirst:name="avlines" />
+    </g>
+  </g>
+  <g
+     id="layer3"
+     inkscape:groupmode="layer"
+     inkscape:label="mpl_target"
+     style="display:inline;opacity:0.98000004;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+     transform="scale(1.3888889,1.3888889)">
+    <figurefirst:targetlayer
+       figurefirst:name="mpl_panel_a" />
+  </g>
+  <g
+     id="layer2"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 2"
+     style="display:inline;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+    <text
+       id="text4677"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="27.703949"
+       xml:space="preserve"
+       y="26.595085"><tspan
+         id="tspan4679"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="27.703949"
+         y="26.595085">lmr</tspan></text>
+    <text
+       id="text4677-1"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="158.41418"
+       xml:space="preserve"
+       y="25.077644"><tspan
+         id="tspan4679-8"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="158.41418"
+         y="25.077644">sac</tspan></text>
+    <text
+       id="text4677-9"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="229.6694"
+       xml:space="preserve"
+       y="26.488895"><tspan
+         id="tspan4679-2"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="229.6694"
+         y="26.488895">b1</tspan></text>
+    <text
+       id="text4677-94"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="275.92737"
+       xml:space="preserve"
+       y="26.488895"><tspan
+         id="tspan4679-87"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="275.92737"
+         y="26.488895">b2</tspan></text>
+    <text
+       id="text4677-21"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="378.52353"
+       xml:space="preserve"
+       y="26.399837"><tspan
+         id="tspan4679-9"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="378.52353"
+         y="26.399837">i1</tspan></text>
+    <text
+       id="text4677-92"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="327.01926"
+       xml:space="preserve"
+       y="26.488895"><tspan
+         id="tspan4679-7"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="327.01926"
+         y="26.488895">b3</tspan></text>
+    <text
+       id="text4677-0"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="427.01688"
+       xml:space="preserve"
+       y="26.471767"><tspan
+         id="tspan4679-83"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="427.01688"
+         y="26.471767">i2</tspan></text>
+    <text
+       id="text4677-6"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="472.28354"
+       xml:space="preserve"
+       y="26.399837"><tspan
+         id="tspan4679-84"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="472.28354"
+         y="26.399837">iii1</tspan></text>
+    <text
+       id="text4677-5"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="566.72174"
+       xml:space="preserve"
+       y="25.146152"><tspan
+         id="tspan4679-0"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="566.72174"
+         y="25.146152">hg1</tspan></text>
+    <text
+       id="text4677-8"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="520.84888"
+       xml:space="preserve"
+       y="26.365582"><tspan
+         id="tspan4679-1"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="520.84888"
+         y="26.365582">iii3</tspan></text>
+    <text
+       id="text4677-5-5"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="615.21515"
+       xml:space="preserve"
+       y="26.268578"><tspan
+         id="tspan4679-0-2"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="615.21515"
+         y="26.268578">hg2</tspan></text>
+    <text
+       id="text4677-5-5-3"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="664.07166"
+       xml:space="preserve"
+       y="25.146152"><tspan
+         id="tspan4679-0-2-1"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="664.07166"
+         y="25.146152">hg3</tspan></text>
+    <text
+       id="text4677-5-5-3-7"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="712.66779"
+       xml:space="preserve"
+       y="25.146152"><tspan
+         id="tspan4679-0-2-1-0"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="712.66779"
+         y="25.146152">hg4</tspan></text>
+    <text
+       id="text4677-02"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:13.88888926px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;-inkscape-font-specification:'sans-serif, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;"
+       x="89.366142"
+       xml:space="preserve"
+       y="24.950909"><tspan
+         id="tspan4679-3"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13.88888926px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="89.366142"
+         y="24.950909">rwing</tspan></text>
+    <path
+       d="m 14.671155,41.734884 -5.0499791,0 0,78.047456 5.7619131,0"
+       id="path123"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.54807186;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:100000" />
+    <g
+       id="g2950"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.3763192,0,0,1.7373277,-42.44012,-7.2979635)">
+      <g
+         id="g154"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <path
+           d="m 37.822498,50.325832 4,0"
+           id="use156"
+           inkscape:connector-curvature="0"
+           style="stroke:#000000;stroke-width:0.49705225;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      </g>
+    </g>
+    <text
+       id="text4677-2"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="1.8497113"
+       xml:space="preserve"
+       y="36.857094"><tspan
+         dx="1.5806673"
+         id="tspan4338"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="1.8497113"
+         y="36.857094">20°</tspan></text>
+    <text
+       id="text4677-2-5"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="-0.63299286"
+       xml:space="preserve"
+       y="131.71356"><tspan
+         id="tspan4679-82-6"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="-0.63299286"
+         y="131.71356">-20</tspan></text>
+    <path
+       d="m 80.617133,41.395945 -5.049982,0 0,78.047455 5.761914,0"
+       id="path123-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.54807186;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:100000" />
+    <g
+       id="line2d_3-7"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.3763192,0,0,1.7373277,23.505856,-7.6369055)">
+      <g
+         id="g154-7"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <path
+           d="m 37.822498,50.325832 4,0"
+           id="use156-7"
+           inkscape:connector-curvature="0"
+           style="stroke:#000000;stroke-width:0.49705225;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      </g>
+    </g>
+    <text
+       id="text4677-2-6"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="68.166618"
+       xml:space="preserve"
+       y="36.518154"><tspan
+         id="tspan4679-82-0"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="68.166618"
+         y="36.518154">10°</tspan></text>
+    <text
+       id="text4677-2-5-8"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="65.29409"
+       xml:space="preserve"
+       y="131.37462"><tspan
+         id="tspan4679-82-6-9"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="65.29409"
+         y="131.37462">-10</tspan></text>
+    <path
+       d="m 145.14719,41.95716 -5.04998,0 0,78.04747 5.76191,0"
+       id="path123-9-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.54807186;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:100000" />
+    <g
+       id="line2d_3-7-5"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.3763192,0,0,1.7373277,88.035913,-7.0756895)">
+      <g
+         id="g154-7-8"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <path
+           d="m 37.822498,50.325832 4,0"
+           id="use156-7-4"
+           inkscape:connector-curvature="0"
+           style="stroke:#000000;stroke-width:0.49705225;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      </g>
+    </g>
+    <text
+       id="text4677-2-6-6"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="134.58005"
+       xml:space="preserve"
+       y="37.079376"><tspan
+         id="tspan4679-82-0-4"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="134.58005"
+         y="37.079376">5Hz</tspan></text>
+    <text
+       id="text4677-2-5-8-5"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="138.77519"
+       xml:space="preserve"
+       y="131.93582"><tspan
+         id="tspan4679-82-6-9-8"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="138.77519"
+         y="131.93582">0</tspan></text>
+    <path
+       d="m 211.36086,41.957159 -5.04996,0 0,78.047471 5.7619,0"
+       id="path123-9-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       style="fill:none;stroke:#000000;stroke-width:1.54807186;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:100000" />
+    <g
+       id="line2d_3-7-3"
+       style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+       transform="matrix(1.3763192,0,0,1.7373277,154.24959,-7.0756905)">
+      <g
+         id="g154-7-5"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <path
+           d="m 37.822498,50.325832 4,0"
+           id="use156-7-8"
+           inkscape:connector-curvature="0"
+           style="stroke:#000000;stroke-width:0.49705225;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000" />
+      </g>
+    </g>
+    <text
+       id="text4677-2-6-9"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="198.53003"
+       xml:space="preserve"
+       y="37.079369"><tspan
+         id="tspan3551"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="198.53003"
+         y="37.079369">2σ</tspan></text>
+    <text
+       id="text4677-2-5-8-2"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="201.40251"
+       xml:space="preserve"
+       y="131.93582"><tspan
+         id="tspan4679-82-6-9-2"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="201.40251"
+         y="131.93582">-2</tspan></text>
+    <text
+       id="text4677-2-7"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590)"
+       x="2.5438769"
+       xml:space="preserve"
+       y="164.87506"><tspan
+         id="tspan4679-82-8"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="2.5438769"
+         y="164.87506">30°</tspan></text>
+    <text
+       id="text4677-2-7-8"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590-0)"
+       x="1.462689"
+       xml:space="preserve"
+       y="301.54172"><tspan
+         id="tspan4679-82-8-5"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="1.462689"
+         y="301.54172">-30</tspan></text>
+    <text
+       id="text4677-2-7-5"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590-3)"
+       x="67.685814"
+       xml:space="preserve"
+       y="164.87506"><tspan
+         id="tspan4679-82-8-2"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="67.685814"
+         y="164.87506">10°</tspan></text>
+    <text
+       id="text4677-2-7-8-5"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590-0-3)"
+       x="68.06562"
+       xml:space="preserve"
+       y="301.54172"><tspan
+         id="tspan4679-82-8-5-2"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="68.06562"
+         y="301.54172">-10</tspan></text>
+    <text
+       id="text4677-2-7-5-0"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590-3-6)"
+       x="138.79692"
+       xml:space="preserve"
+       y="165.06277"><tspan
+         id="tspan4679-82-8-2-9"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="138.79692"
+         y="165.06277">L</tspan></text>
+    <text
+       id="text4677-2-7-8-5-0"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590-0-3-5)"
+       x="138.62117"
+       xml:space="preserve"
+       y="301.36484"><tspan
+         id="tspan4679-82-8-5-2-6"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="138.62117"
+         y="301.36484">R</tspan></text>
+    <text
+       id="text4677-2-7-5-0-2"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590-3-6-5)"
+       x="199.90802"
+       xml:space="preserve"
+       y="164.87506"><tspan
+         id="tspan4679-82-8-2-9-0"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="199.90802"
+         y="164.87506">3σ</tspan></text>
+    <text
+       id="text4677-2-7-8-5-0-4"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;filter:url(#filter8590-0-3-5-1)"
+       x="203.06561"
+       xml:space="preserve"
+       y="301.54172"><tspan
+         id="tspan4679-82-8-5-2-6-4"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="203.06561"
+         y="301.54172">-3</tspan></text>
+    <text
+       id="text3545"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:44.44444275px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       x="0"
+       xml:space="preserve"
+       y="0"><tspan
+         id="tspan3547"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="0"
+         y="0" /></text>
+    <text
+       id="text3557"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-weight:normal;font-size:44.44444275px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       x="0"
+       xml:space="preserve"
+       y="0"><tspan
+         id="tspan3559"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+         x="0"
+         y="0" /></text>
+    <text
+       id="text4677-2-5-7"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111141px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="26.77232"
+       xml:space="preserve"
+       y="585.52417"><tspan
+         id="tspan4679-82-6-1"
+         sodipodi:role="line"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:11.11111141px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%;"
+         x="26.77232"
+         y="585.52417">3s</tspan></text>
+    <text
+       id="text4677-3"
+       sodipodi:linespacing="125%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.66666711px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1;"
+       x="3.4252763"
+       xml:space="preserve"
+       y="23.417522"><tspan
+         id="tspan4679-33"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.66666711px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;writing-mode:lr;text-anchor:start;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000;"
+         x="3.4252763"
+         y="23.417522">A</tspan></text>
+    <path
+       d="m 28.714059,568.48312 0,6.04168 10.349988,0 0,-6.04168"
+       id="path6328"
+       inkscape:connector-curvature="0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.95681733px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1" />
+  </g>
+</svg>

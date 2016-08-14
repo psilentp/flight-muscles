@@ -846,11 +846,14 @@ def idx_by_thresh(signal,thresh = 0.1):
         #print 'IndexError'
         return None
     #split_idxs = [split_idxs]
+    if split_idxs.ndim == 0:
+        split_idxs = np.array([split_idxs])
     #print split_idxs
     try:
         idx_list = np.split(idxs,split_idxs)
     except ValueError:
         #print 'value error'
+        np.split(idxs,split_idxs)
         return None
     idx_list = [x[1:] for x in idx_list]
     return idx_list

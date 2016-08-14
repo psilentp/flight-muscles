@@ -4,14 +4,22 @@ from pylab import *
 import numpy as np
 
 def kill_spines():
-    gca().spines['left'].set_visible(False)
-    gca().spines['top'].set_visible(False)
-    gca().spines['right'].set_visible(False)
-    gca().spines['bottom'].set_visible(False)
-    [x.set_visible(False) for x in gca().get_xticklabels()]
-    [y.set_visible(False) for y in gca().get_yticklabels()]
-    [x.set_visible(False) for x in gca().get_xticklines()]
-    [y.set_visible(False) for y in gca().get_yticklines()]
+    ax = gca()
+    if 'polar' in gca().spines.keys():
+        ax.spines['polar'].set_visible(False)
+        ax.yaxis.grid(False)
+        ax.xaxis.grid(False)
+        ax.set_xticks([])
+        ax.set_yticks([])
+    else:
+        ax.spines['left'].set_visible(False)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
+        [x.set_visible(False) for x in ax.get_xticklabels()]
+        [y.set_visible(False) for y in ax.get_yticklabels()]
+        [x.set_visible(False) for x in ax.get_xticklines()]
+        [y.set_visible(False) for y in ax.get_yticklines()]
 
 ### Test settings for plot data matrix function
 cols = 12

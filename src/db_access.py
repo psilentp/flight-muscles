@@ -40,7 +40,7 @@ def main():
     f.close()
 
 ###In order to work while data is being uploaded    
-hold_flies = [500,501,502]
+hold_flies = [182,500,501,502]
 #hold_flies.extend(range(1,400))
 
 def get_db():
@@ -52,7 +52,8 @@ def get_db():
         flynum = int(fly.split('Fly')[1])
         #print flynum
         if not(flynum in hold_flies):
-            fly_db[flynum] = h5py.File(root_dir+fly+'/fly_record.hdf5','a')
+            #print flynum
+            fly_db[flynum] = h5py.File(root_dir+fly+'/fly_record.hdf5','r')
     return fly_db
 
 class FlySwitch(dict):

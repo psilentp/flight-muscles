@@ -64,6 +64,12 @@ GMR22H05_prc_swarm = flylib.NetSquadron(GMR22H05_prc_list)
 GMR22H05_yr_list = [656,657,658,659,660,661,662] #roll to yaw tuning
 GMR22H05_yr_swarm = flylib.NetSquadron(GMR22H05_yr_list)
 
+GMR39E01_pr_list = [988,989,990,991,992,993,994,995,996,997,998,999] #pitch to roll tuning 987
+GMR39E01_pr_swarm = flylib.NetSquadron(GMR39E01_pr_list)
+
+GMR39E01_yr_list = [1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018]#[1006,1007,1008] #roll to yaw tuning
+GMR39E01_yr_swarm = flylib.NetSquadron(GMR39E01_yr_list)
+
 ###################
 ###################
 
@@ -109,6 +115,8 @@ swarms = {'GMR22H05':GMR22H05_swarm,
           'GMR40D04_ca_mod1':GMR40D04_ca_mod1_swarm,
           'GMR40D04_yr':GMR40D04_yr_swarm,
           'GMR22H05_yr':GMR22H05_yr_swarm,
+          'GMR39E01_pr':GMR39E01_pr_swarm,
+          'GMR39E01_yr':GMR39E01_yr_swarm,
          }
 
 exp_swarms = {'GMR22H05':GMR22H05_swarm,
@@ -133,6 +141,7 @@ ctrl_swarms = {
 ptch_roll_swarms = {
     'GMR22H05_pr':GMR22H05_pr_swarm,
     'GMR22H05_prc':GMR22H05_prc_swarm,
+    'GMR39E01_pr':GMR39E01_pr_swarm,
 }
 
 #labels to use for plots
@@ -351,6 +360,9 @@ signal_plot_info = {
                        'transform':lambda x:np.rad2deg(x/5.0)},
                    'Ph2':
                        {'ax_label':'lmr \n amp',
+                       'transform':lambda x:np.rad2deg(x/5.0)},
+                   'lpr':
+                       {'ax_label':'lpr \n amp',
                        'transform':lambda x:np.rad2deg(x/5.0)},
                    'StimCond':
                        {'ax_label':'Stimulus',
