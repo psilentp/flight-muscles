@@ -58,7 +58,7 @@ GMR40D04_yr_swarm = flylib.NetSquadron(GMR40D04_yr_list)
 
 #GMR22H05_prc_list = [487,488,489,490,491,492,493,494,495,496,497,498,499]
 #GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498]
-GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498,499,500,501,502] # azmuthal tuning - pitch to roll as well as motion control stimuli
+GMR22H05_prc_list = [488,489,490,491,492,493,494,495,496,497,498,500,501,502] # 499 azmuthal tuning - pitch to roll as well as motion control stimuli
 GMR22H05_prc_swarm = flylib.NetSquadron(GMR22H05_prc_list)
 
 GMR22H05_yr_list = [656,657,658,659,660,661,662] #roll to yaw tuning
@@ -336,8 +336,10 @@ def get_xio(trial_name):
         xi -= 7.0
     if 'step_roll_yaw' in trial_name:
         xi -= 7.0
-    if 'flight' in trial_name:
+    if 'flight_starts' in trial_name:
         xi -= 5.0
+    if 'flight_stops' in trial_name:
+        xi -= 18.0
     else:
         return xi
     return xi
