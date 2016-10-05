@@ -291,6 +291,80 @@ def plot_data_matrix(cols = cols,
     gs.tight_layout(fig,h_pad=0.1,w_pad = 0.1)
     draw()
     return ax_grid,row_epoch_panels,col_epoch_panels
+
+class DivergingCMapCreator(object):
+    hsv_arr = np.zeros((1,50,3))
     
+    def get_sincurve(self,gam,end,cent):
+        """return normalized sin**gam curve"""
+        rng = np.linspace(0,np.pi,50)
+        return (((np.sin(rng)**gam))*(cent-end))+(end)
+
+    def get_sigcurve(self,k0,start,stop):
+        """return normalized sigmoid"""
+        rng = np.linspace(0,1,50)
+        return (stop-start)/(1+np.exp(k0*(0.5-rng)))+start
+
+    def set_hsvs(self,hk,hstart,hstop,
+                  sgam,send,scent,
+                  vgam,vend,vcent):
+        """create the colormap in HSV space"""
+        self.hsv_arr[0,:,0] = self.get_sigcurve(hk,hstart,hstop)
+        self.hsv_arr[0,:,1] = self.get_sincurve(sgam,send,scent)
+        self.hsv_arr[0,:,2] = self.get_sincurve(vgam,vend,vcent)
+        return self.hsv_arr
+
+    def get_mpl_cmap(self):
+        """return a matplotlib colormap"""
+        from matplotlib.colors import LinearSegmentedColormap
+        import matplotlib.colors as mplcols
+        rgb = mplcols.hsv_to_rgb(self.hsv_arr)
+        in_map = np.linspace(0,1,50)
+        cdict = {'red':np.vstack  ((in_map,rgb[0,:,0],rgb[0,:,0])).T,
+                 'green':np.vstack((in_map,rgb[0,:,1],rgb[0,:,1])).T,
+                 'blue':np.vstack ((in_map,rgb[0,:,2],rgb[0,:,2])).T,
+        }
+        return LinearSegmentedColormap('custom', cdict)
+        
+cm_creator = DivergingCMapCreator()
+def plot_hsvs(hk,hstart,hstop,
+                  sgam,send,scent,
+                  vgam,vend,vcent):
+        """show the colormap"""
+        dta = cm_creator.set_hsvs(hk,hstart,hstop,
+                      sgam,send,scent,
+                      vgam,vend,vcent)
+        from matplotlib import gridspec
+        from scipy.misc import face
+        import plotfuncs as plf
+        import matplotlib.colors as mplcols
+        gs = gridspec.GridSpec(2,2)
+        
+        plb.subplot(gs[0,0])
+        plb.plot(dta[0,:,:])
+        plb.gca().set_ybound(0,1)
+        plf.pull_ax_spines()
+        
+        plb.subplot(gs[1,0])
+        plb.imshow(mplcols.hsv_to_rgb(dta),aspect = 'auto')
+        plf.kill_spines()
+        from scipy.misc import ascent
+        
+        plb.subplot(gs[:,1])
+        plb.imshow(ascent()[::5,::5],cmap = cm_creator.get_mpl_cmap())
+
+#from ipywidgets import interact
+
+#zto = (0,1,0.1)
+#interact(plot_hsvs,hk = (0,1000,10),
+#                   hstart = (0,1,0.01),
+#                   hstop = (0,1,0.01),
+#                   sgam = (0,20,0.1),
+#                   send = zto,
+#                   scent = zto,
+#                   vgam = (0,20,0.1),
+#                   vend = zto,
+#                   vcent = zto)
+
 if __name__ == '__main__':
     plot_data_matrix()
