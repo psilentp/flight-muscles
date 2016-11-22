@@ -1,5 +1,5 @@
 from IPython import display
-
+print 'here'
 class Genotype(dict):
     def __init__(self):
         self[0] = {'l':'wt','r':'wt'}
@@ -18,7 +18,7 @@ class Genotype(dict):
         #print self
         
     def tbl(self):
-        rstr = """<table>"""
+        rstr = """<table border="1">"""
         rstr += """
                     <tr>
                         <td>%s</td>

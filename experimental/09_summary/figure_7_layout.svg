@@ -22,17 +22,17 @@
      borderopacity="1.0"
      id="base"
      inkscape:current-layer="layer2"
-     inkscape:cx="283.87042"
-     inkscape:cy="525.21774"
+     inkscape:cx="392.53439"
+     inkscape:cy="533.23109"
      inkscape:document-units="in"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:window-height="944"
      inkscape:window-maximized="0"
      inkscape:window-width="1668"
-     inkscape:window-x="4"
-     inkscape:window-y="0"
-     inkscape:zoom="0.78162901"
+     inkscape:window-x="1650"
+     inkscape:window-y="34"
+     inkscape:zoom="1.1434528"
      pagecolor="#ffffff"
      showgrid="false"
      showguides="true"
@@ -16245,6 +16245,103 @@
        id="text1987-8"
        transform="scale(1.010187,0.98991572)"
        sodipodi:linespacing="125%">b2</text>
+    <rect
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7322"
+       width="8.7668219"
+       height="10.958526"
+       x="413.47116"
+       y="300.17255" />
+    <rect
+       style="display:inline;opacity:1;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7322-0"
+       width="8.7668219"
+       height="10.958526"
+       x="424.58231"
+       y="300.17255" />
+    <rect
+       style="display:inline;opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7322-1"
+       width="8.7668219"
+       height="10.958526"
+       x="435.69345"
+       y="300.17255" />
+    <rect
+       style="display:inline;opacity:1;fill:#87aade;fill-opacity:1;stroke:none;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7322-10"
+       width="8.7668219"
+       height="10.958526"
+       x="446.8046"
+       y="300.17255" />
+    <rect
+       style="display:inline;opacity:1;fill:#2a7fff;fill-opacity:1;stroke:none;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect7322-3"
+       width="8.7668219"
+       height="10.958526"
+       x="457.91574"
+       y="300.17255" />
+    <text
+       id="text5805-39-1-6-1-1-2-0-1-3-2-3-2-2-8-2-3"
+       sodipodi:linespacing="119.00001%"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.11111164px;line-height:119.00000572%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:100000;stroke-opacity:1"
+       x="352.90436"
+       xml:space="preserve"
+       y="308.71713"><tspan
+         id="tspan6382-9-9-6-2-2-5-8-9-9-6"
+         sodipodi:role="line"
+         x="354.67303"
+         y="308.71713"
+         style="stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">relative activity: </tspan></text>
+    <g
+       transform="matrix(-0.28233774,-0.83973019,0.82287954,-0.2766721,479.0336,811.09741)"
+       id="g3059-8"
+       style="display:inline;fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <g
+         id="g3061-8"
+         style="fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <line
+           style="fill:#000000;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+           stroke-miterlimit="10"
+           x1="560.18903"
+           y1="102.392"
+           x2="567.78198"
+           y2="104.923"
+           id="line3063-4" />
+        <g
+           id="g3065-8"
+           style="fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+          <polygon
+             style="fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             points="574.59,107.192 567.975,99.731 564.82,109.191 "
+             id="polygon3067-3" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.28233774,0.83973019,-0.82287954,0.2766721,398.06288,-199.79377)"
+       id="g3059-8-5"
+       style="display:inline;fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+      <g
+         id="g3061-8-7"
+         style="fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+        <line
+           style="fill:#000000;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
+           stroke-miterlimit="10"
+           x1="560.18903"
+           y1="102.392"
+           x2="567.78198"
+           y2="104.923"
+           id="line3063-4-2" />
+        <g
+           id="g3065-8-2"
+           style="fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000">
+          <polygon
+             style="fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:100000"
+             points="567.975,99.731 564.82,109.191 574.59,107.192 "
+             id="polygon3067-3-5" />
+        </g>
+      </g>
+    </g>
   </g>
   <g
      id="layer3"
